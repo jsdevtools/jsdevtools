@@ -1,0 +1,26 @@
+{
+  "npmClient": "yarn",
+  "packages": [
+    "packages/*",
+    "packages/configs/*",
+    "packages/shared-components/*",
+    "packages/backends/*",
+    "packages/frontends/*",
+    "packages/services/*",
+    "packages/utilities/*"
+  ],
+  "useWorkspaces": true,
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "registry": "http://localhost:4873",
+      "access": "public",
+      "npmClient": "yarn",
+      "allowBranch": [
+        "master",
+        "feature/*"
+      ]
+    }
+  }
+}

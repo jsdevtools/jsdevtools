@@ -1,0 +1,12 @@
+{
+  "name": "@jsdevtools/babel-config-ts",
+  "version": "0.1.0",
+  "description": "Shared babel configuration for typescript packages",
+  "license": "MIT",
+  "private": true,
+  "main": "index.js",
+  "prettier": "@jsdevtools/prettier-config",
+  "eslintConfig": {
+    "extends": "@jsdevtools/eslint-config"
+  }
+}

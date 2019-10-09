@@ -1,0 +1,24 @@
+{
+  "name": "@jsdevtools/styleguide-storybook",
+  "version": "0.1.0",
+  "description": "Storybook styleguide",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@jsdevtools/input": "0.1.0",
+    "@jsdevtools/input-ts": "0.1.0"
+  },
+  "devDependencies": {
+    "@jsdevtools/dev-dependencies": "0.1.0"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "clean": "shx rm -f yarn-error.log && shx rm -rf storybook-static"
+  },
+  "prettier": "@jsdevtools/prettier-config",
+  "eslintConfig": {
+    "extends": "@jsdevtools/eslint-config"
+  }
+}
