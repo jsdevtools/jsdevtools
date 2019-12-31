@@ -1,12 +1,13 @@
 {
   "name": "@jsdevtools/eslint-config-ts",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Shared eslint configuration for typscript",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "index.js",
-  "prettier": "@jsdevtools/prettier-config",
-  "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config"
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@typescript-eslint/parser": "^2.12.0",
+    "typescript": "^3.7.3"
   }
 }

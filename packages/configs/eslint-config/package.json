@@ -1,12 +1,17 @@
 {
   "name": "@jsdevtools/eslint-config",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Shared eslint configuration",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "index.js",
-  "prettier": "@jsdevtools/prettier-config",
-  "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config"
+  "dependencies": {
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1"
   }
 }

@@ -25,57 +25,72 @@ const packageJson = require('../package.json');
 // but then silently removed during the next create.
 const errorLogFilePatterns = ['npm-debug.log', 'yarn-error.log', 'yarn-debug.log', 'lerna-debug.log'];
 
-let repoName;
-
 const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
-  .arguments('<repo-directory>')
-  .usage(`${chalk.green('<repo-directory>')} [options]`)
-  .action(name => {
-    repoName = name;
-  })
-  .allowUnknownOption()
+  .option('-r, --repo-directory <repo-directory>', 'create mono-repo from template')
+  .option('-s, --skip-configs', 'do not create configs from template')
+  .usage(`--repo-directory <repo-directory>`)
+  .usage(`--skip-configs`)
+  .parse(process.argv)
   .on('--help', () => {
     console.log(`    Only ${chalk.green('<repo-directory>')} is required.`);
     console.log();
-  })
-  .parse(process.argv);
+  });
 
-if (typeof repoName === 'undefined') {
+const repoDirectory = program.repoDirectory;
+const skipConfigs = program.skipConfigs;
+
+if (typeof repoDirectory === 'undefined') {
   console.error('Please specify the repo directory:');
-  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('<repo-directory>')}`);
+  console.log(`  ${chalk.cyan(`${program.name()} --repo-directory`)} ${chalk.green('<repo-directory>')}`);
   console.log();
   console.log('For example:');
-  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('my-monorepo')}`);
+  console.log(`  ${chalk.cyan(`${program.name()} --repo-directory`)} ${chalk.green('my-monorepo')}`);
   console.log();
   console.log(`Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`);
   process.exit(1);
 }
 
-createRepo(repoName);
+// call main function
+createRepo(repoDirectory);
 
-function createRepo(name) {
-  const root = path.resolve(name);
-  const repoDirName = path.basename(root);
+// main function
+function createRepo(repoDir) {
+  // fullRepoDirPath = resolve the full path to the repo directory specified.
+  // The user may have specified a relative or absolute path.
+  // repoDirName = the last directory in the path = name of repo to create.
+  const fullRepoDirPath = path.resolve(repoDir);
+  const repoDirName = path.basename(fullRepoDirPath);
 
-  checkRepoName(repoDirName); //y
-  fs.ensureDirSync(name);
-  if (!isSafeToCreateProjectIn(root, name)) {
-    //y
+  // check repo name against npm naming restrictions and dependency names
+  checkRepoName(repoDirName);
+
+  // equivalent to mkdir -p; creates the directory and any required paths to it
+  if (!fs.ensureDirSync(fullRepoDirPath)) {
     process.exit(1);
   }
 
-  console.log(`Creating a new React app in ${chalk.green(root)}.`);
+  // ensure created directory is either empty or only contains allowed files or error logs
+  if (!isSafeToCreateProjectIn(fullRepoDirPath, repoDir)) {
+    process.exit(1);
+  }
+
+  console.log(`Creating mono-repo in ${chalk.green(fullRepoDirPath)}.`);
   console.log();
 
+  // save location cli was run from
   const originalDirectory = process.cwd();
-  process.chdir(root);
+
+  // move into newly created repo direcotry
+  process.chdir(fullRepoDirPath);
+
+  // self-explanatory?
   if (!checkThatNpmCanReadCwd()) {
-    //y
     process.exit(1);
   }
 
-  run(root, repoDirName, originalDirectory); //y
+  // call run command to create monorepo
+  run(fullRepoDirPath, repoDirName, originalDirectory);
 }
 
 function printValidationResults(results) {
@@ -86,14 +101,15 @@ function printValidationResults(results) {
   }
 }
 
+// arg: repoName = repository name / directory name to create
 function checkRepoName(repoName) {
-  const validationResult = validateProjectName(repoName); //y
+  const validationResult = validateProjectName(repoName);
   if (!validationResult.validForNewPackages) {
     console.error(
       `Could not create a repo called ${chalk.red(`"${repoName}"`)} because of npm naming restrictions:`,
     );
-    printValidationResults(validationResult.errors); //y
-    printValidationResults(validationResult.warnings); //y
+    printValidationResults(validationResult.errors);
+    printValidationResults(validationResult.warnings);
     process.exit(1);
   }
 
@@ -113,7 +129,7 @@ function checkRepoName(repoName) {
   }
 }
 
-function isSafeToCreateProjectIn(root, name) {
+function isSafeToCreateProjectIn(repoDirPath, repoDirName) {
   const validFiles = [
     '.DS_Store',
     'Thumbs.db',
@@ -134,13 +150,13 @@ function isSafeToCreateProjectIn(root, name) {
   console.log();
 
   const conflicts = fs
-    .readdirSync(root)
+    .readdirSync(repoDirPath)
     .filter(file => !validFiles.includes(file))
     // Don't treat log files from previous installation as conflicts
     .filter(file => !errorLogFilePatterns.some(pattern => file.indexOf(pattern) === 0));
 
   if (conflicts.length > 0) {
-    console.log(`The directory ${chalk.green(name)} contains files that could conflict:`);
+    console.log(`The directory ${chalk.green(repoDirName)} contains files that could conflict:`);
     console.log();
     for (const file of conflicts) {
       console.log(`  ${file}`);
@@ -152,12 +168,12 @@ function isSafeToCreateProjectIn(root, name) {
   }
 
   // Remove any remnant files from a previous installation
-  const currentFiles = fs.readdirSync(path.join(root));
+  const currentFiles = fs.readdirSync(path.join(repoDirPath));
   currentFiles.forEach(file => {
     errorLogFilePatterns.forEach(errorLogFilePattern => {
       // This will catch `(npm-debug|yarn-error|yarn-debug|lerna-debug).log*` files
       if (file.indexOf(errorLogFilePattern) === 0) {
-        fs.removeSync(path.join(root, file));
+        fs.removeSync(path.join(repoDirPath, file));
       }
     });
   });
@@ -212,21 +228,84 @@ function checkThatNpmCanReadCwd() {
   return false;
 }
 
-function run(root, appName, originalDirectory) {
-  // Copy files
-  // Exclude non-template
-  console.log(`root: ${JSON.stringify(root)}`);
-  console.log(`appName: ${JSON.stringify(appName)}`);
+/* 
+  params:
+    repoDirPath: full path to repo dir
+    repoDirName: name of repo / repo dir
+    originalDirectory: dir from which cli called from
+  run: create the mono-repo from template
+*/
+function run(repoDirPath, repoDirName, originalDirectory) {
+  console.log(`repoDirPath: ${JSON.stringify(repoDirPath)}`);
+  console.log(`repoDirName: ${JSON.stringify(repoDirName)}`);
   console.log(`originalDirectory: ${JSON.stringify(originalDirectory)}`);
   console.log(`argv: ${JSON.stringify(process.argv)}`);
-  const templateDir = path.resolve(path.join(process.argv[1],'../..'));
-  console.log(`path: ${JSON.stringify(path.resolve(path.join(process.argv[1],'../..')))}`);
+
+  // we use the monorepo-template package, which contains the cli, as our template
+  const templateDir = path.resolve(path.join(process.argv[1], '../..'));
+  console.log(`path: ${JSON.stringify(path.resolve(path.join(process.argv[1], '../..')))}`);
+
+  // copy the template to the target directory, don't copy bin folder or node_modules
   if (fs.existsSync(templateDir)) {
-    fs.copySync(templateDir, root);
+    fs.copySync(templateDir, repoDirPath, {
+      dereference: true,
+      filter: (src, dest) => !dest.match(/node_modules/) && !dest.match(/bin/) && !dest.match(/LICENSE/),
+    });
   } else {
-    console.error(
-      `Could not locate supplied template: ${chalk.green(templateDir)}`
-    );
-    return;
+    console.error(`Could not locate supplied template: ${chalk.green(templateDir)}`);
+    process.exit(1);
   }
+
+  // create the new project's package.json
+  const newJsonPath = path.resolve(repoDirPath, 'package.json');
+  const { bin, dependencies, description, version, ...rest } = packageJson;
+  const newJson = {
+    ...rest,
+    devDependencies: {
+      ...Object.keys(packageJson.devDependencies)
+        .map(key => (skipConfigs ? key : key.replace('@jestaubach', `@${repoDirName}`)))
+        .reduce((acc, curr, i, arr) => {
+          return packageJson.devDependencies[curr]
+            ? { ...acc, [curr]: packageJson.devDependencies[curr] }
+            : { ...acc, [curr]: '^0.0.1' };
+        }, {}),
+    },
+    eslintConfig: {
+      ...Object.keys(packageJson.eslintConfig).reduce(
+        (acc, curr, i, arr) =>
+          skipConfigs
+            ? {
+                ...acc,
+                [curr]: packageJson.eslintConfig[curr],
+              }
+            : {
+                ...acc,
+                [curr]: packageJson.eslintConfig[curr].replace('@jestaubach', `@${repoDirName}`),
+              },
+        {},
+      ),
+    },
+    name: `@${repoDirName}/${repoDirName}`,
+    prettier: skipConfigs
+      ? packageJson.prettier
+      : packageJson.prettier.replace('@jestaubach', `@${repoDirName}`),
+    private: true,
+    scripts: {
+      ...packageJson.scripts,
+      rebuild:
+        `lerna clean --yes --ignore @${repoDirName}/${repoDirName} && ` +
+        `lerna clean --yes --scope @${repoDirName}/${repoDirName} && ` +
+        `lerna init && lerna bootstrap && lerna run clean && lerna run build`,
+    },
+    workspaces: [...packageJson.workspaces.filter(workspace => workspace !== './')],
+  };
+  fs.writeFileSync(newJsonPath, JSON.stringify(newJson, null, 2));
+
+  const lernaJson = require(path.resolve(templateDir, 'lerna.json'));
+  const newLernaPath = path.resolve(repoDirPath, 'lerna.json');
+  const newLerna = {
+    ...lernaJson,
+    packages: [...lernaJson.packages.filter(pkg => pkg !== './')],
+  };
+  fs.writeFileSync(newLernaPath, JSON.stringify(newLerna, null, 2));
 }

@@ -1,14 +1,14 @@
 {
   "npmClient": "yarn",
   "packages": [
+    "./",
     "packages/*",
-    "packages/configs/*",
     "packages/shared-components/*",
+    "packages/configs/*",
     "packages/backends/*",
     "packages/frontends/*",
     "packages/services/*",
-    "packages/utilities/*",
-    "./"
+    "packages/utilities/*"
   ],
   "useWorkspaces": true,
   "version": "independent",

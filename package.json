@@ -1,45 +1,64 @@
 {
   "name": "@jsdevtools/create-monorepo",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Skeleton monorepo",
   "private": true,
   "scripts": {
-    "bs": "lerna init && lerna bootstrap",
-    "clean": "shx rm -f yarn-error.log",
-    "clean-all": "lerna clean --yes",
+    "bs": "npx -p lerna -c \"lerna init && lerna bootstrap\"",
+    "clean": "shx rm -f yarn-error.log lerna-debug.log",
+    "clean-packages": "npx lerna clean --yes --ignore @jsdevtools/create-monorepo",
+    "clean-root": "npx download-cli --out bin --filename rimraf-standalone.js https://unpkg.com/rimraf-standalone/rimraf-standalone.js && node bin/rimraf-standalone.js node_modules",
+    "clean-node-modules": "yarn clean-packages && yarn clean-root",
     "commit": "git-cz",
+    "local-publish": "lerna publish --no-git-tag-version --no-push --registry=\"http://localhost:4873/\"",
+    "local-unpublish": "lerna exec -- cross-env-shell npm unpublish --registry=\"http://localhost:4873/\" \"\\${LERNA_PACKAGE_NAME}@\\$(npm view \\$LERNA_PACKAGE_NAME version)\"",
+    "local-unpublish-all": "lerna exec -- cross-env-shell npm unpublish -f --registry=\"http://localhost:4873/\" \"\\${LERNA_PACKAGE_NAME}\"",
     "prerelease": "yarn rebuild",
     "release": "lerna publish",
-    "rebuild": "lerna clean --yes && lerna init & lerna bootstrap && lerna run clean && lerna run build",
-    "refresh": "yarn rebuild && lerna run build-storybook",
+    "rebuild": "lerna run clean && lerna run build",
+    "refresh": "yarn clean-node-modules && yarn bs && yarn rebuild",
     "semver": "lerna-semver-sync",
     "storybook": "lerna run storybook --stream"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@jsdevtools/eslint-config": "^0.0.1",
+    "@jsdevtools/prettier-config": "^0.0.1",
+    "@jsdevtools/stylelint-config": "^0.0.1",
+    "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
+    "cross-env": "^6.0.3",
     "cz-lerna-changelog": "^2.0.2",
-    "lerna": "^3.13.4",
+    "eslint": "^6.8.0",
+    "lerna": "^3.20.1",
     "lerna-semver-sync": "^1.3.1",
-    "semantic-release": "^15.13.27",
-    "shx": "^0.3.2"
+    "prettier": "^1.19.1",
+    "semantic-release": "^15.14.0",
+    "shx": "^0.3.2",
+    "stylelint": "^12.0.1",
+    "webpack": "^4.41.5"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^3.0.2",
+    "chalk": "^3.0.0",
+    "commander": "^4.0.1",
+    "core-js": "^3.6.1",
     "cross-spawn": "^7.0.1",
     "fs-extra": "^8.1.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "resolutions": {},
   "workspaces": [
+    "./",
     "packages/*",
-    "packages/configs/*",
     "packages/shared-components/*",
+    "packages/configs/*",
     "packages/backends/*",
     "packages/frontends/*",
     "packages/services/*",
-    "packages/utilities/*",
-    "./"
+    "packages/utilities/*"
   ],
   "config": {
     "commitizen": {
@@ -49,6 +68,9 @@
   "prettier": "@jsdevtools/prettier-config",
   "eslintConfig": {
     "extends": "@jsdevtools/eslint-config"
+  },
+  "stylelint": {
+    "extends": "@jsdevtools/stylelint-config"
   },
   "bin": {
     "create-monorepo": "./bin/cli.js"

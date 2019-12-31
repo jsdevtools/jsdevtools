@@ -1,12 +1,17 @@
 {
   "name": "@jsdevtools/babel-config",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Shared babel configuration",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "main": "index.js",
-  "prettier": "@jsdevtools/prettier-config",
-  "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config"
+  "dependencies": {
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4"
+  },
+  "peerDependencies": {
+    "@babel/core": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.3"
   }
 }

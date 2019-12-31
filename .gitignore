@@ -63,6 +63,10 @@ typings/
 # build output
 dist
 build
+storybook-static
 
 # intermediate typescript output
 lib/
+
+# temp file
+rimraf-standalone.js

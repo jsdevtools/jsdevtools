@@ -1,24 +1,30 @@
 {
   "name": "@jsdevtools/styleguide-storybook",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Storybook styleguide",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@jsdevtools/input": "0.1.0",
-    "@jsdevtools/input-ts": "0.1.0"
-  },
-  "devDependencies": {
-    "@jsdevtools/dev-dependencies": "0.1.0"
+    "@jsdevtools/input": "0.0.1",
+    "@jsdevtools/input-ts": "0.0.1",
+    "babel-loader": "^8.0.6",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addon-notes": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/cli": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "storybook-readme": "^5.0.8",
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build": "build-storybook",
     "clean": "shx rm -f yarn-error.log && shx rm -rf storybook-static"
-  },
-  "prettier": "@jsdevtools/prettier-config",
-  "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config"
   }
 }
