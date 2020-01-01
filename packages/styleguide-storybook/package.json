@@ -1,13 +1,13 @@
 {
   "name": "@jsdevtools/styleguide-storybook",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Storybook styleguide",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@jsdevtools/input": "^0.0.2",
-    "@jsdevtools/input-ts": "^0.0.2",
+    "@jsdevtools/input": "^0.1.0",
+    "@jsdevtools/input-ts": "^0.1.0",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-info": "^5.2.8",
     "@storybook/addon-knobs": "^5.2.8",
