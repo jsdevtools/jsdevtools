@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/create-monorepo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Skeleton monorepo",
   "private": false,
   "scripts": {
@@ -25,9 +25,9 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdevtools/eslint-config": "^0.1.0",
-    "@jsdevtools/prettier-config": "^0.1.0",
-    "@jsdevtools/stylelint-config": "^0.1.0",
+    "@jsdevtools/eslint-config": "^0.1.1",
+    "@jsdevtools/prettier-config": "^0.1.1",
+    "@jsdevtools/stylelint-config": "^0.1.1",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
     "cross-env": "^6.0.3",

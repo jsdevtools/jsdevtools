@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/input",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sample component",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@jsdevtools/babel-config": "^0.1.0",
-    "@jsdevtools/stylelint-config": "^0.1.0",
+    "@jsdevtools/babel-config": "^0.1.1",
+    "@jsdevtools/stylelint-config": "^0.1.1",
     "stylelint": "^12.0.1"
   },
   "stylelint": {
