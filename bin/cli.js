@@ -249,7 +249,11 @@ function run(repoDirPath, repoDirName, originalDirectory) {
   if (fs.existsSync(templateDir)) {
     fs.copySync(templateDir, repoDirPath, {
       dereference: true,
-      filter: (src, dest) => !dest.match(/node_modules/) && !dest.match(/bin/) && !dest.match(/LICENSE/),
+      filter: (src, dest) =>
+        !dest.match(/node_modules/) &&
+        !dest.match(/bin/) &&
+        !dest.match(/LICENSE/) &&
+        !dest.match(/CHANGELOG.md/),
     });
   } else {
     console.error(`Could not locate supplied template: ${chalk.green(templateDir)}`);
