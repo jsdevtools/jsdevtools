@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/jsdevtools/monorepo-template/compare/@jsdevtools/create-monorepo@0.1.2...@jsdevtools/create-monorepo@0.1.3) (2020-01-02)
+
+
+### Bug Fixes
+
+* set private key and stage package.json as part of commit. ([5cb96d3](https://github.com/jsdevtools/monorepo-template/commit/5cb96d3acabe020164d1ffba52267829fd1e22fa))
+
+
+
+
+
 ## [0.1.2](https://github.com/jsdevtools/monorepo-template/compare/@jsdevtools/create-monorepo@0.1.1...@jsdevtools/create-monorepo@0.1.2) (2020-01-02)
 
 
