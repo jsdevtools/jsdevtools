@@ -19,6 +19,7 @@ const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
   .option('-r, --repo-directory <repo-directory>', 'create mono-repo from template')
   .option('-s, --skip-configs', 'do not create configs from template')
+  .option('-x, --skip-examples', 'do not create example shared components from template')
   .usage(`--repo-directory <repo-directory>`)
   .usage(`--skip-configs`)
   .parse(process.argv)
@@ -27,10 +28,7 @@ const program = new commander.Command(packageJson.name)
     console.log();
   });
 
-const repoDirectory = program.repoDirectory;
-const skipConfigs = program.skipConfigs;
-
-if (typeof repoDirectory === 'undefined') {
+if (typeof program.repoDirectory === 'undefined') {
   console.error('Please specify the repo directory:');
   console.log(`  ${chalk.cyan(`${program.name()} --repo-directory`)} ${chalk.green('<repo-directory>')}`);
   console.log();
@@ -42,7 +40,7 @@ if (typeof repoDirectory === 'undefined') {
 }
 
 // call main function
-createRepo(repoDirectory);
+createRepo(program.repoDirectory);
 
 // main function
 function createRepo(repoDir) {
@@ -243,7 +241,10 @@ function run(repoDirPath, repoDirName, originalDirectory) {
         !dest.match(/node_modules/) &&
         !dest.match(/bin/) &&
         !dest.match(/LICENSE/) &&
-        !dest.match(/CHANGELOG.md/),
+        !dest.match(/CHANGELOG.md/) &&
+        !(program.skipConfigs && dest.match(/packages\/configs/)) &&
+        !(program.skipExamples && dest.match(/packages\/shared-components\/input/)) &&
+        !(program.skipExamples && dest.match(/packages\/shared-components\/input-ts/)),
     });
   } else {
     console.error(`Could not locate supplied template: ${chalk.green(templateDir)}`);
