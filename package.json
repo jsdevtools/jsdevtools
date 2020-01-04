@@ -11,8 +11,6 @@
     "clean-node-modules": "yarn clean-packages && yarn clean-root",
     "commit": "node bin/togglePrivate.js --private false && git add package.json && git-cz",
     "local-publish": "lerna publish --conventional-commits --registry=\"http://localhost:4873/\"",
-    "local-unpublish": "lerna exec -- cross-env-shell npm unpublish --registry=\"http://localhost:4873/\" \"\\${LERNA_PACKAGE_NAME}@\\$(npm view \\$LERNA_PACKAGE_NAME version)\"",
-    "local-unpublish-all": "lerna exec -- cross-env-shell npm unpublish -f --registry=\"http://localhost:4873/\" \"\\${LERNA_PACKAGE_NAME}\"",
     "prerelease": "yarn rebuild",
     "release": "lerna publish --conventional-commits",
     "rebuild": "lerna run clean && lerna run build",
