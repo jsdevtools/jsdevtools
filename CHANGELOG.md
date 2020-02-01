@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-02-01)
+
+
+### Bug Fixes
+
+* clean up commit script when copying over ([de9dc84](https://github.com/jsdevtools/monorepo-template/commit/de9dc84))
+* do not copy over CHANGELOG.md ([5a03920](https://github.com/jsdevtools/monorepo-template/commit/5a03920))
+* ensure private=false in root when checked in so it can be published. ([6ec2e7a](https://github.com/jsdevtools/monorepo-template/commit/6ec2e7a))
+* pass --conventional-commits flag to lerna version ([ba44a56](https://github.com/jsdevtools/monorepo-template/commit/ba44a56))
+* set private key and stage package.json as part of commit. ([5cb96d3](https://github.com/jsdevtools/monorepo-template/commit/5cb96d3))
+* update versions to 0.1.0 ([bde0ab0](https://github.com/jsdevtools/monorepo-template/commit/bde0ab0))
+
+
+### Features
+
+* provide flag to skip configs and examples. ([15a17ae](https://github.com/jsdevtools/monorepo-template/commit/15a17ae))
+
+
+
+
+
 ## [0.1.3](https://github.com/jsdevtools/monorepo-template/compare/@jsdevtools/create-monorepo@0.1.2...@jsdevtools/create-monorepo@0.1.3) (2020-01-02)
 
 

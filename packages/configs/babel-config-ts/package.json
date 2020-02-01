@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/babel-config-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared babel configuration for typescript packages",
   "license": "MIT",
   "private": false,

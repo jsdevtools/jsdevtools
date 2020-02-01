@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/input",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sample component",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@jsdt/babel-config": "^0.1.1",
-    "@jsdt/stylelint-config": "^0.1.1",
+    "@jsdt/babel-config": "^0.1.2",
+    "@jsdt/stylelint-config": "^0.1.2",
     "stylelint": "^12.0.1"
   },
   "stylelint": {
