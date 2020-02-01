@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/eslint-config-ts",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Shared eslint configuration for typscript",
   "license": "MIT",
   "private": false,
@@ -9,5 +9,6 @@
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
     "typescript": "^3.7.3"
-  }
+  },
+  "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
 }
