@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/stylelint-config",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "Shared stylelint configuration",
   "license": "MIT",
   "private": false,
@@ -12,5 +12,6 @@
   },
   "peerDependencies": {
     "stylelint": "^12.0.0"
-  }
+  },
+  "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
 }
