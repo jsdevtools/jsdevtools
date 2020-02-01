@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/eslint-config",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Shared eslint configuration",
   "license": "MIT",
   "private": false,
@@ -13,5 +13,6 @@
   "peerDependencies": {
     "eslint": "^6.7.2",
     "prettier": "^1.19.1"
-  }
+  },
+  "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
 }
