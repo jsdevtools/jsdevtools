@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/prettier-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Shared prettier configuration",
   "license": "MIT",
   "private": false,
