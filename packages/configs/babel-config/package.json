@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/babel-config",
+  "name": "@jsdt/babel-config",
   "version": "0.1.1",
   "description": "Shared babel configuration",
   "license": "MIT",

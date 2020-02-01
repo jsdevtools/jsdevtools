@@ -1,7 +1,7 @@
 module.exports = {
   entry: './lib/index.js',
   output: {
-    library: '@jsdevtools/input-ts',
+    library: '@jsdt/input-ts',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },

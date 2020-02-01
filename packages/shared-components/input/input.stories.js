@@ -2,7 +2,7 @@ import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 
-import { Input } from '@jsdevtools/input';
+import { Input } from '@jsdt/input';
 
 storiesOf('Input', module)
   .add('default', () => <Input />)

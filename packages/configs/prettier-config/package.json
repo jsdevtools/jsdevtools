@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/prettier-config",
+  "name": "@jsdt/prettier-config",
   "version": "0.1.1",
   "description": "Shared prettier configuration",
   "license": "MIT",

@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/stylelint-config",
+  "name": "@jsdt/stylelint-config",
   "version": "0.1.1",
   "description": "Shared stylelint configuration",
   "license": "MIT",

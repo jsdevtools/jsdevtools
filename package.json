@@ -1,12 +1,12 @@
 {
-  "name": "@jsdevtools/create-monorepo",
+  "name": "@jsdt/create-monorepo",
   "version": "0.1.3",
   "description": "Skeleton monorepo",
-  "private": false,
+  "private": true,
   "scripts": {
     "bs": "npx -p lerna -c \"lerna init && lerna bootstrap\"",
     "clean": "shx rm -f yarn-error.log lerna-debug.log",
-    "clean-packages": "npx lerna clean --yes --ignore @jsdevtools/create-monorepo",
+    "clean-packages": "npx lerna clean --yes --ignore @jsdt/create-monorepo",
     "clean-root": "npx download-cli --out bin --filename rimraf-standalone.js https://unpkg.com/rimraf-standalone/rimraf-standalone.js && node bin/rimraf-standalone.js node_modules",
     "clean-node-modules": "yarn clean-packages && yarn clean-root",
     "commit": "node bin/togglePrivate.js --private false && git add package.json && git-cz",
@@ -23,15 +23,15 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdevtools/eslint-config": "^0.1.1",
-    "@jsdevtools/prettier-config": "^0.1.1",
-    "@jsdevtools/stylelint-config": "^0.1.1",
+    "@jsdt/cz-lerna-changelog": "^2.0.2",
+    "@jsdt/eslint-config": "^0.1.1",
+    "@jsdt/prettier-config": "^0.1.1",
+    "@jsdt/stylelint-config": "^0.1.1",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
     "cross-env": "^6.0.3",
-    "cz-lerna-changelog": "^2.0.2",
     "eslint": "^6.8.0",
-    "lerna": "^3.20.1",
+    "lerna": "^3.20.2",
     "lerna-semver-sync": "^1.3.1",
     "prettier": "^1.19.1",
     "semantic-release": "^15.14.0",
@@ -60,15 +60,15 @@
   ],
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
+      "path": "./node_modules/@jsdt/cz-lerna-changelog"
     }
   },
-  "prettier": "@jsdevtools/prettier-config",
+  "prettier": "@jsdt/prettier-config",
   "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config"
+    "extends": "@jsdt/eslint-config"
   },
   "stylelint": {
-    "extends": "@jsdevtools/stylelint-config"
+    "extends": "@jsdt/stylelint-config"
   },
   "bin": {
     "create-monorepo": "./bin/cli.js"

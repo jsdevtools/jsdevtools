@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/eslint-config",
+  "name": "@jsdt/eslint-config",
   "version": "0.1.1",
   "description": "Shared eslint configuration",
   "license": "MIT",

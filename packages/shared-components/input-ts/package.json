@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/input-ts",
+  "name": "@jsdt/input-ts",
   "version": "0.1.1",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@jsdevtools/babel-config-ts": "^0.1.1",
+    "@jsdt/babel-config-ts": "^0.1.1",
     "babel-loader": "^8.0.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -30,21 +30,21 @@
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
-    "@jsdevtools/eslint-config-ts": "^0.1.1",
-    "@jsdevtools/stylelint-config": "^0.1.1",
-    "@types/node": "^13.1.2",
+    "@jsdt/eslint-config-ts": "^0.1.1",
+    "@jsdt/stylelint-config": "^0.1.1",
+    "@types/node": "^13.1.4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.1",
     "stylelint": "^12.0.1"
   },
   "stylelint": {
-    "extends": "@jsdevtools/stylelint-config"
+    "extends": "@jsdt/stylelint-config"
   },
   "babel": {
     "extends": "@jsdevtools/babel-config-ts"
   },
   "eslintConfig": {
-    "extends": "@jsdevtools/eslint-config-ts"
+    "extends": "@jsdt/eslint-config-ts"
   }
 }

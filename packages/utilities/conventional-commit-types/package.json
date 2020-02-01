@@ -1,0 +1,14 @@
+{
+  "name": "@jsdt/conventional-commit-types",
+  "version": "0.1.0",
+  "description": "Conventional commit types.",
+  "main": "index.json",
+  "scripts": {
+    "test": "json -f index.json"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "json": "^9.0.4"
+  }
+}

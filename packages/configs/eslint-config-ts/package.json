@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/eslint-config-ts",
+  "name": "@jsdt/eslint-config-ts",
   "version": "0.1.1",
   "description": "Shared eslint configuration for typscript",
   "license": "MIT",

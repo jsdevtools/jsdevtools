@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/input",
+  "name": "@jsdt/input",
   "version": "0.1.1",
   "description": "Sample component",
   "main": "dist/bundle.js",
@@ -24,14 +24,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
-    "@jsdevtools/babel-config": "^0.1.1",
-    "@jsdevtools/stylelint-config": "^0.1.1",
+    "@jsdt/babel-config": "^0.1.1",
+    "@jsdt/stylelint-config": "^0.1.1",
     "stylelint": "^12.0.1"
   },
   "stylelint": {
-    "extends": "@jsdevtools/stylelint-config"
+    "extends": "@jsdt/stylelint-config"
   },
   "babel": {
-    "extends": "@jsdevtools/babel-config"
+    "extends": "@jsdt/babel-config"
   }
 }

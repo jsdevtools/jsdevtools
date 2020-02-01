@@ -1,5 +1,5 @@
 {
-  "name": "@jsdevtools/babel-config-ts",
+  "name": "@jsdt/babel-config-ts",
   "version": "0.1.1",
   "description": "Shared babel configuration for typescript packages",
   "license": "MIT",
