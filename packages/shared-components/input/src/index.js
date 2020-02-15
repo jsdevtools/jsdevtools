@@ -33,7 +33,8 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  label: PropTypes.string,
-  id: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   labelWidth: PropTypes.number,
+  type: PropTypes.string,
 };

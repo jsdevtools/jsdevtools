@@ -1,10 +1,10 @@
 {
   "name": "@jsdt/input",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "Sample component",
   "main": "dist/bundle.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "stylelint src/**/index.{j,t}s{,x}",
     "start": "webpack --watch --config webpack.config.js",
@@ -15,18 +15,20 @@
   },
   "dependencies": {
     "babel-loader": "^8.0.6",
+    "babel-plugin-react-docgen": "^4.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "storybook-dep-webpack-plugin": "^1.0.3",
+    "styled-components": "^5.0.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@jsdt/babel-config": "^0.1.2",
     "@jsdt/stylelint-config": "^0.1.2",
-    "stylelint": "^12.0.1"
+    "stylelint": "^13.2.0"
   },
   "stylelint": {
     "extends": "@jsdt/stylelint-config"

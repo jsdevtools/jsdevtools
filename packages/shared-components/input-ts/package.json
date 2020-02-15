@@ -1,10 +1,10 @@
 {
   "name": "@jsdt/input-ts",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "stylelint src/**/index.{j,t}s{,x}",
     "start": "webpack --watch --config webpack.config.js",
@@ -24,7 +24,7 @@
     "babel-loader": "^8.0.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.0.0",
     "typescript": "^3.7.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
@@ -36,13 +36,14 @@
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.1",
-    "stylelint": "^12.0.1"
+    "shx": "^0.3.2",
+    "stylelint": "^13.0.0"
   },
   "stylelint": {
     "extends": "@jsdt/stylelint-config"
   },
   "babel": {
-    "extends": "@jsdevtools/babel-config-ts"
+    "extends": "@jsdt/babel-config-ts"
   },
   "eslintConfig": {
     "extends": "@jsdt/eslint-config-ts"

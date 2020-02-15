@@ -8,7 +8,7 @@
   "dependencies": {
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.9.0"
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "peerDependencies": {
     "stylelint": "^12.0.0"

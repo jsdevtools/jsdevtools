@@ -11,11 +11,18 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-typescript', '@babel/preset-env', '@babel/preset-react'],
+        options: {
+          presets: [
+            '@babel/preset-typescript',
+            '@babel/preset-env',
+            '@babel/preset-react'
+          ],
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx'],
   },
   externals: {
     react: 'react',

@@ -10,5 +10,6 @@
   "license": "MIT",
   "devDependencies": {
     "json": "^9.0.4"
-  }
+  },
+  "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
 }
