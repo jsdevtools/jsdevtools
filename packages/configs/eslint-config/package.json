@@ -15,6 +15,13 @@
     "type": "git",
     "url": "https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config"
   },
+  "contributors": [
+    {
+      "name" : "JEStaubach",
+      "email" : "justin@jsdevtools.com",
+      "url" : "https://twitter.com/jsdevtool"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "main": "index.js",
