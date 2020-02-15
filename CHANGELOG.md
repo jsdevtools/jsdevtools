@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/jsdevtools/monorepo-template/compare/@jsdt/create-monorepo@0.2.2...@jsdt/create-monorepo@0.2.3) (2020-02-15)
+
+
+### Bug Fixes
+
+* restore to private after publish ([b2a85d8](https://github.com/jsdevtools/monorepo-template/commit/b2a85d83ff97590cfbee0e3a3aa2757b8a9ab876))
+* roll back version of cz-customizable ([cd581fe](https://github.com/jsdevtools/monorepo-template/commit/cd581fe24fff209fbdde0ee5c5eff0af9c2fef56))
+
+
+
+
+
 ## [0.2.2](https://github.com/jsdevtools/monorepo-template/compare/@jsdt/create-monorepo@0.2.1...@jsdt/create-monorepo@0.2.2) (2020-02-15)
 
 **Note:** Version bump only for package @jsdt/create-monorepo
