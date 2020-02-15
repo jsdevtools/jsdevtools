@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/jsdevtools/monorepo-template/compare/@jsdt/create-monorepo@0.2.3...@jsdt/create-monorepo@0.2.4) (2020-02-15)
+
+
+### Bug Fixes
+
+* roll back unneeded change that was made ([038d2fa](https://github.com/jsdevtools/monorepo-template/commit/038d2fa825098663ee7017d2b90458b55133a5d3))
+
+
+
+
+
 ## [0.2.3](https://github.com/jsdevtools/monorepo-template/compare/@jsdt/create-monorepo@0.2.2...@jsdt/create-monorepo@0.2.3) (2020-02-15)
 
 
