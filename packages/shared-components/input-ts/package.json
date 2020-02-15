@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/input-ts",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@jsdt/eslint-config-ts": "^0.1.2",
-    "@jsdt/stylelint-config": "^0.1.2",
+    "@jsdt/stylelint-config": "^0.1.8",
     "@types/node": "^13.1.4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",

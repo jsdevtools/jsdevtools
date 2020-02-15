@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/stylelint-config",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Shared stylelint configuration",
   "license": "MIT",
   "private": false,

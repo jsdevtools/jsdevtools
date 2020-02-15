@@ -2,7 +2,7 @@
   "name": "@jsdt/cz-lerna-changelog",
   "description": "Commitizen adapter following the conventional-changelog format.",
   "main": "lib/index.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "build": "babel src -d lib",
     "commit": "git-cz",
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@jsdt/conventional-commit-types": "^0.1.1",
+    "@jsdt/conventional-commit-types": "^0.1.2",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "chalk": "^3.0.0",
     "cz-customizable": "^6.2.0",

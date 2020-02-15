@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/conventional-commit-types",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Conventional commit types.",
   "main": "index.json",
   "scripts": {

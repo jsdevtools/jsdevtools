@@ -1,8 +1,11 @@
 {
   "name": "@jsdt/eslint-config",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A shared eslint configuration",
-  "keywords": ["eslint", "eslintconfig"],
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
   "homepage": "https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config",
   "bugs": {
     "url": "https://github.com/jsdevtools/jsdevtools/issues",
