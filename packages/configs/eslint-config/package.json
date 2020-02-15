@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/eslint-config",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A shared eslint configuration",
   "keywords": [
     "eslint",
@@ -17,9 +17,9 @@
   },
   "contributors": [
     {
-      "name" : "JEStaubach",
-      "email" : "justin@jsdevtools.com",
-      "url" : "https://twitter.com/jsdevtool"
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
     }
   ],
   "license": "MIT",
