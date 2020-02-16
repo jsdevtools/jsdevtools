@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/eslint-config-ts",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A shared eslint configuration for typscript",
   "keywords": [
     "eslint",
