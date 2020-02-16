@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/create-monorepo",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Skeleton monorepo",
   "private": false,
   "scripts": {
