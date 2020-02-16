@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/cz-lerna-changelog",
-  "description": "Commitizen adapter following the conventional-changelog format.",
+  "description": "Fork of cz-lerna-changelog, see https://github.com/atlassian/cz-lerna-changelog.git",
   "main": "lib/index.js",
   "version": "0.1.4",
   "scripts": {
@@ -14,6 +14,11 @@
     "lib",
     "src"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/cz-lerna-changelog.git"
+  },
+  "author": "Justin@JSDevTools.com, original work by Joshua Nelson <jonelson@atlassian.com>, Joscha Feth <jfeth@atlassian.com>",
   "license": "MIT",
   "dependencies": {
     "@jsdt/conventional-commit-types": "^0.1.4",
@@ -45,6 +50,5 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
+  }
 }
