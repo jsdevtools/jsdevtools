@@ -42,12 +42,14 @@ Override specific rules:
 ```json
   "eslintConfig": {
     "extends": "@jsdt/eslint-config",
-    "max-len": [
-      "error",
-      {
-        "code": 80,
-      },
-    ]
-  },
+    "rules": {
+      "max-len": [
+        "error",
+        {
+          "code": 80,
+        }
+      ]
+    }
+  }
 ```
 
