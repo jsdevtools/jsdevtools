@@ -1,7 +1,28 @@
 {
   "name": "@jsdt/eslint-config-ts",
   "version": "0.1.5",
-  "description": "Shared eslint configuration for typscript",
+  "description": "A shared eslint configuration for typscript",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript"
+  ],
+  "homepage": "https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config-ts",
+  "bugs": {
+    "url": "https://github.com/jsdevtools/jsdevtools/issues",
+    "email": "contact@jsdevtools.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "main": "index.js",
@@ -9,6 +30,9 @@
     "@typescript-eslint/eslint-plugin": "^2.12.0",
     "@typescript-eslint/parser": "^2.12.0",
     "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "eslint": "^6.7.2"
   },
   "gitHead": "9d8b058d44a812d8fbb6f7e2705bf44457f0a7c3"
 }
