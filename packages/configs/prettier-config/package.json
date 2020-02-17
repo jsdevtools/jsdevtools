@@ -1,7 +1,27 @@
 {
   "name": "@jsdt/prettier-config",
   "version": "0.1.6",
-  "description": "Shared prettier configuration",
+  "description": "A shared prettier configuration",
+  "keywords": [
+    "prettier",
+    "prettierconfig"
+  ],
+  "homepage": "https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/prettier-config",
+  "bugs": {
+    "url": "https://github.com/jsdevtools/jsdevtools/issues",
+    "email": "contact@jsdevtools.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "main": "index.js",

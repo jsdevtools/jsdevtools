@@ -1,7 +1,27 @@
 {
   "name": "@jsdt/stylelint-config",
   "version": "0.1.8",
-  "description": "Shared stylelint configuration",
+  "description": "A shared stylelint configuration",
+  "keywords": [
+    "stylelint",
+    "stylelintconfig"
+  ],
+  "homepage": "https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/stylelint-config",
+  "bugs": {
+    "url": "https://github.com/jsdevtools/jsdevtools/issues",
+    "email": "contact@jsdevtools.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "license": "MIT",
   "private": false,
   "main": "index.js",
