@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/prettier-config",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A shared prettier configuration",
   "keywords": [
     "prettier",

@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/babel-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A shared babel configuration",
   "keywords": [
     "babel",

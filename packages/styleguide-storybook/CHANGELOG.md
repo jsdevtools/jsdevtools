@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/styleguide-storybook@0.1.3...@jsdt/styleguide-storybook@0.1.4) (2020-02-17)
+
+**Note:** Version bump only for package @jsdt/styleguide-storybook
+
+
+
+
+
 ## [0.1.3](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/styleguide-storybook@0.1.1...@jsdt/styleguide-storybook@0.1.3) (2020-02-16)
 
 **Note:** Version bump only for package @jsdt/styleguide-storybook

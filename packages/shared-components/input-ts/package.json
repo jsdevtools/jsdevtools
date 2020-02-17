@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/input-ts",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@jsdt/babel-config-ts": "^0.1.2",
+    "@jsdt/babel-config-ts": "^0.1.4",
     "babel-loader": "^8.0.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -30,8 +30,8 @@
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
-    "@jsdt/eslint-config-ts": "^0.1.6",
-    "@jsdt/stylelint-config": "^0.1.8",
+    "@jsdt/eslint-config-ts": "^0.1.7",
+    "@jsdt/stylelint-config": "^0.1.9",
     "@types/node": "^13.1.4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",

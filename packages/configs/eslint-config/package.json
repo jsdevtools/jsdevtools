@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/eslint-config",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A shared eslint configuration",
   "keywords": [
     "eslint",

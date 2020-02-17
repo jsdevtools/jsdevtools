@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/input-ts@0.1.11...@jsdt/input-ts@0.1.12) (2020-02-17)
+
+**Note:** Version bump only for package @jsdt/input-ts
+
+
+
+
+
 ## [0.1.11](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/input-ts@0.1.10...@jsdt/input-ts@0.1.11) (2020-02-16)
 
 **Note:** Version bump only for package @jsdt/input-ts
