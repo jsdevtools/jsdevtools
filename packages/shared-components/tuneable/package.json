@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/tuneable",
-  "version": "0.1.6",
+  "version": "0.1.15",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
