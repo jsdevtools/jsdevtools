@@ -1,12 +1,11 @@
 {
-  "name": "@jsdt/input",
-  "version": "0.1.8",
-  "description": "Sample component",
+  "name": "@jsdt/place-holder",
+  "version": "0.1.0",
+  "description": "Handler that displays a place holder when wrapped component throws.",
   "main": "dist/bundle.js",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
-    "lint": "stylelint src/**/index.{j,t}s{,x}",
     "start": "webpack --watch --config webpack.config.js",
     "prepare": "yarn run build",
     "build": "webpack --config webpack.config.js",
@@ -18,7 +17,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.1"
-  },
+    },
   "devDependencies": {
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",

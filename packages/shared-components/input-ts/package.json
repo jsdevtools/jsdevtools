@@ -18,26 +18,29 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist lib"
   },
   "dependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@jsdt/babel-config-ts": "^0.1.4",
-    "babel-loader": "^8.0.6",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "styled-components": "^5.0.0",
-    "typescript": "^3.7.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
+    "@jsdt/babel-config-ts": "^0.1.4",
     "@jsdt/eslint-config-ts": "^0.1.7",
     "@jsdt/stylelint-config": "^0.1.9",
     "@types/node": "^13.1.4",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.4.1",
+    "babel-loader": "^8.0.6",
     "shx": "^0.3.2",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.0.0",
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "stylelint": {
     "extends": "@jsdt/stylelint-config"
