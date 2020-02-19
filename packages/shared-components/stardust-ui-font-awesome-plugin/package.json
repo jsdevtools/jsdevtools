@@ -13,7 +13,12 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist"
   },
   "dependencies": {
-    "@fortawesome/react-fontawesome": ">=0.1.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-regular-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@stardust-ui/react": "^0.40.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
