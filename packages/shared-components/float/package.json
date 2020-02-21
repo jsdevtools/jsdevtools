@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/float",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Container component that fits to size of a wrapped component and floats it.",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist"
   },
   "dependencies": {
-    "@jsdt/place-holder": "^0.1.0",
+    "@jsdt/place-holder": "^0.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "styled-components": "^5.0.1"
