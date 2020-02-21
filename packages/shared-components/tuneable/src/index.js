@@ -44,7 +44,7 @@ const actions = {
   overlay,
 };
 
-const reducer1 = (state = {}, action) => {
+const reducer1 = (state, action) => {
   switch (action.type) {
     case types.INIT: {
       // console.log(`Reached ${action.type}`, action);
@@ -96,7 +96,7 @@ const reducer1 = (state = {}, action) => {
   }
 };
 
-const reducer2 = (state = {}, action) => {
+const reducer2 = (state, action) => {
   switch (action.type) {
     case types.INIT:
       return state;
@@ -118,7 +118,7 @@ const setOfReducersA = {
   [`nameOfReducer2`]: reducer2,
 };
 
-const rootReducer = (state = {}, action) =>
+const rootReducer = (state, action) =>
   // Object.values({ ...setOfReducersA, ...setOfReducersB, ...setOfReducersC }).reduce((acc, curr) => (
   Object.values({ ...setOfReducersA }).reduce((acc, curr) => curr(acc, action), state);
 
