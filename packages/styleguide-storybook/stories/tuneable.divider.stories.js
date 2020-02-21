@@ -1,8 +1,18 @@
 import React /*, { useContext }*/ from 'react';
 // import Float from '@jsdt/float';
 import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
-import { storiesOf } from '@storybook/react';
+//import { storiesOf } from '@storybook/react';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { withA11y } from '@storybook/addon-a11y';
+
+export default {
+  title: 'Components/Tuneable/Divider',
+  component: Tuneable.Divider,
+  decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
+  parameters: {
+    viewport: { defaultViewport: 'iphone6' },
+  },
+};
 
 const DefaultDivider = () => {
   return (
@@ -86,14 +96,9 @@ const FittedDivider = () => (
   </>
 );
 
-storiesOf('Tuneable/Divider', module)
-  .addDecorator(ThemeProvider)
-  .addDecorator(GlobalStateDecorator)
-  .add('Default', () => <DefaultDivider />, { readme: { sidebar: 'Default divider.' } })
-  .add('Content', () => <DividerWithContent />, { readme: { sidebar: 'Divider with content.' } })
-  .add('Color', () => <ColoredDivider />, { readme: { sidebar: 'Divider with color.' } })
-  .add('Size', () => <SizedDivider />, { readme: { sidebar: 'Divider sizes.' } })
-  .add('Important', () => <ImportantDivider />, { readme: { sidebar: 'Important divider.' } })
-  .add('Fitted', () => <FittedDivider />, {
-    readme: { sidebar: 'A divider can be fitted, without any space above or below it.' },
-  });
+DefaultDivider.story = { name: 'Default' };
+DividerWithContent.story = { name: 'Content' };
+ColoredDivider.story = { name: 'Color' };
+SizedDivider.story = { name: 'Size' };
+ImportantDivider.story = { name: 'Important' };
+FittedDivider.story = { name: 'Fitted' };

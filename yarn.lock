@@ -13528,6 +13528,11 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-add-space@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/react-add-space/-/react-add-space-1.0.7.tgz#8419bc989c18ab7f954ba7b162618394831f357f"
+  integrity sha512-KTr3q1GGTtCqldgY/auQskg2rgVmB5PKOvUhr7sZ7NQ8aqiN4GPXsnR0uhzNJZgzOEUJSeCi3DAx4cwVPgQ1ng==
+
 react-addons-shallow-compare@^15.6.2:
   version "15.6.2"
   resolved "https://registry.npmjs.org/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.2.tgz#198a00b91fc37623db64a28fd17b596ba362702f"

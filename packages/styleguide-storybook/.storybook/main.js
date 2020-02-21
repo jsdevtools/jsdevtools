@@ -3,7 +3,7 @@ const DependenciesPlugin = require('storybook-dep-webpack-plugin');
 
 module.exports = {
   presets: ['storybook-addon-deps/preset', '@storybook/addon-docs/preset'],
-  stories: ['../src/stories/*.stories.js'],
+  stories: ['../stories/*.stories.js'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-actions',

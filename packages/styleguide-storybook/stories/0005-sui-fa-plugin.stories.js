@@ -50,4 +50,4 @@ export const suiFaPluginButton = () => (
   </Provider>
 );
 
-suiFaPluginButton.sotry = { name: 'SUI fa Button' };
+suiFaPluginButton.story = { name: 'SUI fa Button' };

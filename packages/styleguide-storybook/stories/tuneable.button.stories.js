@@ -1,13 +1,22 @@
 import React, { useContext } from 'react';
-import { storiesOf } from '@storybook/react';
 import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
 import { actions, StateContext } from '@jsdt/tuneable';
 import Spacer from 'react-add-space';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { withA11y } from '@storybook/addon-a11y';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from './shared-fa.js';
 
-const DefaultButtons = () => {
+export default {
+  title: 'Components/Tuneable/Button',
+  component: Tuneable.Button,
+  decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
+  parameters: {
+    viewport: { defaultViewport: 'iphone6' },
+  },
+};
+
+export const DefaultButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -91,7 +100,7 @@ const DefaultButtons = () => {
   );
 };
 
-const EmphasisButtons = () => {
+export const EmphasisButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -130,7 +139,7 @@ const EmphasisButtons = () => {
   );
 };
 
-const IconButtons = () => {
+export const IconButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -169,7 +178,7 @@ const IconButtons = () => {
   );
 };
 
-const IconOnlyButtons = () => {
+export const IconOnlyButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -212,7 +221,7 @@ const IconOnlyButtons = () => {
   );
 };
 
-const IconAndContentButtons = () => {
+export const IconAndContentButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -295,7 +304,7 @@ const IconAndContentButtons = () => {
   );
 };
 
-const FluidButtons = () => {
+export const FluidButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -348,7 +357,7 @@ const FluidButtons = () => {
   );
 };
 
-const CircularButtons = () => {
+export const CircularButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -391,7 +400,7 @@ const CircularButtons = () => {
   );
 };
 
-const CircularEmphasisButtons = () => {
+export const CircularEmphasisButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -434,7 +443,7 @@ const CircularEmphasisButtons = () => {
   );
 };
 
-const TextButtons = () => {
+export const TextButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -509,7 +518,7 @@ const TextButtons = () => {
   );
 };
 
-const GroupButtons = () => {
+export const GroupButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -572,7 +581,7 @@ const GroupButtons = () => {
   );
 };
 
-const CircularGroupButtons = () => {
+export const CircularGroupButtons = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -634,21 +643,15 @@ const CircularGroupButtons = () => {
     </>
   );
 };
-storiesOf('Tuneable/Buttons', module)
-  .addDecorator(ThemeProvider)
-  .addDecorator(GlobalStateDecorator)
-  .add('Default', () => <DefaultButtons />, { readme: { sidebar: 'Default Buttons.' } })
-  .add('Emphasis', () => <EmphasisButtons />, { readme: { sidebar: 'Emphasis Buttons' } })
-  .add('Icon', () => <IconButtons />, { readme: { sidebar: 'Icon Buttons' } })
-  .add('Icon Only', () => <IconOnlyButtons />, { readme: { sidebar: 'Icon Only Buttons' } })
-  .add('Icon and Content', () => <IconAndContentButtons />, {
-    readme: { sidebar: 'Icon and Content Buttons' },
-  })
-  .add('Fluid', () => <FluidButtons />, { readme: { sidebar: 'Fluid Buttons' } })
-  .add('Circular', () => <CircularButtons />, { readme: { sidebar: 'Circular Buttons' } })
-  .add('Circular Emphasis', () => <CircularEmphasisButtons />, {
-    readme: { sidebar: 'Circular Emphasis Buttons' },
-  })
-  .add('Text', () => <TextButtons />, { readme: { sidebar: 'Text Buttons' } })
-  .add('Group', () => <GroupButtons />, { readme: { sidebar: 'Group Buttons' } })
-  .add('Circular Group', () => <CircularGroupButtons />, { readme: { sidebar: 'Circular Group Buttons' } });
+
+DefaultButtons.story = { name: 'Default' };
+EmphasisButtons.story = { name: 'Emphasis' };
+IconButtons.story = { name: 'Icon' };
+IconOnlyButtons.story = { name: 'Icon Only' };
+IconAndContentButtons.story = { name: 'Icon and Content' };
+FluidButtons.story = { name: 'Fluid' };
+CircularButtons.story = { name: 'Circular' };
+CircularEmphasisButtons.story = { name: 'Circular Emphasis' };
+TextButtons.story = { name: 'Text' };
+GroupButtons.story = { name: 'Group' };
+CircularGroupButtons.story = { name: 'Circular Group' };

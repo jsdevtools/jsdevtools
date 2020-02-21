@@ -1,8 +1,18 @@
 import React, { useContext } from 'react';
 import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
-import { storiesOf } from '@storybook/react';
+// import { storiesOf } from '@storybook/react';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { withA11y } from '@storybook/addon-a11y';
 import { actions, StateContext } from '@jsdt/tuneable';
+
+export default {
+  title: 'Components/Tuneable/Dialog',
+  component: Tuneable.Dialog,
+  decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
+  parameters: {
+    viewport: { defaultViewport: 'iphone6' },
+  },
+};
 
 const DefaultDialog = () => {
   const [, dispatch] = useContext(StateContext);
@@ -53,8 +63,5 @@ const ContentDialog = () => {
   );
 };
 
-storiesOf('Tuneable/Dialog', module)
-  .addDecorator(ThemeProvider)
-  .addDecorator(GlobalStateDecorator)
-  .add('Default', () => <DefaultDialog />, { readme: { sidebar: 'Default dialog.' } })
-  .add('Content', () => <ContentDialog />, { readme: { sidebar: 'Content dialog.' } });
+DefaultDialog.story = { name: 'Default' };
+ContentDialog.story = { name: 'Content' };

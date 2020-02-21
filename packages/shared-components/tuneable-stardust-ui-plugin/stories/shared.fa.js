@@ -4,6 +4,4 @@ import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faStroopwafel);
 
-export {
-  library,
-};
+export { library };
