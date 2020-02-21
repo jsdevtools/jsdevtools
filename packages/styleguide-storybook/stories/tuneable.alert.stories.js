@@ -83,9 +83,10 @@ export const OofAlert = () => (
 );
 
 export const ActionAlert = () => {
-  const [, dispatch] = StateContext && useContext(StateContext)
-    ? useContext(StateContext)
-    : [null, () => console.log(`dispatch undefined`)];
+  const [, dispatch] =
+    StateContext && useContext(StateContext)
+      ? useContext(StateContext)
+      : [null, () => console.log(`dispatch undefined`)];
 
   console.log(`StateContext ${JSON.stringify(StateContext.Provider._context._currentValue)}`);
   console.log(`useContext ${JSON.stringify(useContext(StateContext))}`);
