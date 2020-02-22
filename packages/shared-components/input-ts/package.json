@@ -52,5 +52,6 @@
   },
   "eslintConfig": {
     "extends": "@jsdt/eslint-config-ts"
-  }
+  },
+  "gitHead": "94920d5f4b0010e614d4b7ca361f742313bb5ec7"
 }
