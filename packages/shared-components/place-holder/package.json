@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/place-holder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Handler that displays a place holder when wrapped component throws.",
   "main": "dist/bundle.js",
   "license": "MIT",

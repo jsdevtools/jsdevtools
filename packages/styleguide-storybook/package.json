@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/styleguide-storybook",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "license": "MIT",
   "private": false,
@@ -17,8 +17,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@jsdt/babel-config": "^0.1.4",
-    "@jsdt/input": "^0.2.0",
-    "@jsdt/input-ts": "^0.2.0",
+    "@jsdt/input": "^0.2.1",
+    "@jsdt/input-ts": "^0.2.1",
     "@mdx-js/loader": "^1.5.5",
     "@stardust-ui/react": "^0.40.4",
     "@storybook/addon-a11y": "^5.3.13",
@@ -36,9 +36,9 @@
     "react-add-space": "^1.0.7",
     "react-dom": "^16.12.0",
     "react-is": "^16.12.0",
-    "styled-components": "^5.0.1",
     "storybook-addon-deps": "^1.0.11",
-    "storybook-dep-webpack-plugin": "^1.0.3"
+    "storybook-dep-webpack-plugin": "^1.0.3",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 9009 -s ./public",

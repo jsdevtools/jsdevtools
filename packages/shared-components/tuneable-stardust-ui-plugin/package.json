@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/tuneable-stardust-ui-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Make stardust-ui components tuneable.",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist"
   },
   "dependencies": {
-    "@jsdt/tuneable": "^0.2.0",
+    "@jsdt/tuneable": "^0.2.1",
     "@stardust-ui/react": "^0.29.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/tuneable-stardust-ui-plugin@0.2.0...@jsdt/tuneable-stardust-ui-plugin@0.2.1) (2020-02-22)
+
+**Note:** Version bump only for package @jsdt/tuneable-stardust-ui-plugin
+
+
+
+
+
 # 0.2.0 (2020-02-21)
 
 
