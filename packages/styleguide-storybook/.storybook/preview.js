@@ -33,10 +33,12 @@ addParameters({
     container: DocsContainer,
     page: DocsPage,
   },
-  viewports: {
-    ...INITIAL_VIEWPORTS,
-    // or ...MINIMAL_VIEWPORTS,
-    ...customViewports,
+  viewport: {
+    viewports: {
+      ...INITIAL_VIEWPORTS,
+      // or ...MINIMAL_VIEWPORTS,
+      ...customViewports,
+    },
   },
   backgrounds: [
     { name: 'jsdevtools', value: '#eeeeee', default: true },

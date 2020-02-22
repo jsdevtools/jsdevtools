@@ -26,7 +26,7 @@ export default {
   component: Icon,
   decorators: [withA11y],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 

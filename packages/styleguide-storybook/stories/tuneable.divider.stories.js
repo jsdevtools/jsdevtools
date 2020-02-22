@@ -10,11 +10,11 @@ export default {
   component: Tuneable.Divider,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 
-const DefaultDivider = () => {
+export const DefaultDivider = () => {
   return (
     <>
       <ThemeSelector />
@@ -26,7 +26,7 @@ const DefaultDivider = () => {
   );
 };
 
-const DividerWithContent = () => {
+export const DividerWithContent = () => {
   return (
     <>
       <ThemeSelector />
@@ -42,7 +42,7 @@ const DividerWithContent = () => {
   );
 };
 
-const ColoredDivider = () => (
+export const ColoredDivider = () => (
   <>
     <ThemeSelector />
     <Tuneable.Text size="large" weight="bold" content="Color" />
@@ -58,7 +58,7 @@ const ColoredDivider = () => (
   </>
 );
 
-const SizedDivider = () => (
+export const SizedDivider = () => (
   <>
     <ThemeSelector />
     <Tuneable.Text size="large" weight="bold" content="Size" />
@@ -71,7 +71,7 @@ const SizedDivider = () => (
   </>
 );
 
-const ImportantDivider = () => (
+export const ImportantDivider = () => (
   <>
     <ThemeSelector />
     <Tuneable.Text size="large" weight="bold" content="Important" />
@@ -85,7 +85,7 @@ const ImportantDivider = () => (
   </>
 );
 
-const FittedDivider = () => (
+export const FittedDivider = () => (
   <>
     <ThemeSelector />
     <Tuneable.Text size="large" weight="bold" content="Fitted" />

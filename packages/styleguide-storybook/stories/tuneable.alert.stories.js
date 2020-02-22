@@ -10,7 +10,7 @@ export default {
   component: Tuneable.Alert,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 
@@ -83,14 +83,7 @@ export const OofAlert = () => (
 );
 
 export const ActionAlert = () => {
-  const [, dispatch] =
-    StateContext && useContext(StateContext)
-      ? useContext(StateContext)
-      : [null, () => console.log(`dispatch undefined`)];
-
-  console.log(`StateContext ${JSON.stringify(StateContext.Provider._context._currentValue)}`);
-  console.log(`useContext ${JSON.stringify(useContext(StateContext))}`);
-
+  const [, dispatch] = useContext(StateContext);
   return (
     <>
       <ThemeSelector />

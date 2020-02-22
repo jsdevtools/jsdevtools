@@ -122,10 +122,12 @@ const rootReducer = (state, action) =>
   // Object.values({ ...setOfReducersA, ...setOfReducersB, ...setOfReducersC }).reduce((acc, curr) => (
   Object.values({ ...setOfReducersA }).reduce((acc, curr) => curr(acc, action), state);
 
-if (window.StateContext === undefined) {
-  window.StateContext = createContext();
-}
-let StateContext = window.StateContext;
+const StateContext = (() => {
+  if (window.StateContext === undefined) {
+    window.StateContext = createContext();
+  }
+  return window.StateContext;
+})();
 
 const GlobalStateProvider = props => (
   <StateContext.Provider value={useReducer(rootReducer, {})}>{props.children}</StateContext.Provider>

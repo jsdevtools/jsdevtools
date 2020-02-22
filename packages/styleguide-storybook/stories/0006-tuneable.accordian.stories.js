@@ -9,7 +9,7 @@ export default {
   component: Tuneable.Accordian,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 

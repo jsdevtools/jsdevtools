@@ -5,7 +5,11 @@ import { actions, StateContext } from '@jsdt/tuneable';
 import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
 import Float from '@jsdt/float';
 
-export const GlobalStateDecorator = storyFn => <GlobalStateProvider>{storyFn()}</GlobalStateProvider>;
+export const GlobalStateDecorator = StoryFn => (
+  <GlobalStateProvider>
+    <StoryFn />
+  </GlobalStateProvider>
+);
 
 export const TuneableProvider = props => {
   const [, dispatch] = useContext(StateContext);

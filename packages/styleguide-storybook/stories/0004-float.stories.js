@@ -7,7 +7,7 @@ export default {
   component: Float,
   decorators: [withA11y],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 

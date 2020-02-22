@@ -10,11 +10,11 @@ export default {
   component: Tuneable.Dialog,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'iphone6' },
+    viewport: { defaultViewport: 'kindleFireHD' },
   },
 };
 
-const DefaultDialog = () => {
+export const DefaultDialog = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -38,7 +38,7 @@ const DefaultDialog = () => {
   );
 };
 
-const ContentDialog = () => {
+export const ContentDialog = () => {
   const [, dispatch] = useContext(StateContext);
   return (
     <>
@@ -63,5 +63,5 @@ const ContentDialog = () => {
   );
 };
 
-DefaultDialog.story = { name: 'Default' };
-ContentDialog.story = { name: 'Content' };
+DefaultDialog.story = { name: 'Default Dialog' };
+ContentDialog.story = { name: 'Dialog with Content' };

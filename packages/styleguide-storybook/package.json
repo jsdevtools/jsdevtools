@@ -36,6 +36,7 @@
     "react-add-space": "^1.0.7",
     "react-dom": "^16.12.0",
     "react-is": "^16.12.0",
+    "styled-components": "^5.0.1",
     "storybook-addon-deps": "^1.0.11",
     "storybook-dep-webpack-plugin": "^1.0.3"
   },
