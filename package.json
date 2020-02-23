@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/create-monorepo",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Skeleton monorepo",
   "private": false,
   "scripts": {
@@ -23,7 +23,7 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdt/cz-lerna-changelog": "^0.1.5",
+    "@jsdt/cz-lerna-changelog": "^0.1.6",
     "@jsdt/eslint-config": "^0.1.8",
     "@jsdt/prettier-config": "^0.1.7",
     "@jsdt/stylelint-config": "^0.1.9",

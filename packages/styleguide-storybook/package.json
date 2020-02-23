@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/styleguide-storybook",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "index.js",
   "license": "MIT",
   "private": false,
@@ -17,8 +17,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "@jsdt/babel-config": "^0.1.4",
-    "@jsdt/input": "^0.2.1",
-    "@jsdt/input-ts": "^0.2.1",
+    "@jsdt/input": "^0.2.2",
+    "@jsdt/input-ts": "^0.2.2",
     "@mdx-js/loader": "^1.5.5",
     "@stardust-ui/react": "^0.40.4",
     "@storybook/addon-a11y": "^5.3.13",
