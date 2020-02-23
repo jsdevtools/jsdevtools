@@ -55,8 +55,7 @@
     "packages/configs/*",
     "packages/backends/*",
     "packages/frontends/*",
-    "packages/services/*",
-    "packages/utilities/*"
+    "packages/services/*"
   ],
   "config": {
     "commitizen": {

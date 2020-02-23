@@ -7,8 +7,7 @@
     "packages/configs/*",
     "packages/backends/*",
     "packages/frontends/*",
-    "packages/services/*",
-    "packages/utilities/*"
+    "packages/services/*"
   ],
   "useWorkspaces": true,
   "version": "independent",
