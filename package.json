@@ -55,7 +55,8 @@
     "packages/configs/*",
     "packages/backends/*",
     "packages/frontends/*",
-    "packages/services/*"
+    "packages/services/*",
+    "packages/utilities/*"
   ],
   "config": {
     "commitizen": {
@@ -72,5 +73,5 @@
   "bin": {
     "create-monorepo": "./bin/cli.js"
   },
-  "gitHead": "b82c52e7faa811928d2152e40825fb90c6586e7d"
+  "gitHead": "d86dcb5b663d0b33487f68d903a8e0549e4711ae"
 }

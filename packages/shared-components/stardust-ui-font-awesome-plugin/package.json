@@ -43,5 +43,6 @@
   },
   "babel": {
     "extends": "@jsdt/babel-config"
-  }
+  },
+  "gitHead": "d86dcb5b663d0b33487f68d903a8e0549e4711ae"
 }
