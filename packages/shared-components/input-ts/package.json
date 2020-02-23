@@ -1,6 +1,6 @@
 {
   "name": "@jsdt/input-ts",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
