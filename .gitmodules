@@ -1,0 +1,6 @@
+[submodule "packages\\utilities\\cz-lerna-changelog"]
+	path = packages\\utilities\\cz-lerna-changelog
+	url = https://github.com/jsdevtools/cz-lerna-changelog.git
+[submodule "packages\\utilities\\conventional-commit-types"]
+	path = packages\\utilities\\conventional-commit-types
+	url = https://github.com/jsdevtools/conventional-commit-types.git
