@@ -12,7 +12,7 @@
   },
   "author": "",
   "license": "MIT",
-  "gitHead": "94920d5f4b0010e614d4b7ca361f742313bb5ec7",
+  "gitHead": "b82c52e7faa811928d2152e40825fb90c6586e7d",
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.12.0"
