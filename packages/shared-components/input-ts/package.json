@@ -33,16 +33,16 @@
     "@jsdt/babel-config-ts": "^0.1.4",
     "@jsdt/eslint-config-ts": "^0.1.7",
     "@jsdt/stylelint-config": "^0.1.9",
-    "@types/node": "^13.1.4",
-    "@types/react": "^16.9.17",
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
     "@types/react-dom": "^16.9.4",
-    "@types/styled-components": "^4.4.1",
+    "@types/styled-components": "^5.0.0",
     "babel-loader": "^8.0.6",
     "shx": "^0.3.2",
-    "stylelint": "^13.0.0",
-    "typescript": "^3.7.3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "stylelint": "^13.2.0",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   },
   "stylelint": {
     "extends": "@jsdt/stylelint-config"

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { GlobalStateProvider } from '@jsdt/tuneable';
 import { actions, StateContext } from '@jsdt/tuneable';
-import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
+import Tuneable from '@jsdt/tuneable-fluentui';
 import Float from '@jsdt/float';
 
 export const GlobalStateDecorator = StoryFn => (

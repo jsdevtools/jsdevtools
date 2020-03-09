@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
+import Tuneable from '@jsdt/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, StateContext } from '@jsdt/tuneable';
 
 export default {
-  title: 'Components/Tuneable/Alert',
+  title: 'Components/Fluent-UI/Alert',
   component: Tuneable.Alert,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
@@ -93,12 +93,10 @@ export const ActionAlert = () => {
       <Tuneable.Alert
         instance="alert1"
         content="This is a closable alert"
-        action={{
-          icon: 'close',
-          onClick: () => {
-            dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }));
-            dispatch(actions.chg('alert1', { open: false }));
-          },
+        dismissible
+        onDismiss={() => {
+          dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }));
+          dispatch(actions.chg('alert1', { visible: false }));
         }}
       />
     </>

@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/tuneable-stardust-ui-plugin',
+    library: '@jsdt/tuneable-jsdt',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },
@@ -19,7 +19,6 @@ module.exports = {
   },
   externals: {
     react: 'react',
-    '@stardust-ui/react': '@stardust-ui/react',
   },
   mode: 'development',
 };

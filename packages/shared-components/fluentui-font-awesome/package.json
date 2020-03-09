@@ -1,7 +1,7 @@
 {
-  "name": "@jsdt/stardust-ui-font-awesome-plugin",
-  "version": "0.2.3",
-  "description": "Plugin adds font-awesome icons to stardust-ui",
+  "name": "@jsdt/fluentui-font-awesome",
+  "version": "0.1.0",
+  "description": "Plugin adds font-awesome icons to fluentui",
   "main": "dist/bundle.js",
   "license": "MIT",
   "private": false,
@@ -18,7 +18,6 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@stardust-ui/react": "^0.40.4",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

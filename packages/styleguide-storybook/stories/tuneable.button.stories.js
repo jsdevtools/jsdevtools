@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
+import Tuneable from '@jsdt/tuneable-fluentui';
 import { actions, StateContext } from '@jsdt/tuneable';
 import Spacer from 'react-add-space';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';

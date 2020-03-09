@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-stardust-ui-plugin';
+import Tuneable from '@jsdt/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
 import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';

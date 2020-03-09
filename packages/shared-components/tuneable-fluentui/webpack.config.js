@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/float',
+    library: '@jsdt/tuneable-fluentui',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },
@@ -19,7 +19,7 @@ module.exports = {
   },
   externals: {
     react: 'react',
-    'styled-components': 'styled-components',
+    '@fluentui/react': '@fluentui/react',
   },
   mode: 'development',
 };
