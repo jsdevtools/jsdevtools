@@ -2,7 +2,7 @@
   "name": "@jsdt/create-monorepo",
   "version": "0.3.10",
   "description": "Skeleton monorepo",
-  "private": false,
+  "private": true,
   "scripts": {
     "bs": "npx -p lerna -c \"lerna init && lerna bootstrap\"",
     "clean": "shx rm -f yarn-error.log lerna-debug.log",

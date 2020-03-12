@@ -1,6 +1,6 @@
 import React from 'react';
-import Tuneable from '@jsdt/tuneable-fluentui';
-import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { Accordion, Image, List, Text } from '@jsdt/tuneable-fluentui';
+import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, StateContext } from '@jsdt/tuneable';
 
@@ -23,8 +23,8 @@ themes.teams.icons = { ...themes.teams.icons, ...faIcons };
 themes.teamsHighContrast.icons = { ...themes.teamsHighContrast.icons, ...faIcons };
 
 export default {
-  title: 'Components/Tuneable/Accordian',
-  component: Tuneable.Accordian,
+  title: 'Components/Tuneable/Accordion',
+  component: Accordion,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
     viewport: { defaultViewport: 'kindleFireHD' },
@@ -35,10 +35,7 @@ const petItems = [
   {
     key: 'irving',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/matt.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/matt.jpg" avatar />
     ),
     header: 'Irving Kuhic',
     headerMedia: '7:26:56 AM',
@@ -47,10 +44,7 @@ const petItems = [
   {
     key: 'skyler',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/steve.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/steve.jpg" avatar />
     ),
     header: 'Skyler Parks',
     headerMedia: '11:30:17 PM',
@@ -59,10 +53,7 @@ const petItems = [
   {
     key: 'dante',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/nom.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/nom.jpg" avatar />
     ),
     header: 'Dante Schneider',
     headerMedia: '5:22:40 PM',
@@ -74,10 +65,7 @@ const peopleItems = [
   {
     key: 'irving',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/matt.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/matt.jpg" avatar />
     ),
     header: 'Irving Kuhic',
     headerMedia: '7:26:56 AM',
@@ -86,10 +74,7 @@ const peopleItems = [
   {
     key: 'skyler',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/steve.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/steve.jpg" avatar />
     ),
     header: 'Skyler Parks',
     headerMedia: '11:30:17 PM',
@@ -98,10 +83,7 @@ const peopleItems = [
   {
     key: 'dante',
     media: (
-      <Tuneable.Image
-        src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/nom.jpg"
-        avatar
-      />
+      <Image src="https://fluentsite.z22.web.core.windows.net/public/images/avatar/small/nom.jpg" avatar />
     ),
     header: 'Dante Schneider',
     headerMedia: '5:22:40 PM',
@@ -119,7 +101,7 @@ const panels = [
     ),
     content: {
       key: 'people',
-      content: <Tuneable.List selectable defaultSelectedIndex={0} items={peopleItems} />,
+      content: <List selectable defaultSelectedIndex={0} items={peopleItems} />,
     },
   },
   {
@@ -128,41 +110,41 @@ const panels = [
     ),
     content: {
       key: 'pets',
-      content: <Tuneable.List selectable defaultSelectedIndex={0} items={petItems} />,
+      content: <List selectable defaultSelectedIndex={0} items={petItems} />,
     },
   },
 ];
 
-export const DefaultAccordian = () => (
+export const DefaultAccordion = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Default" />
+    <Text size="large" weight="bold" content="Default" />
     <br />
-    <Tuneable.Text size="small" content="A default Accordian." />
-    <Tuneable.Accordion defaultActiveIndex={[0]} panels={panels} />
+    <Text size="small" content="A default Accordion." />
+    <Accordion defaultActiveIndex={[0]} panels={panels} />
   </>
 );
 
-export const ExclusiveAccordian = () => (
+export const ExclusiveAccordion = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Exclusive" />
+    <Text size="large" weight="bold" content="Exclusive" />
     <br />
-    <Tuneable.Text size="small" content="An exclusive Accordian." />
-    <Tuneable.Accordion panels={panels} exclusive />
+    <Text size="small" content="An exclusive Accordion." />
+    <Accordion panels={panels} exclusive />
   </>
 );
 
-export const ExclusiveAndExpandedAccordian = () => (
+export const ExclusiveAndExpandedAccordion = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Exclusive and Expanded" />
+    <Text size="large" weight="bold" content="Exclusive and Expanded" />
     <br />
-    <Tuneable.Text size="small" content="An exclusive expanded Accordian." />
-    <Tuneable.Accordion panels={panels} exclusive expanded />
+    <Text size="small" content="An exclusive expanded Accordion." />
+    <Accordion panels={panels} exclusive expanded />
   </>
 );
 
-DefaultAccordian.story = { name: 'Default' };
-ExclusiveAccordian.story = { name: 'Exclusive' };
-ExclusiveAndExpandedAccordian.story = { name: 'Exclusive and Expanded' };
+DefaultAccordion.story = { name: 'Default' };
+ExclusiveAccordion.story = { name: 'Exclusive' };
+ExclusiveAndExpandedAccordion.story = { name: 'Exclusive and Expanded' };

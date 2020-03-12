@@ -1,13 +1,13 @@
 import React /*, { useContext }*/ from 'react';
 // import Float from '@jsdt/float';
-import Tuneable from '@jsdt/tuneable-fluentui';
+import { Text, Divider, ProviderConsumer } from '@jsdt/tuneable-fluentui';
 //import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
   title: 'Components/Tuneable/Divider',
-  component: Tuneable.Divider,
+  component: Divider,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
     viewport: { defaultViewport: 'kindleFireHD' },
@@ -18,10 +18,10 @@ export const DefaultDivider = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Default" />
+      <Text size="large" weight="bold" content="Default" />
       <br />
-      <Tuneable.Text size="small" content="Some text followed by a divider." />
-      <Tuneable.Divider />
+      <Text size="small" content="Some text followed by a divider." />
+      <Divider />
     </>
   );
 };
@@ -30,14 +30,14 @@ export const DividerWithContent = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Divider with content:" />
+      <Text size="large" weight="bold" content="Divider with content:" />
       <br />
-      <Tuneable.Text
+      <Text
         ssize="small"
         content="A Divider can contain text or other content displayed along with the line."
       />
-      <Tuneable.Divider content="Some text" />
-      <Tuneable.Divider>Children API</Tuneable.Divider>
+      <Divider content="Some text" />
+      <Divider>Children API</Divider>
     </>
   );
 };
@@ -45,13 +45,13 @@ export const DividerWithContent = () => {
 export const ColoredDivider = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Color" />
+    <Text size="large" weight="bold" content="Color" />
     <br />
-    <Tuneable.Text ssize="small" content="A divider can have different colors." />
-    <Tuneable.ProviderConsumer
+    <Text ssize="small" content="A divider can have different colors." />
+    <ProviderConsumer
       render={({ siteVariables: { emphasisColors, naturalColors } }) =>
         _.map({ ...emphasisColors, ...naturalColors }, (variants, name) => (
-          <Tuneable.Divider key={name} color={name} content={_.startCase(name)} />
+          <Divider key={name} color={name} content={_.startCase(name)} />
         ))
       }
     />
@@ -61,12 +61,12 @@ export const ColoredDivider = () => (
 export const SizedDivider = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Size" />
+    <Text size="large" weight="bold" content="Size" />
     <br />
-    <Tuneable.Text ssize="small" content="A divider can have different sizes." />
+    <Text ssize="small" content="A divider can have different sizes." />
     {_.times(11, i => {
       const size = i;
-      return <Tuneable.Divider key={size} size={size} content={`Size ${size}`} />;
+      return <Divider key={size} size={size} content={`Size ${size}`} />;
     })}
   </>
 );
@@ -74,25 +74,22 @@ export const SizedDivider = () => (
 export const ImportantDivider = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Important" />
+    <Text size="large" weight="bold" content="Important" />
     <br />
-    <Tuneable.Text
-      ssize="small"
-      content="A divider can appear more important and draw the user's attention."
-    />
-    <Tuneable.Divider important content="This is important" />
-    <Tuneable.Divider important>So is this</Tuneable.Divider>
+    <Text ssize="small" content="A divider can appear more important and draw the user's attention." />
+    <Divider important content="This is important" />
+    <Divider important>So is this</Divider>
   </>
 );
 
 export const FittedDivider = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Fitted" />
+    <Text size="large" weight="bold" content="Fitted" />
     <br />
-    <Tuneable.Text ssize="small" content="There is no space between this text and the divider." />
-    <Tuneable.Divider fitted />
-    <Tuneable.Text ssize="small" content="There is no space between this text and the divider." />
+    <Text ssize="small" content="There is no space between this text and the divider." />
+    <Divider fitted />
+    <Text ssize="small" content="There is no space between this text and the divider." />
   </>
 );
 

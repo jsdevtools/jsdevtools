@@ -1,85 +1,49 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import * as FUIR from '@fluentui/react';
 import { withGlobalState } from '@jsdt/tuneable';
-// import { withGlobalState } from '../../tuneable/src';
+import TuneableProvider from './provider';
+import TuneableAlert from './alert';
+import TuneableIcon from './icon';
 
-class TuneableProvider extends React.Component {
-  componentDidUpdate(prevProps) {
-    if (prevProps.theme !== this.props.theme && this.props.onChange) {
-      this.props.onChange(undefined, { value: this.props.theme });
-    }
-  }
-
-  render() {
-    const { theme, ...rest } = this.props;
-    return (
-      <FUIR.Provider theme={FUIR.themes[theme]} {...rest}>
-        {this.props.children}
-      </FUIR.Provider>
-    );
-  }
-}
-
-TuneableProvider.propTypes = {
-  theme: PropTypes.string,
-  onChange: PropTypes.func,
-  children: PropTypes.element,
-};
-
-const ModAlert = props => {
-  const { open, ...rest } = { open: true, ...props };
-  return open === false ? null : <FUIR.Alert {...rest} />;
-};
-
-ModAlert.propTypes = {
-  open: PropTypes.bool,
-};
-
-const Tuneable = {
-  Provider: withGlobalState(TuneableProvider),
-  Accordion: withGlobalState(FUIR.Accordion),
-  Alert: withGlobalState(ModAlert),
-  Animation: withGlobalState(FUIR.Animation),
-  Avatar: withGlobalState(FUIR.Avatar),
-  Button: withGlobalState(FUIR.Button),
-  ButtonGroup: withGlobalState(FUIR.ButtonGroup),
-  Chat: withGlobalState(FUIR.Chat),
-  ChatItem: withGlobalState(FUIR.ChatItem),
-  ChatMessage: withGlobalState(FUIR.ChatMessage),
-  Dialog: withGlobalState(FUIR.Dialog),
-  Divider: withGlobalState(FUIR.Divider),
-  Dropdown: withGlobalState(FUIR.Dropdown),
-  DropdownItem: withGlobalState(FUIR.DropdownItem),
-  // DropdownLabel: withGlobalState(FUIR.DropdownLabel),
-  DropdownSearchInput: withGlobalState(FUIR.DropdownSearchInput),
-  FocusZoneMode: withGlobalState(FUIR.FocusZoneMode),
-  Form: withGlobalState(FUIR.Form),
-  FormField: withGlobalState(FUIR.FormField),
-  Grid: withGlobalState(FUIR.Grid),
-  Header: withGlobalState(FUIR.Header),
-  HeaderDescription: withGlobalState(FUIR.HeaderDescription),
-  Icon: withGlobalState(FUIR.Icon),
-  Image: withGlobalState(FUIR.Image),
-  Input: withGlobalState(FUIR.Input),
-  ItemLayout: withGlobalState(FUIR.ItemLayout),
-  Label: withGlobalState(FUIR.Label),
-  Layout: withGlobalState(FUIR.Layout),
-  List: withGlobalState(FUIR.List),
-  ListItem: withGlobalState(FUIR.ListItem),
-  Menu: withGlobalState(FUIR.Menu),
-  MenuItem: withGlobalState(FUIR.MenuItem),
-  Popup: withGlobalState(FUIR.Popup),
-  PopupContent: withGlobalState(FUIR.PopupContent),
-  Portal: withGlobalState(FUIR.Portal),
-  ProviderConsumer: withGlobalState(FUIR.ProviderConsumer),
-  RadioGroup: withGlobalState(FUIR.RadioGroup),
-  RadioGroupItem: withGlobalState(FUIR.RadioGroupItem),
-  Ref: withGlobalState(FUIR.Ref),
-  Segment: withGlobalState(FUIR.Segment),
-  Status: withGlobalState(FUIR.Status),
-  Text: withGlobalState(FUIR.Text),
-  Tree: withGlobalState(FUIR.Tree),
-};
-
-export default Tuneable;
+export const Provider = withGlobalState(TuneableProvider);
+export const Accordion = withGlobalState(FUIR.Accordion);
+export const Alert = withGlobalState(TuneableAlert);
+export const Animation = withGlobalState(FUIR.Animation);
+export const Avatar = withGlobalState(FUIR.Avatar);
+export const Button = withGlobalState(FUIR.Button);
+export const ButtonGroup = withGlobalState(FUIR.ButtonGroup);
+export const Chat = withGlobalState(FUIR.Chat);
+export const ChatItem = withGlobalState(FUIR.ChatItem);
+export const ChatMessage = withGlobalState(FUIR.ChatMessage);
+export const Dialog = withGlobalState(FUIR.Dialog);
+export const Divider = withGlobalState(FUIR.Divider);
+export const Dropdown = withGlobalState(FUIR.Dropdown);
+export const DropdownItem = withGlobalState(FUIR.DropdownItem);
+// export const DropdownLabel = withGlobalState(FUIR.DropdownLabel);
+export const DropdownSearchInput = withGlobalState(FUIR.DropdownSearchInput);
+export const FocusZoneMode = withGlobalState(FUIR.FocusZoneMode);
+export const Form = withGlobalState(FUIR.Form);
+export const FormField = withGlobalState(FUIR.FormField);
+export const Grid = withGlobalState(FUIR.Grid);
+export const Header = withGlobalState(FUIR.Header);
+export const HeaderDescription = withGlobalState(FUIR.HeaderDescription);
+export const Icon = withGlobalState(TuneableIcon);
+export const Image = withGlobalState(FUIR.Image);
+export const Input = withGlobalState(FUIR.Input);
+export const ItemLayout = withGlobalState(FUIR.ItemLayout);
+export const Label = withGlobalState(FUIR.Label);
+export const Layout = withGlobalState(FUIR.Layout);
+export const List = withGlobalState(FUIR.List);
+export const ListItem = withGlobalState(FUIR.ListItem);
+export const Menu = withGlobalState(FUIR.Menu);
+export const MenuItem = withGlobalState(FUIR.MenuItem);
+export const Popup = withGlobalState(FUIR.Popup);
+export const PopupContent = withGlobalState(FUIR.PopupContent);
+export const Portal = withGlobalState(FUIR.Portal);
+export const ProviderConsumer = withGlobalState(FUIR.ProviderConsumer);
+export const RadioGroup = withGlobalState(FUIR.RadioGroup);
+export const RadioGroupItem = withGlobalState(FUIR.RadioGroupItem);
+export const Ref = withGlobalState(FUIR.Ref);
+export const Segment = withGlobalState(FUIR.Segment);
+export const Status = withGlobalState(FUIR.Status);
+export const Text = withGlobalState(FUIR.Text);
+export const Tree = withGlobalState(FUIR.Tree);

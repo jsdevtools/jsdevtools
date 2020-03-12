@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-fluentui';
+import { Alert, Text, Input } from '@jsdt/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, StateContext } from '@jsdt/tuneable';
 
 export default {
-  title: 'Components/Fluent-UI/Alert',
-  component: Tuneable.Alert,
+  title: 'Components/Tuneable/Alert',
+  component: Alert,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
     viewport: { defaultViewport: 'kindleFireHD' },
@@ -17,60 +17,60 @@ export default {
 export const DefaultAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Default" />
+    <Text size="large" weight="bold" content="Default" />
     <br />
     <br />
-    <Tuneable.Alert content="This is a default alert" />
+    <Alert content="This is a default alert" />
   </>
 );
 
 export const InfoAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Info" />
+    <Text size="large" weight="bold" content="Info" />
     <br />
     <br />
-    <Tuneable.Alert info content="This is an informational alert" />
+    <Alert info content="This is an informational alert" />
   </>
 );
 
 export const DangerAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Danger" />
+    <Text size="large" weight="bold" content="Danger" />
     <br />
     <br />
-    <Tuneable.Alert danger content="This is a danger alert" />
+    <Alert danger content="This is a danger alert" />
   </>
 );
 
 export const WarningAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Warning" />
+    <Text size="large" weight="bold" content="Warning" />
     <br />
     <br />
-    <Tuneable.Alert warning content="This is a warning alert" />
+    <Alert warning content="This is a warning alert" />
   </>
 );
 
 export const SuccessAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Success" />
+    <Text size="large" weight="bold" content="Success" />
     <br />
     <br />
-    <Tuneable.Alert success content="This is a success alert" />
+    <Alert success content="This is a success alert" />
   </>
 );
 
 export const OofAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="OOF" />
+    <Text size="large" weight="bold" content="OOF" />
     <br />
     <br />
-    <Tuneable.Alert
+    <Alert
       variables={{
         oof: true,
       }}
@@ -87,10 +87,10 @@ export const ActionAlert = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Action" />
+      <Text size="large" weight="bold" content="Action" />
       <br />
       <br />
-      <Tuneable.Alert
+      <Alert
         instance="alert1"
         content="This is a closable alert"
         dismissible
@@ -106,14 +106,14 @@ export const ActionAlert = () => {
 export const AttachedAlert = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Attached" />
+    <Text size="large" weight="bold" content="Attached" />
     <br />
     <br />
-    <Tuneable.Alert attached content="This is a top attached alert" />
-    <Tuneable.Input fluid placeholder="Name..." />
+    <Alert attached content="This is a top attached alert" />
+    <Input fluid placeholder="Name..." />
     <br /> <br />
-    <Tuneable.Input fluid placeholder="Surname..." />
-    <Tuneable.Alert attached="bottom" content="This is a bottom attached alert" />
+    <Input fluid placeholder="Surname..." />
+    <Alert attached="bottom" content="This is a bottom attached alert" />
   </>
 );
 

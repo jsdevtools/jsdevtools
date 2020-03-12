@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-fluentui';
+import { Button, ButtonGroup, Text } from '@jsdt/tuneable-fluentui';
 import { actions, StateContext } from '@jsdt/tuneable';
 import Spacer from 'react-add-space';
-import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from './shared-fa.js';
 
 export default {
   title: 'Components/Tuneable/Button',
-  component: Tuneable.Button,
+  component: Button,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
     viewport: { defaultViewport: 'kindleFireHD' },
@@ -21,9 +21,9 @@ export const DefaultButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Default:" />
+      <Text size="large" weight="bold" content="Default:" />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1a"
         content={() => (
           <>
@@ -33,30 +33,27 @@ export const DefaultButtons = () => {
         onClick={() => dispatch(actions.chg('button1a', { content: 'Kazaam!' }))}
       />
       <br />
-      <Tuneable.Button content="onClick" onClick={() => console.log('clicked')} />
+      <Button content="onClick" onClick={() => console.log('clicked')} />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Change Theme Prop"
       />
       <br />
-      <Tuneable.Button
-        instance="button1d"
-        onClick={() => dispatch(actions.chg('button1d', { children: 'Kazaam!' }))}
-      >
+      <Button instance="button1d" onClick={() => dispatch(actions.chg('button1d', { children: 'Kazaam!' }))}>
         Change Content as Children <Spacer amount={8} />
         <FontAwesomeIcon icon="stroopwafel" />
-      </Tuneable.Button>
+      </Button>
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1e"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="See how this very long text shows up on the button"
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1f"
         disabled
         content={() => (
@@ -67,30 +64,25 @@ export const DefaultButtons = () => {
         onClick={() => dispatch(actions.chg('button1a', { content: 'Kazaam!' }))}
       />
       <br />
-      <Tuneable.Button
-        instance="button1g"
-        disabled
-        content="onClick"
-        onClick={() => console.log('clicked')}
-      />
+      <Button instance="button1g" disabled content="onClick" onClick={() => console.log('clicked')} />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1h"
         disabled
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Change Theme Prop"
       />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1i"
         disabled
         onClick={() => dispatch(actions.chg('button1d', { children: 'Kazaam!' }))}
       >
         Change Content as Children <Spacer amount={8} />
         <FontAwesomeIcon icon="stroopwafel" />
-      </Tuneable.Button>
+      </Button>
       <br />
-      <Tuneable.Button
+      <Button
         instance="button1j"
         disabled
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -105,15 +97,15 @@ export const EmphasisButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Emphasis:" />
+      <Text size="large" weight="bold" content="Emphasis:" />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         instance="button2a"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Primary"
       />
-      <Tuneable.Button
+      <Button
         secondary
         instance="button2b"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -121,14 +113,14 @@ export const EmphasisButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         disabled
         instance="button2c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Primary"
       />
-      <Tuneable.Button
+      <Button
         secondary
         disabled
         instance="button2d"
@@ -144,15 +136,15 @@ export const IconButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Icon:" />
+      <Text size="large" weight="bold" content="Icon:" />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         icon="fas calendar"
         instance="button3a"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         secondary
         icon="chat"
         instance="button3b"
@@ -160,14 +152,14 @@ export const IconButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         disabled
         icon="fas calendar"
         instance="button3c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         secondary
         disabled
         icon="chat"
@@ -183,16 +175,16 @@ export const IconOnlyButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Icon Only:" />
+      <Text size="large" weight="bold" content="Icon Only:" />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         icon="download"
         iconOnly
         instance="button4a"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         secondary
         icon="email"
         iconOnly
@@ -201,7 +193,7 @@ export const IconOnlyButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         disabled
         icon="download"
@@ -209,7 +201,7 @@ export const IconOnlyButtons = () => {
         instance="button4c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         secondary
         disabled
         icon="email"
@@ -226,9 +218,9 @@ export const IconAndContentButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Icon and Content:" />
+      <Text size="large" weight="bold" content="Icon and Content:" />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         icon="eye"
         iconPosition="before"
@@ -236,7 +228,7 @@ export const IconAndContentButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Click me before"
       />
-      <Tuneable.Button
+      <Button
         primary
         icon="triangle-down"
         iconPosition="after"
@@ -245,7 +237,7 @@ export const IconAndContentButtons = () => {
         content="Click me after"
       />
       <br />
-      <Tuneable.Button
+      <Button
         secondary
         icon="flag"
         iconPosition="before"
@@ -253,7 +245,7 @@ export const IconAndContentButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Click me before"
       />
-      <Tuneable.Button
+      <Button
         secondary
         icon="leave"
         iconPosition="after"
@@ -263,7 +255,7 @@ export const IconAndContentButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         primary
         disabled
         icon="eye"
@@ -272,7 +264,7 @@ export const IconAndContentButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Click me before"
       />
-      <Tuneable.Button
+      <Button
         primary
         disabled
         icon="triangle-down"
@@ -282,7 +274,7 @@ export const IconAndContentButtons = () => {
         content="Click me after"
       />
       <br />
-      <Tuneable.Button
+      <Button
         secondary
         disabled
         icon="flag"
@@ -291,7 +283,7 @@ export const IconAndContentButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Click me before"
       />
-      <Tuneable.Button
+      <Button
         secondary
         disabled
         icon="leave"
@@ -309,9 +301,9 @@ export const FluidButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Fluid:" />
+      <Text size="large" weight="bold" content="Fluid:" />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button6a"
         fluid
         primary
@@ -321,7 +313,7 @@ export const FluidButtons = () => {
         content="Fits to container"
       />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button6b"
         fluid
         secondary
@@ -332,7 +324,7 @@ export const FluidButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button6c"
         disabled
         fluid
@@ -343,7 +335,7 @@ export const FluidButtons = () => {
         content="Fits to container"
       />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button6d"
         disabled
         fluid
@@ -362,15 +354,15 @@ export const CircularButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Circular:" />
+      <Text size="large" weight="bold" content="Circular:" />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button7a"
         circular
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="C"
       />
-      <Tuneable.Button
+      <Button
         instance="button7b"
         circular
         icon="more"
@@ -380,14 +372,14 @@ export const CircularButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button7c"
         disabled
         circular
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="C"
       />
-      <Tuneable.Button
+      <Button
         instance="button7d"
         disabled
         circular
@@ -405,16 +397,16 @@ export const CircularEmphasisButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Circular Emphasis:" />
+      <Text size="large" weight="bold" content="Circular Emphasis:" />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button8a"
         circular
         primary
         icon="number-list"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button8b"
         circular
         secondary
@@ -423,7 +415,7 @@ export const CircularEmphasisButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button8c"
         disabled
         circular
@@ -431,7 +423,7 @@ export const CircularEmphasisButtons = () => {
         icon="number-list"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button8d"
         disabled
         circular
@@ -448,9 +440,9 @@ export const TextButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="sidebar:" />
+      <Text size="large" weight="bold" content="sidebar:" />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button9a"
         text
         icon="quote"
@@ -458,21 +450,21 @@ export const TextButtons = () => {
         content="Default"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button9b"
         text
         primary
         content="Primary"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button9c"
         text
         secondary
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Secondary"
       />
-      <Tuneable.Button
+      <Button
         instance="button9d"
         text
         icon="reply"
@@ -481,7 +473,7 @@ export const TextButtons = () => {
       />
       <br />
       <br />
-      <Tuneable.Button
+      <Button
         instance="button9e"
         disabled
         text
@@ -490,7 +482,7 @@ export const TextButtons = () => {
         content="Default"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button9f"
         disabled
         text
@@ -498,7 +490,7 @@ export const TextButtons = () => {
         content="Primary"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
-      <Tuneable.Button
+      <Button
         instance="button9g"
         disabled
         text
@@ -506,7 +498,7 @@ export const TextButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Secondary"
       />
-      <Tuneable.Button
+      <Button
         instance="button9h"
         disabled
         text
@@ -523,9 +515,9 @@ export const GroupButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Group:" />
+      <Text size="large" weight="bold" content="Group:" />
       <br />
-      <Tuneable.ButtonGroup
+      <ButtonGroup
         instance="button10a"
         buttons={[
           {
@@ -550,7 +542,7 @@ export const GroupButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
       <br />
-      <Tuneable.ButtonGroup
+      <ButtonGroup
         instance="button10b"
         buttons={[
           {
@@ -586,9 +578,9 @@ export const CircularGroupButtons = () => {
   return (
     <>
       <ThemeSelector />
-      <Tuneable.Text size="large" weight="bold" content="Circular Group:" />
+      <Text size="large" weight="bold" content="Circular Group:" />
       <br />
-      <Tuneable.ButtonGroup
+      <ButtonGroup
         instance="button11a"
         circular
         buttons={[
@@ -613,7 +605,7 @@ export const CircularGroupButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
       <br />
-      <Tuneable.ButtonGroup
+      <ButtonGroup
         instance="button11b"
         circular
         buttons={[

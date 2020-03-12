@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Tuneable from '@jsdt/tuneable-fluentui';
+import { Text } from '@jsdt/tuneable-fluentui';
 import JSDT from '../../shared-components/tuneable-jsdt/src/index.js';
-import { GlobalStateDecorator, /*TuneableProvider,*/ ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, StateContext } from '@jsdt/tuneable';
 import Float from '@jsdt/float';
@@ -18,7 +18,7 @@ export default {
 export const Default = () => (
   <>
     <ThemeSelector />
-    <Tuneable.Text size="large" weight="bold" content="Default" />
+    <Text size="large" weight="bold" content="Default" />
     <br />
     <br />
     <Float>
