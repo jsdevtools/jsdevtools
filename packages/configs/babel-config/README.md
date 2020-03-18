@@ -1,8 +1,5 @@
 @jsdevtools/babel-config
 ===================
-
-[![NPM](https://img.shields.io/npm/l/@jsdevtools/babel-config)](LICENSE)
-
 [@jsdevtools/babel-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config) is a shareable config for [Babel](https://babeljs.io/).
 
 Motivation

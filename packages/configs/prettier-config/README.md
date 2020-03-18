@@ -1,9 +1,5 @@
 @jsdevtools/prettier-config
 =====================
-
-[![NPM](https://img.shields.io/npm/l/@jsdevtools/prettier-config)](LICENSE)
-
-
 [@jsdevtools/prettier-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/prettier-config) is a shareable config for [Prettier](https://prettier.io/).
 
 Motivation

@@ -1,8 +1,5 @@
 @jsdevtools/stylelint-config
 ===================
-
-[![NPM](https://img.shields.io/npm/l/@jsdevtools/stylelint-config)](LICENSE)
-
 [@jsdevtools/stylelint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/stylelint-config) is a shareable config for [stylelint](https://stylelint.io/).
 
 Motivation
@@ -18,7 +15,7 @@ Installation
 [Stylelint](https://stylelint.io/) and the [@jsdevtools/stylelint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/stylelint-config) will be used in the development of other projects. Therefore, run the following [npm](https://docs.npmjs.com/about-npm/) command to install them as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) of your project:
 
 ```bash
-npm install stylelint @jsdevtools/stylelint-config --save-dev
+npm install stylelint @jsdt/stylelint-config --save-dev
 ```
 
 or

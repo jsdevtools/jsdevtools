@@ -1,8 +1,5 @@
 @jsdevtools/eslint-config
 ===================
-
-[![NPM](https://img.shields.io/npm/l/@jsdevtools/eslint-config)](LICENSE)
-
 [@jsdevtools/eslint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config) is a set of [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) for [ESLint](https://eslint.org/).
 
 Motivation
