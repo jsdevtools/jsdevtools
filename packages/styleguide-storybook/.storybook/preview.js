@@ -21,6 +21,10 @@ const customViewports = {
       height: '801px',
     },
   },
+  default: {
+    name: 'Full',
+    type: 'desktop',
+  },
 };
 
 addParameters({

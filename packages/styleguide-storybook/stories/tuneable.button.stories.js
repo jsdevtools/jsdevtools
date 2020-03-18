@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { Button, ButtonGroup, Text } from '@jsdt/tuneable-fluentui';
-import { actions, StateContext } from '@jsdt/tuneable';
+import { Button, ButtonGroup, Text } from '@jsdevtools/tuneable-fluentui';
+import { actions, useDispatch } from '@jsdevtools/tuneable';
 import Spacer from 'react-add-space';
-import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from './shared-fa.js';
@@ -12,17 +12,14 @@ export default {
   component: Button,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'kindleFireHD' },
+    viewport: { defaultViewport: 'default' },
   },
 };
 
 export const DefaultButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Default:" />
-      <br />
+    <Overlays content="Default" target="button1a">
       <Button
         instance="button1a"
         content={() => (
@@ -88,17 +85,14 @@ export const DefaultButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="See how this very long text shows up on the button"
       />
-    </>
+    </Overlays>
   );
 };
 
 export const EmphasisButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Emphasis:" />
-      <br />
+    <Overlays content="Emphasis" target="button2a">
       <Button
         primary
         instance="button2a"
@@ -127,17 +121,14 @@ export const EmphasisButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Secondary"
       />
-    </>
+    </Overlays>
   );
 };
 
 export const IconButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Icon:" />
-      <br />
+    <Overlays content="Icon" target="button3a">
       <Button
         primary
         icon="fas calendar"
@@ -166,17 +157,14 @@ export const IconButtons = () => {
         instance="button3d"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const IconOnlyButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Icon Only:" />
-      <br />
+    <Overlays content="Icon Only" target="button4a">
       <Button
         primary
         icon="download"
@@ -209,17 +197,14 @@ export const IconOnlyButtons = () => {
         instance="button4d"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const IconAndContentButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Icon and Content:" />
-      <br />
+    <Overlays content="Icon and Content" target="button5a">
       <Button
         primary
         icon="eye"
@@ -292,17 +277,14 @@ export const IconAndContentButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Click me after"
       />
-    </>
+    </Overlays>
   );
 };
 
 export const FluidButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Fluid:" />
-      <br />
+    <Overlays content="Fluid" target="button6a">
       <Button
         instance="button6a"
         fluid
@@ -345,17 +327,14 @@ export const FluidButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="See how this very long text shows up on the button"
       />
-    </>
+    </Overlays>
   );
 };
 
 export const CircularButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Circular:" />
-      <br />
+    <Overlays content="Circular" target="button7a">
       <Button
         instance="button7a"
         circular
@@ -388,17 +367,14 @@ export const CircularButtons = () => {
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Confusingly long"
       />
-    </>
+    </Overlays>
   );
 };
 
 export const CircularEmphasisButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Circular Emphasis:" />
-      <br />
+    <Overlays content="Circular Emphasis" target="button8a">
       <Button
         instance="button8a"
         circular
@@ -431,17 +407,14 @@ export const CircularEmphasisButtons = () => {
         icon="play"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const TextButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="sidebar:" />
-      <br />
+    <Overlays content="Sidebar" target="button9a">
       <Button
         instance="button9a"
         text
@@ -506,17 +479,14 @@ export const TextButtons = () => {
         iconOnly
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const GroupButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Group:" />
-      <br />
+    <Overlays content="Group" target="button10a">
       <ButtonGroup
         instance="button10a"
         buttons={[
@@ -569,17 +539,14 @@ export const GroupButtons = () => {
         ]}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const CircularGroupButtons = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Circular Group:" />
-      <br />
+    <Overlays content="Circular Group" target="button11a">
       <ButtonGroup
         instance="button11a"
         circular
@@ -632,7 +599,7 @@ export const CircularGroupButtons = () => {
         ]}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
-    </>
+    </Overlays>
   );
 };
 

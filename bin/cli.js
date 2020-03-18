@@ -258,7 +258,7 @@ function run(repoDirPath, repoDirName, originalDirectory) {
     ...rest,
     devDependencies: {
       ...Object.keys(packageJson.devDependencies)
-        .map(key => (skipConfigs ? key : key.replace('@jsdt', `@${repoDirName}`)))
+        .map(key => (skipConfigs ? key : key.replace('@jsdevtools', `@${repoDirName}`)))
         .reduce((acc, curr, i, arr) => {
           return packageJson.devDependencies[curr]
             ? { ...acc, [curr]: packageJson.devDependencies[curr] }
@@ -275,7 +275,7 @@ function run(repoDirPath, repoDirName, originalDirectory) {
               }
             : {
                 ...acc,
-                [curr]: packageJson.eslintConfig[curr].replace('@jsdt', `@${repoDirName}`),
+                [curr]: packageJson.eslintConfig[curr].replace('@jsdevtools', `@${repoDirName}`),
               },
         {},
       ),
@@ -283,11 +283,11 @@ function run(repoDirPath, repoDirName, originalDirectory) {
     name: `@${repoDirName}/${repoDirName}`,
     prettier: skipConfigs
       ? packageJson.prettier
-      : packageJson.prettier.replace('@jsdt', `@${repoDirName}`),
+      : packageJson.prettier.replace('@jsdevtools', `@${repoDirName}`),
     private: true,
     scripts: {
       ...packageJson.scripts,
-      'clean-packages': packageJson.scripts['clean-packages'].replace('@jsdt', `@${repoDirName}`),
+      'clean-packages': packageJson.scripts['clean-packages'].replace('@jsdevtools', `@${repoDirName}`),
       commit: `git-cz`,
     },
     workspaces: [...packageJson.workspaces.filter(workspace => workspace !== './')],

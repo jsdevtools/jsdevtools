@@ -70,6 +70,3 @@ lib/
 
 # temp file
 rimraf-standalone.js
-
-packages/utilities/cz-lerna-changelog/
-packages/utilities/conventional-commit-types/

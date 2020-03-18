@@ -1,5 +1,5 @@
 {
-  "name": "@jsdt/babel-config",
+  "name": "@jsdevtools/babel-config",
   "version": "0.1.4",
   "description": "A shared babel configuration",
   "keywords": [
@@ -11,9 +11,13 @@
     "url": "https://github.com/jsdevtools/jsdevtools/issues",
     "email": "contact@jsdevtools.com"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdevtools/jsdevtools.git"
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/configs/babel-config"
   },
   "contributors": [
     {

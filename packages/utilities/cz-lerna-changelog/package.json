@@ -1,0 +1,67 @@
+{
+  "name": "@jsdevtools/cz-lerna-changelog",
+  "description": "Fork of cz-lerna-changelog, see https://github.com/atlassian/cz-lerna-changelog.git",
+  "main": "lib/index.js",
+  "version": "0.1.10",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/cz-lerna-changelog.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
+  "scripts": {
+    "build": "babel src -d lib",
+    "clean": "shx rm -f yarn-error.log && shx rm -rf lib",
+    "commit": "git-cz",
+    "test": "mocha --compilers js:babel-register test/**/*.js",
+    "prepublish": "npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "see original work at https://github.com/atlassian/cz-lerna-changelog.git",
+  "license": "MIT",
+  "dependencies": {
+    "@jsdevtools/conventional-commit-types": "^0.1.9",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "chalk": "^3.0.0",
+    "cz-customizable": "^4.0.0",
+    "inquirer-autocomplete-prompt": "^1.0.2",
+    "promise": "^8.0.3",
+    "shelljs": "0.8.3",
+    "shx": "^0.3.2"
+  },
+  "peerDependencies": {
+    "lerna": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-register": "^6.18.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.1",
+    "inquirer": "^7.0.4",
+    "lerna": "^3.4.0",
+    "mocha": "^7.0.1",
+    "semantic-release": "^17.0.4"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

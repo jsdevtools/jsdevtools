@@ -4,13 +4,13 @@ import { withA11y } from '@storybook/addon-a11y';
 import { Layout, themes, Table } from '@fluentui/react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { transformIconColectionToIconMap } from '@jsdt/fluentui-font-awesome';
-import { Provider, Icon } from '@jsdt/tuneable-fluentui';
+import { transformIconColectionToIconMap } from '@jsdevtools/fluentui-font-awesome';
+import { Icon } from '@jsdevtools/tuneable-fluentui';
 
 import * as fab from '@fortawesome/free-brands-svg-icons';
 import * as far from '@fortawesome/free-regular-svg-icons';
 import * as fas from '@fortawesome/free-solid-svg-icons';
-import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 
 const teamsIconNames = Object.keys(themes.teams.icons);
 const teamsDarkIconNames = Object.keys(themes.teamsDark.icons);
@@ -28,15 +28,13 @@ export default {
   title: 'Components/fui-fa-Icons',
   component: Icon,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
+  parameters: {
+    viewport: { defaultViewport: 'default' },
+  },
 };
-//  parameters: {
-//    viewport: { defaultViewport: 'kindleFireHD' },
-//  },
-//};
 
 export const fluentTeamsIcons = () => (
-  <>
-    <ThemeSelector />
+  <Overlays content="Fluent-UI Teams Icons">
     {teamsIconNames.map(fuiIconName => (
       <React.Fragment key={`t-${fuiIconName}`}>
         <Layout
@@ -48,7 +46,7 @@ export const fluentTeamsIcons = () => (
         />
       </React.Fragment>
     ))}
-  </>
+  </Overlays>
 );
 
 const faStoryFn = faTypeDefinitions => {
@@ -181,10 +179,14 @@ const faStoryFn = faTypeDefinitions => {
           },
     );
     return (
-      <>
-        <ThemeSelector />
+      <Overlays
+        content={`${
+          definition.prefix === 'fas' ? 'FA Solid' : definition.prefix === 'far' ? 'FA Regular' : 'FA Brands'
+        }`}
+        subContent="Font Awesome Icons"
+      >
         <Table header={header} rows={rows} />
-      </>
+      </Overlays>
     );
   };
   return fn;

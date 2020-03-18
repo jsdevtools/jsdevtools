@@ -1,5 +1,5 @@
 import React from 'react';
-import Float from '@jsdt/float';
+import Float from '@jsdevtools/float';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
@@ -7,7 +7,7 @@ export default {
   component: Float,
   decorators: [withA11y],
   parameters: {
-    viewport: { defaultViewport: 'kindleFireHD' },
+    viewport: { defaultViewport: 'default' },
   },
 };
 

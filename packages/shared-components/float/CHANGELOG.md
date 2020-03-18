@@ -3,9 +3,9 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.2.1](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/float@0.2.0...@jsdt/float@0.2.1) (2020-02-22)
+## [0.2.1](https://github.com/jsdevtools/jsdevtools/compare/@jsdevtools/float@0.2.0...@jsdevtools/float@0.2.1) (2020-02-22)
 
-**Note:** Version bump only for package @jsdt/float
+**Note:** Version bump only for package @jsdevtools/float
 
 
 

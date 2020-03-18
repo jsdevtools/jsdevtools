@@ -1,10 +1,25 @@
 {
-  "name": "@jsdt/place-holder",
+  "name": "@jsdevtools/place-holder",
   "version": "0.2.1",
   "description": "Handler that displays a place holder when wrapped component throws.",
   "main": "dist/bundle.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/shared-components/place-holder"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "scripts": {
     "start": "webpack --watch --config webpack.config.js",
     "prepare": "yarn run build",
@@ -24,8 +39,8 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdt/babel-config": "^0.1.4",
-    "@jsdt/stylelint-config": "^0.1.9",
+    "@jsdevtools/babel-config": "^0.1.4",
+    "@jsdevtools/stylelint-config": "^0.1.9",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-docgen": "^4.1.0",
     "shx": "^0.3.2",
@@ -35,9 +50,9 @@
     "webpack-cli": "^3.3.11"
   },
   "stylelint": {
-    "extends": "@jsdt/stylelint-config"
+    "extends": "@jsdevtools/stylelint-config"
   },
   "babel": {
-    "extends": "@jsdt/babel-config"
+    "extends": "@jsdevtools/babel-config"
   }
 }

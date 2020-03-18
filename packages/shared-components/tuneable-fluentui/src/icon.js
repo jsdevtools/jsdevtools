@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@fluentui/react';
-import { withGlobalState } from '@jsdt/tuneable';
+import { withGlobalState } from '@jsdevtools/tuneable';
 
 Icon.propTypes.size = PropTypes.oneOf([
   'smallest',

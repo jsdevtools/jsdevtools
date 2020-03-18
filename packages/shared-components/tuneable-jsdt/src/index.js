@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as JSDT from './jsdt';
-import { withGlobalState } from '@jsdt/tuneable';
+import { withGlobalState } from '@jsdevtools/tuneable';
 
-const Tuneable = {
-  MyDiv: withGlobalState(JSDT.MyDiv),
-};
-
-export default Tuneable;
+export const MyDiv = withGlobalState(JSDT.MyDiv);

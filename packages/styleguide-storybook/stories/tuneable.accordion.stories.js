@@ -1,13 +1,13 @@
 import React from 'react';
-import { Accordion, Image, List, Text } from '@jsdt/tuneable-fluentui';
-import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
+import { Accordion, Image, List, Text } from '@jsdevtools/tuneable-fluentui';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
-import { actions, StateContext } from '@jsdt/tuneable';
+import { actions, StateContext } from '@jsdevtools/tuneable';
 
 import { Layout, Label, themes } from '@fluentui/react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { transformIconColectionToIconMap } from '@jsdt/fluentui-font-awesome';
+import { transformIconColectionToIconMap } from '@jsdevtools/fluentui-font-awesome';
 
 // Import explicitly to reduce size
 //import * as fas from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +27,7 @@ export default {
   component: Accordion,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'kindleFireHD' },
+    viewport: { defaultViewport: 'default' },
   },
 };
 
@@ -116,33 +116,25 @@ const panels = [
 ];
 
 export const DefaultAccordion = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Default" />
-    <br />
-    <Text size="small" content="A default Accordion." />
-    <Accordion defaultActiveIndex={[0]} panels={panels} />
-  </>
+  <Overlays content="Default" subContent="A default Accordion." target="defaultAccordion">
+    <Accordion instance="defaultAccordion" defaultActiveIndex={[0]} panels={panels} />
+  </Overlays>
 );
 
 export const ExclusiveAccordion = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Exclusive" />
-    <br />
-    <Text size="small" content="An exclusive Accordion." />
-    <Accordion panels={panels} exclusive />
-  </>
+  <Overlays content="Exclusive" subContent="An exclusive Accordion." target="exclusiveAccordion">
+    <Accordion instance="exclusiveAccordion" panels={panels} exclusive />
+  </Overlays>
 );
 
 export const ExclusiveAndExpandedAccordion = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Exclusive and Expanded" />
-    <br />
-    <Text size="small" content="An exclusive expanded Accordion." />
-    <Accordion panels={panels} exclusive expanded />
-  </>
+  <Overlays
+    content="Exclusive and Expanded"
+    subContent="An exclusive expanded Accordion."
+    target="exclusiveAndExpandedAccordion"
+  >
+    <Accordion instance="exclusiveAndExpandedAccordion" panels={panels} exclusive expanded />
+  </Overlays>
 );
 
 DefaultAccordion.story = { name: 'Default' };

@@ -1,9 +1,24 @@
 {
-  "name": "@jsdt/babel-config-ts",
+  "name": "@jsdevtools/babel-config-ts",
   "version": "0.1.4",
   "description": "Shared babel configuration for typescript packages",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/configs/babel-config-ts"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "main": "index.js",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",

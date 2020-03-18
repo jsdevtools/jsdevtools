@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/place-holder',
+    library: '@jsdevtools/place-holder',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },

@@ -3,21 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.9](https://github.com/jsdevtools/jsdevtools/compare/@jsdt/stylelint-config@0.1.8...@jsdt/stylelint-config@0.1.9) (2020-02-17)
+## [0.1.9](https://github.com/jsdevtools/jsdevtools/compare/@jsdevtools/stylelint-config@0.1.8...@jsdevtools/stylelint-config@0.1.9) (2020-02-17)
 
-**Note:** Version bump only for package @jsdt/stylelint-config
-
-
+**Note:** Version bump only for package @jsdevtools/stylelint-config
 
 
 
-## [0.1.8](https://github.com/jsdevtools/monorepo-template/compare/@jsdt/stylelint-config@0.1.2...@jsdt/stylelint-config@0.1.8) (2020-02-15)
+
+
+## [0.1.8](https://github.com/jsdevtools/monorepo-template/compare/@jsdevtools/stylelint-config@0.1.2...@jsdevtools/stylelint-config@0.1.8) (2020-02-15)
 
 
 
 ## 0.1.7 (2020-02-01)
 
-**Note:** Version bump only for package @jsdt/stylelint-config
+**Note:** Version bump only for package @jsdevtools/stylelint-config
 
 
 

@@ -1,13 +1,16 @@
-import React, { createContext, useContext, useReducer, useLayoutEffect } from 'react';
+import React, { createContext, useLayoutEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { action as actionAddon } from '@storybook/addon-actions';
+import { Provider, createStoreHook, createDispatchHook, createSelectorHook, shallowEqual } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import { createSelector } from 'reselect';
 
 const INIT = 'INIT';
 const CLR = 'CLR';
 const CHG = 'CHG';
 const OVERLAY = 'OVERLAY';
 
-const types = {
+export const types = {
   INIT,
   CLR,
   CHG,
@@ -37,7 +40,7 @@ const overlay = (instance, newProps) => ({
   payload: { instance, newProps },
 });
 
-const actions = {
+export const actions = {
   init,
   clr,
   chg,
@@ -45,9 +48,10 @@ const actions = {
 };
 
 const reducer1 = (state, action) => {
+  if (!state) return {};
   switch (action.type) {
     case types.INIT: {
-      // console.log(`Reached ${action.type}`, action);
+      console.log(`Reached ${action.type}`, action);
       const { instance, initProps } = action.payload;
       const retVal = state;
       Object.keys(initProps)
@@ -55,12 +59,10 @@ const reducer1 = (state, action) => {
         .forEach(undefPropName => {
           retVal[`${instance}/${undefPropName}`] = initProps[undefPropName];
         });
-      // console.log(`${action.type} retVal`, retVal);
+      console.log(`${action.type} retVal`, retVal);
       return retVal;
     }
     case types.CLR: {
-      // console.log(`Reached ${action.type}, however ignoring.`, action);
-      /* Use this if we want to revert to init props when unmounted and remounted.
       const { instance } = action.payload;
       const retVal = state;
       Object.keys(state)
@@ -70,12 +72,9 @@ const reducer1 = (state, action) => {
         });
       console.log(`${action.type} retVal`, retVal);
       return retVal;
-      */
-      // console.log(`${action.type} retVal`, retVal);
-      return state;
     }
     case types.CHG: {
-      // console.log(`Reached ${action.type}`, action);
+      console.log(`Reached ${action.type}`, action);
       return {
         ...state,
         ...Object.keys(action.payload.newProps).reduce(
@@ -97,6 +96,7 @@ const reducer1 = (state, action) => {
 };
 
 const reducer2 = (state, action) => {
+  if (!state) return {};
   switch (action.type) {
     case types.INIT:
       return state;
@@ -113,50 +113,62 @@ const reducer2 = (state, action) => {
   }
 };
 
-const setOfReducersA = {
-  [`nameOfReducer1`]: reducer1,
-  [`nameOfReducer2`]: reducer2,
-};
+const rootReducer = combineReducers({
+  reducer1,
+  reducer2,
+});
 
-const rootReducer = (state, action) =>
-  // Object.values({ ...setOfReducersA, ...setOfReducersB, ...setOfReducersC }).reduce((acc, curr) => (
-  Object.values({ ...setOfReducersA }).reduce((acc, curr) => curr(acc, action), state);
-
-const StateContext = (() => {
-  if (window.StateContext === undefined) {
-    window.StateContext = createContext();
+export const store = (() => {
+  if (window.store === undefined) {
+    window.store = createStore(rootReducer);
   }
-  return window.StateContext;
+  return window.store;
 })();
 
-const GlobalStateProvider = props => (
-  <StateContext.Provider value={useReducer(rootReducer, {})}>{props.children}</StateContext.Provider>
+export const TuneableContext = (() => {
+  if (window.TuneableContext === undefined) {
+    window.TuneableContext = createContext();
+  }
+  return window.TuneableContext;
+})();
+
+export const useStore = createStoreHook(TuneableContext);
+export const useDispatch = createDispatchHook(TuneableContext);
+export const useSelector = createSelectorHook(TuneableContext);
+
+export const GlobalStateProvider = props => (
+  <Provider store={store} context={TuneableContext}>
+    {props.children}
+  </Provider>
 );
 
 GlobalStateProvider.propTypes = {
   children: PropTypes.element,
 };
 
-const mapStateToProps = (state, instance) => {
-  const retVal =
-    instance === 'ignore'
-      ? {}
-      : Object.keys(state)
-          .filter(key => key.includes(`${instance}`))
-          .reduce(
-            (acc, cur) => ({
-              ...acc,
-              [cur.split('/').slice(-1)[0]]: state[cur],
-            }),
-            {},
-          );
-  return retVal;
-};
+const makeMapStateToPropsSelector = () =>
+  createSelector(
+    (state, instance) => {
+      // console.log(`mSTP: ${JSON.stringify(instance)} ${JSON.stringify(Object.keys(state))}`);
+      if (instance === 'ignore') return {};
+      const wholeState = Object.entries(state).reduce((acc, [, val]) => ({ ...acc, ...val }), {});
+      return Object.keys(wholeState)
+        .filter(key => key.includes(`${instance}`))
+        .reduce(
+          (acc, cur) => ({
+            ...acc,
+            [cur.split('/').slice(-1)[0]]: wholeState[cur],
+          }),
+          {},
+        );
+    },
+    newProps => newProps,
+  );
 
-const withGlobalState = WrappedComponent => {
+export const withGlobalState = WrappedComponent => {
   const wrapComponent = props => {
     const { instance, ...rest } = props;
-    const [, dispatch] = useContext(StateContext);
+    const dispatch = useDispatch();
     useLayoutEffect(() => {
       if (instance) {
         dispatch(actions.init(instance, rest));
@@ -165,12 +177,11 @@ const withGlobalState = WrappedComponent => {
         dispatch(actions.clr(props.instance));
       };
     }, []);
-    const [state] = useContext(StateContext);
-    const newProps = mapStateToProps(state, instance);
+    const mapStateToProps = useMemo(makeMapStateToPropsSelector, []);
+    const newProps = useSelector(state => mapStateToProps(state, instance), shallowEqual);
+    //console.log(`wGS: ${JSON.stringify(Object.keys(newProps))}`);
     return <WrappedComponent {...{ ...rest, ...newProps }} />;
   };
   wrapComponent.propTypes = { instance: PropTypes.string };
   return wrapComponent;
 };
-
-export { types, actions, StateContext, GlobalStateProvider, withGlobalState };

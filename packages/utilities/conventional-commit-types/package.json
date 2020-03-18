@@ -1,0 +1,30 @@
+{
+  "name": "@jsdevtools/conventional-commit-types",
+  "version": "0.1.10",
+  "description": "Fork of conventional-commit-types, see https://github.com/commitizen/conventional-commit-types.git",
+  "main": "index.json",
+  "private": false,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/conventional-commit-types.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
+  "scripts": {
+    "test": "json -f index.json"
+  },
+  "keywords": [],
+  "author": "see original work @ https://github.com/commitizen/conventional-commit-types.git",
+  "license": "ISC",
+  "devDependencies": {
+    "json": "^9.0.4"
+  }
+}

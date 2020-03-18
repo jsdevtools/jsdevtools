@@ -1,10 +1,25 @@
 {
-  "name": "@jsdt/input-ts",
+  "name": "@jsdevtools/input-ts",
   "version": "0.2.6",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/shared-components/input-ts"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "scripts": {
     "lint": "stylelint src/**/index.{j,t}s{,x}",
     "start": "webpack --watch --config webpack.config.js",
@@ -30,9 +45,9 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.7",
-    "@jsdt/babel-config-ts": "^0.1.4",
-    "@jsdt/eslint-config-ts": "^0.1.7",
-    "@jsdt/stylelint-config": "^0.1.9",
+    "@jsdevtools/babel-config-ts": "^0.1.4",
+    "@jsdevtools/eslint-config-ts": "^0.1.7",
+    "@jsdevtools/stylelint-config": "^0.1.9",
     "@types/node": "^13.7.4",
     "@types/react": "^16.9.22",
     "@types/react-dom": "^16.9.4",
@@ -45,13 +60,13 @@
     "webpack-cli": "^3.3.11"
   },
   "stylelint": {
-    "extends": "@jsdt/stylelint-config"
+    "extends": "@jsdevtools/stylelint-config"
   },
   "babel": {
-    "extends": "@jsdt/babel-config-ts"
+    "extends": "@jsdevtools/babel-config-ts"
   },
   "eslintConfig": {
-    "extends": "@jsdt/eslint-config-ts"
+    "extends": "@jsdevtools/eslint-config-ts"
   },
   "gitHead": "b82c52e7faa811928d2152e40825fb90c6586e7d"
 }

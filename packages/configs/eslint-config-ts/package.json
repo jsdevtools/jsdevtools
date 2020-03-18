@@ -1,5 +1,5 @@
 {
-  "name": "@jsdt/eslint-config-ts",
+  "name": "@jsdevtools/eslint-config-ts",
   "version": "0.1.7",
   "description": "A shared eslint configuration for typscript",
   "keywords": [
@@ -12,9 +12,13 @@
     "url": "https://github.com/jsdevtools/jsdevtools/issues",
     "email": "contact@jsdevtools.com"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdevtools/jsdevtools.git"
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/configs/eslint-config-ts"
   },
   "contributors": [
     {

@@ -13,7 +13,7 @@ For both packages the `javascript` gets compiled down using `babel` for greater 
 
 Finally, the javascript and other assets are packaged up using `webpack` and written to the `dist/` folder. The configuration for webpack is located in `webpack.config.json`.
 
-The components can be shared by importing `@jsdt/input` or `@jsdt/input-ts`.
+The components can be shared by importing `@jsdevtools/input` or `@jsdevtools/input-ts`.
 
 During development you can add your shared components as dependencies to your project(s). However, if you are going to publish a package that utilizes your shared components you will need to publish the components as well. TODO: describe how to publish a component.
 

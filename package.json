@@ -1,12 +1,26 @@
 {
-  "name": "@jsdt/create-monorepo",
+  "name": "@jsdevtools/create-monorepo",
   "version": "0.3.10",
   "description": "Skeleton monorepo",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "scripts": {
     "bs": "npx -p lerna -c \"lerna init && lerna bootstrap\"",
     "clean": "shx rm -f yarn-error.log lerna-debug.log",
-    "clean-packages": "npx lerna clean --yes --ignore @jsdt/create-monorepo",
+    "clean-packages": "npx lerna clean --yes --ignore @jsdevtools/create-monorepo",
     "clean-root": "npx download-cli --out bin --filename rimraf-standalone.js https://unpkg.com/rimraf-standalone/rimraf-standalone.js && node bin/rimraf-standalone.js node_modules",
     "clean-node-modules": "yarn clean-packages && yarn clean-root",
     "commit": "node bin/togglePrivate.js --private false && git add package.json && git-cz",
@@ -23,10 +37,10 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdt/cz-lerna-changelog": "^0.1.9",
-    "@jsdt/eslint-config": "^0.1.8",
-    "@jsdt/prettier-config": "^0.1.7",
-    "@jsdt/stylelint-config": "^0.1.9",
+    "@jsdevtools/cz-lerna-changelog": "^0.1.9",
+    "@jsdevtools/eslint-config": "^0.1.8",
+    "@jsdevtools/prettier-config": "^0.1.7",
+    "@jsdevtools/stylelint-config": "^0.1.9",
     "babel-loader": "^8.0.6",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.0",
@@ -60,15 +74,15 @@
   ],
   "config": {
     "commitizen": {
-      "path": "./node_modules/@jsdt/cz-lerna-changelog"
+      "path": "./node_modules/@jsdevtools/cz-lerna-changelog"
     }
   },
-  "prettier": "@jsdt/prettier-config",
+  "prettier": "@jsdevtools/prettier-config",
   "eslintConfig": {
-    "extends": "@jsdt/eslint-config"
+    "extends": "@jsdevtools/eslint-config"
   },
   "stylelint": {
-    "extends": "@jsdt/stylelint-config"
+    "extends": "@jsdevtools/stylelint-config"
   },
   "bin": {
     "create-monorepo": "./bin/cli.js"

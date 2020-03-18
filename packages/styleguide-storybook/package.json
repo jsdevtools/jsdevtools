@@ -1,9 +1,24 @@
 {
-  "name": "@jsdt/styleguide-storybook",
+  "name": "@jsdevtools/styleguide-storybook",
   "version": "0.2.6",
   "main": "index.js",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/styleguide-storybook"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "dependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
@@ -17,9 +32,9 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@jsdt/babel-config": "^0.1.4",
-    "@jsdt/input": "^0.2.6",
-    "@jsdt/input-ts": "^0.2.6",
+    "@jsdevtools/babel-config": "^0.1.4",
+    "@jsdevtools/input": "^0.2.6",
+    "@jsdevtools/input-ts": "^0.2.6",
     "@mdx-js/loader": "^1.5.7",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",
@@ -45,7 +60,7 @@
     "build-storybook": "build-storybook"
   },
   "babel": {
-    "extends": "@jsdt/babel-config"
+    "extends": "@jsdevtools/babel-config"
   },
   "gitHead": "b82c52e7faa811928d2152e40825fb90c6586e7d"
 }

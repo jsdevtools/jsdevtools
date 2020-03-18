@@ -1,76 +1,53 @@
 import React, { useContext } from 'react';
-import { Alert, Text, Input } from '@jsdt/tuneable-fluentui';
+import { Alert, Text, Input } from '@jsdevtools/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, ThemeProvider, ThemeSelector } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
 import { withA11y } from '@storybook/addon-a11y';
-import { actions, StateContext } from '@jsdt/tuneable';
+import { actions, useDispatch } from '@jsdevtools/tuneable';
 
 export default {
   title: 'Components/Tuneable/Alert',
   component: Alert,
   decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
   parameters: {
-    viewport: { defaultViewport: 'kindleFireHD' },
+    viewport: { defaultViewport: 'default' },
   },
 };
 
 export const DefaultAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Default" />
-    <br />
-    <br />
-    <Alert content="This is a default alert" />
-  </>
+  <Overlays content="Default" target="defaultAlert">
+    <Alert instance="defaultAlert" content="This is a default alert" />
+  </Overlays>
 );
 
 export const InfoAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Info" />
-    <br />
-    <br />
-    <Alert info content="This is an informational alert" />
-  </>
+  <Overlays content="Info" target="infoAlert">
+    <Alert instance="infoAlert" info content="This is an informational alert" />
+  </Overlays>
 );
 
 export const DangerAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Danger" />
-    <br />
-    <br />
-    <Alert danger content="This is a danger alert" />
-  </>
+  <Overlays content="Danger" target="dangerAlert">
+    <Alert instance="dangerAlert" danger content="This is a danger alert" />
+  </Overlays>
 );
 
 export const WarningAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Warning" />
-    <br />
-    <br />
-    <Alert warning content="This is a warning alert" />
-  </>
+  <Overlays content="Warning" target="warningAlert">
+    <Alert instance="warningAlert" warning content="This is a warning alert" />
+  </Overlays>
 );
 
 export const SuccessAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Success" />
-    <br />
-    <br />
-    <Alert success content="This is a success alert" />
-  </>
+  <Overlays content="Success" target="successAlert">
+    <Alert instance="successAlert" success content="This is a success alert" />
+  </Overlays>
 );
 
 export const OofAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="OOF" />
-    <br />
-    <br />
+  <Overlays content="Oof" target="oofAlert">
     <Alert
+      instance="oofAlert"
       variables={{
         oof: true,
       }}
@@ -79,42 +56,34 @@ export const OofAlert = () => (
       }}
       content="This is an OOF alert"
     />
-  </>
+  </Overlays>
 );
 
 export const ActionAlert = () => {
-  const [, dispatch] = useContext(StateContext);
+  const dispatch = useDispatch();
   return (
-    <>
-      <ThemeSelector />
-      <Text size="large" weight="bold" content="Action" />
-      <br />
-      <br />
+    <Overlays content="Action" target="actionAlert">
       <Alert
-        instance="alert1"
+        instance="actionAlert"
         content="This is a closable alert"
         dismissible
         onDismiss={() => {
           dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }));
-          dispatch(actions.chg('alert1', { visible: false }));
+          dispatch(actions.chg('actionAlert', { visible: false }));
         }}
       />
-    </>
+    </Overlays>
   );
 };
 
 export const AttachedAlert = () => (
-  <>
-    <ThemeSelector />
-    <Text size="large" weight="bold" content="Attached" />
-    <br />
-    <br />
-    <Alert attached content="This is a top attached alert" />
+  <Overlays content="Attached" target="attachedAlert">
+    <Alert instance="attachedAlert" attached content="This is a top attached alert" />
     <Input fluid placeholder="Name..." />
     <br /> <br />
     <Input fluid placeholder="Surname..." />
     <Alert attached="bottom" content="This is a bottom attached alert" />
-  </>
+  </Overlays>
 );
 
 DefaultAlert.story = { name: 'Default' };

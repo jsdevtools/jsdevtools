@@ -1,5 +1,5 @@
 {
-  "name": "@jsdt/eslint-config",
+  "name": "@jsdevtools/eslint-config",
   "version": "0.1.8",
   "description": "A shared eslint configuration",
   "keywords": [
@@ -11,9 +11,13 @@
     "url": "https://github.com/jsdevtools/jsdevtools/issues",
     "email": "contact@jsdevtools.com"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdevtools/jsdevtools.git"
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/configs/eslint-config"
   },
   "contributors": [
     {

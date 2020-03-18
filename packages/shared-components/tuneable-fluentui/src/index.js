@@ -1,5 +1,5 @@
 import * as FUIR from '@fluentui/react';
-import { withGlobalState } from '@jsdt/tuneable';
+import { withGlobalState } from '@jsdevtools/tuneable';
 import TuneableProvider from './provider';
 import TuneableAlert from './alert';
 import TuneableIcon from './icon';
@@ -21,6 +21,7 @@ export const DropdownItem = withGlobalState(FUIR.DropdownItem);
 // export const DropdownLabel = withGlobalState(FUIR.DropdownLabel);
 export const DropdownSearchInput = withGlobalState(FUIR.DropdownSearchInput);
 export const FocusZoneMode = withGlobalState(FUIR.FocusZoneMode);
+export const Flex = withGlobalState(FUIR.Flex);
 export const Form = withGlobalState(FUIR.Form);
 export const FormField = withGlobalState(FUIR.FormField);
 export const Grid = withGlobalState(FUIR.Grid);

@@ -1,8 +1,23 @@
 {
-  "name": "@jsdt/tuneable",
+  "name": "@jsdevtools/tuneable",
   "version": "0.2.6",
   "description": "",
   "main": "dist/bundle.js",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/shared-components/tuneable"
+  },
+  "contributors": [
+    {
+      "name": "JEStaubach",
+      "email": "justin@jsdevtools.com",
+      "url": "https://twitter.com/jsdevtool"
+    }
+  ],
   "scripts": {
     "start": "webpack --watch --config webpack.config.js",
     "prepare": "yarn run build",
@@ -15,9 +30,13 @@
   "gitHead": "b82c52e7faa811928d2152e40825fb90c6586e7d",
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.12.0"
+    "react": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
+    "redux-devtools": "^3.5.0",
     "shx": "^0.3.2",
     "stylelint": "^13.2.0",
     "webpack": "^4.41.6"

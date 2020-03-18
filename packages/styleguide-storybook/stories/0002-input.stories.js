@@ -1,6 +1,6 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
-import { Input } from '@jsdt/input';
+import { Input } from '@jsdevtools/input';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   component: Input,
   decorators: [withA11y],
   parameters: {
-    viewport: { defaultViewport: 'kindleFireHD' },
+    viewport: { defaultViewport: 'default' },
   },
 };
 

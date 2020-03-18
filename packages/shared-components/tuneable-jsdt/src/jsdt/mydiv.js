@@ -44,6 +44,7 @@ MyDiv.propTypes = {
   position: PropTypes.oneOf(['static', 'relative', 'absolute', 'fixed', 'sticky']),
   top: PropTypes.number,
   left: PropTypes.number,
+  target: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
 };
 
 MyDiv.defaultProps = {
@@ -63,4 +64,24 @@ MyDiv.defaultProps = {
   left: 0,
 };
 
-export default MyDiv;
+const MyDivWithContent = props => {
+  const { target, ...rest } = props;
+  return target ? (
+    <MyDiv {...rest}>
+      {Array.isArray(target)
+        ? target.map(tgt => (
+            <>
+              {tgt}
+              <br />
+            </>
+          ))
+        : target}
+    </MyDiv>
+  ) : null;
+};
+
+MyDivWithContent.propTypes = {
+  ...MyDiv.propTypes,
+};
+
+export default MyDivWithContent;

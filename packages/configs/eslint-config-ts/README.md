@@ -1,8 +1,8 @@
-@jsdt/eslint-config-ts
+@jsdevtools/eslint-config-ts
 ===================
-[![NPM](https://img.shields.io/npm/l/@jsdt/eslint-config-ts)](LICENSE)
+[![NPM](https://img.shields.io/npm/l/@jsdevtools/eslint-config-ts)](LICENSE)
 
-[@jsdt/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config-ts) is a set of [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) for [ESLint](https://eslint.org/) and typescript.
+[@jsdevtools/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config-ts) is a set of [shareable configs](https://eslint.org/docs/developer-guide/shareable-configs) for [ESLint](https://eslint.org/) and typescript.
 
 Motivation
 ------------
@@ -11,14 +11,14 @@ Motivation
 
 Installation
 ------------
-[ESLint](https://eslint.org/) and the [@jsdt/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config) will be used in the development of other typescript projects. Therefore, run the following [npm](https://docs.npmjs.com/about-npm/) command to install them as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) of your project:
+[ESLint](https://eslint.org/) and the [@jsdevtools/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config) will be used in the development of other typescript projects. Therefore, run the following [npm](https://docs.npmjs.com/about-npm/) command to install them as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) of your project:
 
 ```bash
-npm install eslint @jsdt/eslint-config-ts --save-dev
+npm install eslint @jsdevtools/eslint-config-ts --save-dev
 ```
 or
 ```bash
-yarn add -D eslint @jsdt/eslint-config-ts
+yarn add -D eslint @jsdevtools/eslint-config-ts
 ```
 
 Configuration
@@ -26,22 +26,22 @@ Configuration
 Simply [add an eslintConfig key to your package.json file](https://eslint.org/docs/user-guide/configuring), like so:
 ```json
   "eslintConfig": {
-    "extends": "@jsdt/eslint-config-ts"
+    "extends": "@jsdevtools/eslint-config-ts"
   },
 ```
 Extend with additonal configurations:
 ```json
   "eslintConfig": {
     "extends": [
-      "@jsdt/eslint-config-ts",
-      "@jsdt/eslint-config-ts/react"
+      "@jsdevtools/eslint-config-ts",
+      "@jsdevtools/eslint-config-ts/react"
     ]
   },
 ```
 Override specific rules:
 ```json
   "eslintConfig": {
-    "extends": "@jsdt/eslint-config-ts",
+    "extends": "@jsdevtools/eslint-config-ts",
     "rules": {
       "max-len": [
         "error",
@@ -55,8 +55,8 @@ Override specific rules:
 
 Related Projects
 ----------------
-[@jsdt/eslint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config)
+[@jsdevtools/eslint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config)
 
-[@jsdt/babel-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config)
+[@jsdevtools/babel-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config)
 
-[@jsdt/babel-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config-ts)
+[@jsdevtools/babel-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config-ts)

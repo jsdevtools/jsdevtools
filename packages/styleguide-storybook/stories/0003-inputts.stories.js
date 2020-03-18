@@ -1,6 +1,6 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
-import { Input } from '@jsdt/input-ts';
+import { Input } from '@jsdevtools/input-ts';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {

@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/tuneable',
+    library: '@jsdevtools/tuneable',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },

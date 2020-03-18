@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/tuneable-fluentui',
+    library: '@jsdevtools/tuneable-fluentui',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },

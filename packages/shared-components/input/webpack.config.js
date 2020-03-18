@@ -3,7 +3,7 @@ const DependenciesPlugin = require('storybook-dep-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    library: '@jsdt/input',
+    library: '@jsdevtools/input',
     libraryTarget: 'umd',
     filename: 'bundle.js',
   },

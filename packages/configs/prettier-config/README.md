@@ -1,10 +1,10 @@
-@jsdt/prettier-config
+@jsdevtools/prettier-config
 =====================
 
-[![NPM](https://img.shields.io/npm/l/@jsdt/prettier-config)](LICENSE)
+[![NPM](https://img.shields.io/npm/l/@jsdevtools/prettier-config)](LICENSE)
 
 
-[@jsdt/prettier-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/prettier-config) is a shareable config for [Prettier](https://prettier.io/).
+[@jsdevtools/prettier-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/prettier-config) is a shareable config for [Prettier](https://prettier.io/).
 
 Motivation
 ------------
@@ -16,16 +16,16 @@ Motivation
 Installation
 ------------
 
-[Prettier](https://prettier.io/) and the [@jsdt/prettier-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config) will be used in the development of other projects. Therefore, run the following [npm](https://docs.npmjs.com/about-npm/) command to install them as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) of your project:
+[Prettier](https://prettier.io/) and the [@jsdevtools/prettier-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config) will be used in the development of other projects. Therefore, run the following [npm](https://docs.npmjs.com/about-npm/) command to install them as [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) of your project:
 
 ```bash
-npm install prettier @jsdt/prettier-config --save-dev
+npm install prettier @jsdevtools/prettier-config --save-dev
 ```
 
 or
 
 ```bash
-yarn add -D prettier @jsdt/prettier-config
+yarn add -D prettier @jsdevtools/prettier-config
 ```
 
 Configuration
@@ -34,19 +34,19 @@ Configuration
 Simply [add a prettier key to your package.json file](https://prettier.io/docs/en/configuration.html), like so:
 
 ```json
-    "prettier": "@jsdt/prettier-config"
+    "prettier": "@jsdevtools/prettier-config"
   },
 ```
 
 Related Projects
 ----------------
 
-[@jsdt/babel-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config)
+[@jsdevtools/babel-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config)
 
-[@jsdt/babel-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config-ts)
+[@jsdevtools/babel-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/babel-config-ts)
 
-[@jsdt/eslint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config)
+[@jsdevtools/eslint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config)
 
-[@jsdt/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config-ts)
+[@jsdevtools/eslint-config-ts](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/eslint-config-ts)
 
-[@jsdt/stylelint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/stylelint-config)
+[@jsdevtools/stylelint-config](https://github.com/jsdevtools/jsdevtools/tree/master/packages/configs/stylelint-config)
