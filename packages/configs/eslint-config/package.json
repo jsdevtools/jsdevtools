@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/eslint-config",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A shared eslint configuration",
   "keywords": [
     "eslint",
@@ -12,7 +12,7 @@
     "email": "contact@jsdevtools.com"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",

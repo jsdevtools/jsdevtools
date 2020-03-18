@@ -2,10 +2,10 @@
   "name": "@jsdevtools/cz-lerna-changelog",
   "description": "Fork of cz-lerna-changelog, see https://github.com/atlassian/cz-lerna-changelog.git",
   "main": "lib/index.js",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
   "author": "see original work at https://github.com/atlassian/cz-lerna-changelog.git",
   "license": "MIT",
   "dependencies": {
-    "@jsdevtools/conventional-commit-types": "^0.1.9",
+    "@jsdevtools/conventional-commit-types": "^0.1.11",
     "@semantic-release/commit-analyzer": "^8.0.1",
     "chalk": "^3.0.0",
     "cz-customizable": "^4.0.0",

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/jsdevtools/jsdevtools/compare/@jsdevtools/babel-config@0.1.1...@jsdevtools/babel-config@0.1.5) (2020-03-18)
+
+
+
+## 0.1.3 (2020-02-01)
+
+**Note:** Version bump only for package @jsdevtools/babel-config
+
+
+
+
+
 ## [0.1.4](https://github.com/jsdevtools/jsdevtools/compare/@jsdevtools/babel-config@0.1.2...@jsdevtools/babel-config@0.1.4) (2020-02-17)
 
 

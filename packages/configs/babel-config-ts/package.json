@@ -1,11 +1,11 @@
 {
   "name": "@jsdevtools/babel-config-ts",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Shared babel configuration for typescript packages",
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",

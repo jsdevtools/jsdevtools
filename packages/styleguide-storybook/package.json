@@ -1,11 +1,11 @@
 {
   "name": "@jsdevtools/styleguide-storybook",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "main": "index.js",
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
@@ -32,9 +32,9 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
-    "@jsdevtools/babel-config": "^0.1.4",
-    "@jsdevtools/input": "^0.2.6",
-    "@jsdevtools/input-ts": "^0.2.6",
+    "@jsdevtools/babel-config": "^0.1.5",
+    "@jsdevtools/input": "^0.3.0",
+    "@jsdevtools/input-ts": "^0.3.0",
     "@mdx-js/loader": "^1.5.7",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",

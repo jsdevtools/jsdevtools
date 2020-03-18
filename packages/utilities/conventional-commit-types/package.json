@@ -1,11 +1,11 @@
 {
   "name": "@jsdevtools/conventional-commit-types",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Fork of conventional-commit-types, see https://github.com/commitizen/conventional-commit-types.git",
   "main": "index.json",
   "private": false,
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
