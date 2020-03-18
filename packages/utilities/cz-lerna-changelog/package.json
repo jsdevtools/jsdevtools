@@ -5,11 +5,12 @@
   "version": "0.1.10",
   "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry":"https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdevtools/cz-lerna-changelog.git"
+    "url": "https://github.com/jsdevtools/jsdevtools.git",
+    "directory": "packages/utilities/cz-lerna-changelog"
   },
   "contributors": [
     {
