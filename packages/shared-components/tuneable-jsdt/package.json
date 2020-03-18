@@ -4,7 +4,7 @@
   "description": "Make jsdt components tuneable.",
   "main": "dist/bundle.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "publishConfig": {
     "registry":"https://npm.pkg.github.com/"
   },
