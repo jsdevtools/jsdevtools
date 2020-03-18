@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/create-monorepo",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Skeleton monorepo",
   "private": false,
   "publishConfig": {
