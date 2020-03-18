@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/tuneable-jsdt",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Make jsdt components tuneable.",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -37,8 +37,8 @@
     "@babel/core": "^7.7.7",
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
-    "@jsdevtools/babel-config": "^0.1.5",
-    "@jsdevtools/stylelint-config": "^0.1.10",
+    "@jsdevtools/babel-config": "^0.1.6",
+    "@jsdevtools/stylelint-config": "^0.1.11",
     "babel-loader": "^8.0.6",
     "babel-plugin-react-docgen": "^4.1.0",
     "shx": "^0.3.2",
