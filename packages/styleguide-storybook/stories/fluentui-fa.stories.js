@@ -178,11 +178,10 @@ const faStoryFn = faTypeDefinitions => {
             ],
           },
     );
+    const prefix = faTypeDefinitions[Object.keys(faTypeDefinitions)[0]].prefix;
     return (
       <Overlays
-        content={`${
-          definition.prefix === 'fas' ? 'FA Solid' : definition.prefix === 'far' ? 'FA Regular' : 'FA Brands'
-        }`}
+        content={`${prefix === 'fas' ? 'Solid' : prefix === 'far' ? 'Regular' : 'Brands'}`}
         subContent="Font Awesome Icons"
       >
         <Table header={header} rows={rows} />
