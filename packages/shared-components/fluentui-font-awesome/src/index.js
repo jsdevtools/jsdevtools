@@ -37,12 +37,24 @@ const convertSize = size => {
 
 const transformObjectToFontAwesomeIcon = ({ prefix, iconName, icon }) => {
   const createIcon = args => {
-    const { size, bordered, spin, pulse, rotate, accessibility, ...rest } = args.props;
+    const {
+      size,
+      bordered,
+      spin,
+      pulse,
+      rotate,
+      accessibility,
+      style,
+      styles,
+      xSpacing,
+      ...rest
+    } = args.props;
     const optionals = {};
     if (bordered && bordered === 'true') optionals.bordered = true;
     if (spin && spin === 'true') optionals.spin = true;
     if (pulse && pulse === 'true') optionals.pulse = true;
     if (rotate) optionals.rotation = rotate;
+    if (style) optionals.style = style;
     return (
       <FontAwesomeIcon icon={{ prefix, iconName, icon }} size={convertSize(size)} {...optionals} {...rest} />
     );

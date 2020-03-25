@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Alert, Text, Input } from '@jsdevtools/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, useDispatch } from '@jsdevtools/tuneable';
 
@@ -78,11 +78,13 @@ export const ActionAlert = () => {
 
 export const AttachedAlert = () => (
   <Overlays content="Attached" target="attachedAlert">
-    <Alert instance="attachedAlert" attached content="This is a top attached alert" />
-    <Input fluid placeholder="Name..." />
-    <br /> <br />
-    <Input fluid placeholder="Surname..." />
-    <Alert attached="bottom" content="This is a bottom attached alert" />
+    <>
+      <Alert instance="attachedAlert" attached content="This is a top attached alert" />
+      <Input fluid placeholder="Name..." />
+      <br /> <br />
+      <Input fluid placeholder="Surname..." />
+      <Alert attached="bottom" content="This is a bottom attached alert" />
+    </>
   </Overlays>
 );
 

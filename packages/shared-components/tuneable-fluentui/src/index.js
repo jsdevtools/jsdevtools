@@ -46,5 +46,6 @@ export const RadioGroupItem = withGlobalState(FUIR.RadioGroupItem);
 export const Ref = withGlobalState(FUIR.Ref);
 export const Segment = withGlobalState(FUIR.Segment);
 export const Status = withGlobalState(FUIR.Status);
+export const Table = withGlobalState(FUIR.Table);
 export const Text = withGlobalState(FUIR.Text);
 export const Tree = withGlobalState(FUIR.Tree);

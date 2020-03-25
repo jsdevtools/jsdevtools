@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button, ButtonGroup, Text } from '@jsdevtools/tuneable-fluentui';
 import { actions, useDispatch } from '@jsdevtools/tuneable';
 import Spacer from 'react-add-space';
-import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { library } from './shared-fa.js';

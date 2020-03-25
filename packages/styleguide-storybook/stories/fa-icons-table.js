@@ -1,55 +1,8 @@
 import React from 'react';
-import { withA11y } from '@storybook/addon-a11y';
+import { Icon, Table } from '@jsdevtools/tuneable-fluentui';
+import { Overlays } from './shared';
 
-import { Layout, themes, Table } from '@fluentui/react';
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-import { transformIconColectionToIconMap } from '@jsdevtools/fluentui-font-awesome';
-import { Icon } from '@jsdevtools/tuneable-fluentui';
-
-import * as fab from '@fortawesome/free-brands-svg-icons';
-import * as far from '@fortawesome/free-regular-svg-icons';
-import * as fas from '@fortawesome/free-solid-svg-icons';
-import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
-
-const teamsIconNames = Object.keys(themes.teams.icons);
-const teamsDarkIconNames = Object.keys(themes.teamsDark.icons);
-const teamsHighContrastIconNames = Object.keys(themes.teamsHighContrast.icons);
-
-library.add(...Object.values(fab.fab), ...Object.values(far.far), ...Object.values(fas.fas));
-
-const faIcons = transformIconColectionToIconMap({ iconCollection: library });
-
-themes.teams.icons = { ...themes.teams.icons, ...faIcons };
-themes.teamsDark.icons = { ...themes.teamsDark.icons, ...faIcons };
-themes.teamsHighContrast.icons = { ...themes.teamsHighContrast.icons, ...faIcons };
-
-export default {
-  title: 'Components/fui-fa-Icons',
-  component: Icon,
-  decorators: [withA11y, ThemeProvider, GlobalStateDecorator],
-  parameters: {
-    viewport: { defaultViewport: 'default' },
-  },
-};
-
-export const fluentTeamsIcons = () => (
-  <Overlays content="Fluent-UI Teams Icons">
-    {teamsIconNames.map(fuiIconName => (
-      <React.Fragment key={`t-${fuiIconName}`}>
-        <Layout
-          key={`l-t-${fuiIconName}`}
-          reducing
-          gap="16px"
-          start={<Icon key={`i-t-${fuiIconName}`} size="larger" name={`${fuiIconName}`} />}
-          main={`${fuiIconName}`}
-        />
-      </React.Fragment>
-    ))}
-  </Overlays>
-);
-
-const faStoryFn = faTypeDefinitions => {
+export const faStoryFn = faTypeDefinitions => {
   const fn = () => {
     const header = {
       items: [
@@ -71,7 +24,7 @@ const faStoryFn = faTypeDefinitions => {
             key: `${i}`,
             items: [
               <React.Fragment key={`${i}0`}>
-                {definition.prefix} {definition.iconName}
+                {i} {definition.prefix} {definition.iconName}
               </React.Fragment>,
               <Icon key={`${i}1`} bordered name={`${definition.prefix} ${definition.iconName}`} />,
               <Icon
@@ -183,6 +136,7 @@ const faStoryFn = faTypeDefinitions => {
       <Overlays
         content={`${prefix === 'fas' ? 'Solid' : prefix === 'far' ? 'Regular' : 'Brands'}`}
         subContent="Font Awesome Icons"
+        target="fa-icons-table-target"
       >
         <Table header={header} rows={rows} />
       </Overlays>
@@ -190,12 +144,3 @@ const faStoryFn = faTypeDefinitions => {
   };
   return fn;
 };
-
-export const fabStory = faStoryFn(fab.fab);
-export const farStory = faStoryFn(far.far);
-export const fasStory = faStoryFn(fas.fas);
-
-fluentTeamsIcons.story = { name: 'Teams' };
-fabStory.story = { name: 'FA Brands' };
-farStory.story = { name: 'FA Regular' };
-fasStory.story = { name: 'FA Solid' };

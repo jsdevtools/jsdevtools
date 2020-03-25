@@ -16,12 +16,13 @@ const MyDiv = styled.div`
   z-index: ${props => props.zIndex};
   top: ${props => props.top}px;
   left: ${props => props.left}px;
+  margin: ${props => props.margin};
 `;
 
 MyDiv.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
-  backgroundColor: PropTypes.color,
+  backgroundColor: PropTypes.string,
   opacity: PropTypes.number,
   border: PropTypes.oneOf([
     'none',
@@ -35,7 +36,7 @@ MyDiv.propTypes = {
     'inset',
     'outset',
   ]),
-  borderColor: PropTypes.color,
+  borderColor: PropTypes.string,
   borderRadius: PropTypes.number,
   borderWidth: PropTypes.number,
   boxShadow: PropTypes.string,
@@ -45,6 +46,7 @@ MyDiv.propTypes = {
   top: PropTypes.number,
   left: PropTypes.number,
   target: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  margin: PropTypes.string,
 };
 
 MyDiv.defaultProps = {
@@ -62,6 +64,7 @@ MyDiv.defaultProps = {
   position: 'static',
   top: 0,
   left: 0,
+  margin: '0px',
 };
 
 const MyDivWithContent = props => {
@@ -82,6 +85,10 @@ const MyDivWithContent = props => {
 
 MyDivWithContent.propTypes = {
   ...MyDiv.propTypes,
+};
+
+MyDivWithContent.defaultProps = {
+  ...MyDiv.defaultProps,
 };
 
 export default MyDivWithContent;

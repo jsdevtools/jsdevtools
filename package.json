@@ -2,7 +2,7 @@
   "name": "@jsdevtools/create-monorepo",
   "version": "0.4.2",
   "description": "Skeleton monorepo",
-  "private": false,
+  "private": true,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

@@ -2,7 +2,7 @@ import React /*, { useContext }*/ from 'react';
 // import Float from '@jsdevtools/float';
 import { Text, Divider, ProviderConsumer } from '@jsdevtools/tuneable-fluentui';
 //import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
 
 export default {

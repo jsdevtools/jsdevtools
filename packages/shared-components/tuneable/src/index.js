@@ -51,7 +51,7 @@ const reducer1 = (state, action) => {
   if (!state) return {};
   switch (action.type) {
     case types.INIT: {
-      console.log(`Reached ${action.type}`, action);
+      // console.log(`Reached ${action.type}`, action);
       const { instance, initProps } = action.payload;
       const retVal = state;
       Object.keys(initProps)
@@ -59,7 +59,7 @@ const reducer1 = (state, action) => {
         .forEach(undefPropName => {
           retVal[`${instance}/${undefPropName}`] = initProps[undefPropName];
         });
-      console.log(`${action.type} retVal`, retVal);
+      //console.log(`${action.type} retVal`, retVal);
       return retVal;
     }
     case types.CLR: {
@@ -70,11 +70,11 @@ const reducer1 = (state, action) => {
         .forEach(match => {
           delete retVal[match];
         });
-      console.log(`${action.type} retVal`, retVal);
+      //console.log(`${action.type} retVal`, retVal);
       return retVal;
     }
     case types.CHG: {
-      console.log(`Reached ${action.type}`, action);
+      //console.log(`Reached ${action.type}`, action);
       return {
         ...state,
         ...Object.keys(action.payload.newProps).reduce(
@@ -179,7 +179,7 @@ export const withGlobalState = WrappedComponent => {
     }, []);
     const mapStateToProps = useMemo(makeMapStateToPropsSelector, []);
     const newProps = useSelector(state => mapStateToProps(state, instance), shallowEqual);
-    //console.log(`wGS: ${JSON.stringify(Object.keys(newProps))}`);
+    //console.log(`wGS: ${JSON.stringify(Object.keys(newProps).map(key => `${key} ${newProps[key]}`))}`);
     return <WrappedComponent {...{ ...rest, ...newProps }} />;
   };
   wrapComponent.propTypes = { instance: PropTypes.string };

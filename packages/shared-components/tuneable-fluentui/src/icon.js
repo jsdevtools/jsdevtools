@@ -1,7 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@fluentui/react';
-import { withGlobalState } from '@jsdevtools/tuneable';
 
 Icon.propTypes.size = PropTypes.oneOf([
   'smallest',
@@ -19,5 +17,7 @@ Icon.propTypes.size = PropTypes.oneOf([
   'ginormous',
   'titanic',
 ]);
+
+Icon.propTypes.style = PropTypes.oneOfType([PropTypes.bool, PropTypes.func]);
 
 export default Icon;

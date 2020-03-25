@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Dialog, Text, Button } from '@jsdevtools/tuneable-fluentui';
 // import { storiesOf } from '@storybook/react';
-import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared.js';
+import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
 import { actions, useDispatch } from '@jsdevtools/tuneable';
 

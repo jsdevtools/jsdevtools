@@ -19,6 +19,7 @@ module.exports = {
   },
   externals: {
     react: 'react',
+    'styled-components': 'styled-components',
   },
   mode: 'development',
 };
