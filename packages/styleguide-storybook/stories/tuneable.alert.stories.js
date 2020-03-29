@@ -15,37 +15,37 @@ export default {
 };
 
 export const DefaultAlert = () => (
-  <Overlays content="Default" target="defaultAlert">
+  <Overlays content="Default" target={['defaultAlert']}>
     <Alert instance="defaultAlert" content="This is a default alert" />
   </Overlays>
 );
 
 export const InfoAlert = () => (
-  <Overlays content="Info" target="infoAlert">
+  <Overlays content="Info" target={['infoAlert']}>
     <Alert instance="infoAlert" info content="This is an informational alert" />
   </Overlays>
 );
 
 export const DangerAlert = () => (
-  <Overlays content="Danger" target="dangerAlert">
+  <Overlays content="Danger" target={['dangerAlert']}>
     <Alert instance="dangerAlert" danger content="This is a danger alert" />
   </Overlays>
 );
 
 export const WarningAlert = () => (
-  <Overlays content="Warning" target="warningAlert">
+  <Overlays content="Warning" target={['warningAlert']}>
     <Alert instance="warningAlert" warning content="This is a warning alert" />
   </Overlays>
 );
 
 export const SuccessAlert = () => (
-  <Overlays content="Success" target="successAlert">
+  <Overlays content="Success" target={['successAlert']}>
     <Alert instance="successAlert" success content="This is a success alert" />
   </Overlays>
 );
 
 export const OofAlert = () => (
-  <Overlays content="Oof" target="oofAlert">
+  <Overlays content="Oof" target={['oofAlert']}>
     <Alert
       instance="oofAlert"
       variables={{
@@ -62,7 +62,7 @@ export const OofAlert = () => (
 export const ActionAlert = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Action" target="actionAlert">
+    <Overlays content="Action" target={['actionAlert']}>
       <Alert
         instance="actionAlert"
         content="This is a closable alert"
@@ -77,7 +77,7 @@ export const ActionAlert = () => {
 };
 
 export const AttachedAlert = () => (
-  <Overlays content="Attached" target="attachedAlert">
+  <Overlays content="Attached" target={['attachedAlert']}>
     <>
       <Alert instance="attachedAlert" attached content="This is a top attached alert" />
       <Input fluid placeholder="Name..." />

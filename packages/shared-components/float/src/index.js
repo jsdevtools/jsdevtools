@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import withPlaceHolder from '@jsdevtools/place-holder';
 // import withPlaceHolder from '../../place-holder/src';
+import { withGlobalState } from '@jsdevtools/tuneable';
 
 const StyledFloatAbsolute = styled.div`
   z-index: ${props => props.zIndex};
@@ -82,4 +83,4 @@ Float.defaultProps = {
   position: 'absolute',
 };
 
-export default withPlaceHolder(Float);
+export default withGlobalState(withPlaceHolder(Float));

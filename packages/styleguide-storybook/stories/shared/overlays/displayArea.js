@@ -11,7 +11,8 @@ export const DisplayArea = props => (
     </HeaderBar>
     <main style={{ flex: '1', display: 'flex', padding: '10px 10px 10px 10px' }}>
       <div style={{ flex: '1' }}>{props.children}</div>
-      <div style={{ flex: '0 0 auto', width: '315px' }}>
+      <div style={{ flex: '0 0 auto', width: '10px' }} />
+      <div style={{ flex: '0 0 auto', width: '300px' }}>
         <OptionMenu target={props.target} />
       </div>
     </main>
@@ -20,7 +21,7 @@ export const DisplayArea = props => (
 
 DisplayArea.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]).isRequired,
-  target: PropTypes.string.isRequired,
+  target: PropTypes.arrayOf(PropTypes.string).isRequired,
   headerHeight: PropTypes.number.isRequired,
   content: PropTypes.string,
   subContent: PropTypes.string,

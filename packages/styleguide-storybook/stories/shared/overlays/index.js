@@ -17,7 +17,7 @@ export const withResizeObserver = WrappedComponent => {
         console.log(`${JSON.stringify(entry.contentRect)}`);
         console.log(`e.c.w: ${entry.contentRect.width}`);
         console.log(`e.c.h: ${entry.contentRect.height}`);
-        dispatch(actions.chg(target, { headerHeight: entry.contentRect.height }));
+        dispatch(actions.chg(target[0], { headerHeight: entry.contentRect.height }));
       }
     });
     useLayoutEffect(() => {
@@ -28,7 +28,7 @@ export const withResizeObserver = WrappedComponent => {
     }, []);
     return <WrappedComponent {...{ resizedRef }} {...rest} />;
   };
-  wrapComponent.propTypes = { target: PropTypes.string };
+  wrapComponent.propTypes = { target: PropTypes.arrayOf(PropTypes.string) };
   return wrapComponent;
 };
 
@@ -38,7 +38,7 @@ const BetterDisplayArea = withGlobalState(DisplayArea);
 
 export const Overlays = props => (
   <>
-    <BetterHeader content={props.content} subContent={props.subContent} target="betterDisplayArea" />
+    <BetterHeader content={props.content} subContent={props.subContent} target={['betterDisplayArea']} />
     <BetterDisplayArea
       instance="betterDisplayArea"
       content={props.content}
@@ -53,7 +53,7 @@ export const Overlays = props => (
 Overlays.propTypes = {
   content: PropTypes.string.isRequired,
   subContent: PropTypes.string,
-  target: PropTypes.string.isRequired,
+  target: PropTypes.arrayOf(PropTypes.string).isRequired,
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]).isRequired,
 };
 

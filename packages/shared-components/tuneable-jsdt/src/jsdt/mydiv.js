@@ -1,90 +1,100 @@
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Button, Dropdown } from '@jsdevtools/tuneable-fluentui';
+import { actions, useDispatch } from '@jsdevtools/tuneable';
 
 const MyDiv = styled.div`
   background-color: ${props => props.backgroundColor};
-  height: ${props => props.height}px;
-  width: ${props => props.width}px;
+  height: ${props => props.height};
+  width: ${props => props.width};
   opacity: ${props => props.opacity};
-  border: ${props => props.border};
-  border-color: ${props => props.borderColor};
-  border-radius: ${props => props.borderRadius}px;
-  border-width: ${props => props.borderWidth}px;
+  border-top: ${props => props.borderTop};
+  border-left: ${props => props.borderLeft};
+  border-bottom: ${props => props.borderBottom};
+  border-right: ${props => props.borderRight};
+  border-radius: ${props => props.borderRadius};
   box-shadow: ${props => props.boxShadow};
-  padding: ${props => props.padding}px;
+  padding: ${props => props.padding};
   z-index: ${props => props.zIndex};
-  top: ${props => props.top}px;
-  left: ${props => props.left}px;
+  top: ${props => props.top};
+  left: ${props => props.left};
   margin: ${props => props.margin};
 `;
 
 MyDiv.propTypes = {
-  height: PropTypes.number,
-  width: PropTypes.number,
+  height: PropTypes.string,
+  width: PropTypes.string,
   backgroundColor: PropTypes.string,
   opacity: PropTypes.number,
-  border: PropTypes.oneOf([
-    'none',
-    'hidden',
-    'dotted',
-    'dashed',
-    'solid',
-    'double',
-    'groove',
-    'ridge',
-    'inset',
-    'outset',
-  ]),
-  borderColor: PropTypes.string,
-  borderRadius: PropTypes.number,
-  borderWidth: PropTypes.number,
+  borderTop: PropTypes.string,
+  borderRight: PropTypes.string,
+  borderBottom: PropTypes.string,
+  borderLeft: PropTypes.string,
+  borderRadius: PropTypes.string,
   boxShadow: PropTypes.string,
-  padding: PropTypes.number,
+  padding: PropTypes.string,
   zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   position: PropTypes.oneOf(['static', 'relative', 'absolute', 'fixed', 'sticky']),
-  top: PropTypes.number,
-  left: PropTypes.number,
-  target: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  top: PropTypes.string,
+  left: PropTypes.string,
   margin: PropTypes.string,
 };
 
 MyDiv.defaultProps = {
-  height: 100,
-  width: 150,
+  height: '400px',
+  width: '300px',
+  boxShadow: '2px 2px 2px #494949',
   backgroundColor: 'silver',
   opacity: 1,
-  border: 'solid',
-  borderColor: 'grey',
-  borderRadius: 32,
-  borderWidth: 1,
-  boxShadow: 'none',
-  padding: 16,
+  borderRadius: '0px 4px',
+  borderTop: '3px solid purple',
+  borderRight: '1px solid grey',
+  borderBottom: '1px solid grey',
+  borderLeft: '1px solid grey',
+  padding: '16px',
   zIndex: 'auto',
   position: 'static',
-  top: 0,
-  left: 0,
+  top: '0px',
+  left: '0px',
   margin: '0px',
 };
 
 const MyDivWithContent = props => {
+  const dispatch = useDispatch();
   const { target, ...rest } = props;
-  return target ? (
+  console.log(`target ${target}`);
+  useEffect(() => {
+    dispatch(
+      actions.chg('chgChildren', {
+        onClick: () => dispatch(actions.chg(target[0], { children: <h1>Hello my friend.</h1> })),
+      }),
+    );
+  });
+  return (
     <MyDiv {...rest}>
-      {Array.isArray(target)
-        ? target.map(tgt => (
-            <>
-              {tgt}
-              <br />
-            </>
-          ))
-        : target}
+      <Dropdown
+        placeholder={'Colors'}
+        items={target}
+        fluid
+        defaultValue={target[0]}
+        onSelectedChange={(a, b) => {
+          dispatch(
+            actions.chg('chgChildren', {
+              onClick: () =>
+                dispatch(actions.chg(b.value, { children: <h1>Hello friend.</h1>, hasError: false })),
+            }),
+          );
+        }}
+      />
+      <Button instance="chgChildren">Replace Children</Button>
     </MyDiv>
-  ) : null;
+  );
 };
 
 MyDivWithContent.propTypes = {
   ...MyDiv.propTypes,
+  target: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 MyDivWithContent.defaultProps = {

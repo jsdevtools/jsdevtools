@@ -17,7 +17,7 @@ export default {
 export const DefaultDialog = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Default" target="dialog1">
+    <Overlays content="Default" target={['dialog1']}>
       <Dialog
         instance="dialog1"
         cancelButton="Cancel"
@@ -38,7 +38,7 @@ export const DefaultDialog = () => {
 export const ContentDialog = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="With Content" target="dialog2">
+    <Overlays content="With Content" target={['dialog2']}>
       <Dialog
         instance="dialog2"
         cancelButton="Cancel"

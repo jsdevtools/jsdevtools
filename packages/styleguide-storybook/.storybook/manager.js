@@ -8,4 +8,7 @@ addons.setConfig({
     'storybook/docs/panel': 'MDX', // the configuration is either an object or a title string
     canvas: null,
   },
+  panelPosition: 'bootom',
+  showPanel: false,
+  isToolShown: false,
 });

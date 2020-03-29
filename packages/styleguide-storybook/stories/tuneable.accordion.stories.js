@@ -116,13 +116,13 @@ const panels = [
 ];
 
 export const DefaultAccordion = () => (
-  <Overlays content="Default" subContent="A default Accordion." target="defaultAccordion">
+  <Overlays content="Default" subContent="A default Accordion." target={['defaultAccordion']}>
     <Accordion instance="defaultAccordion" defaultActiveIndex={[0]} panels={panels} />
   </Overlays>
 );
 
 export const ExclusiveAccordion = () => (
-  <Overlays content="Exclusive" subContent="An exclusive Accordion." target="exclusiveAccordion">
+  <Overlays content="Exclusive" subContent="An exclusive Accordion." target={['exclusiveAccordion']}>
     <Accordion instance="exclusiveAccordion" panels={panels} exclusive />
   </Overlays>
 );
@@ -131,7 +131,7 @@ export const ExclusiveAndExpandedAccordion = () => (
   <Overlays
     content="Exclusive and Expanded"
     subContent="An exclusive expanded Accordion."
-    target="exclusiveAndExpandedAccordion"
+    target={['exclusiveAndExpandedAccordion']}
   >
     <Accordion instance="exclusiveAndExpandedAccordion" panels={panels} exclusive expanded />
   </Overlays>

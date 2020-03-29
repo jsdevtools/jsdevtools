@@ -18,15 +18,8 @@ export default {
 };
 
 export const Default = () => (
-  <Overlays content="Default" subContent="MyDiv" target="mydiv-target">
-    <MyDiv
-      instance="mydiv"
-      height={400}
-      width={300}
-      boxShadow="-8px 16px 8px   #292929"
-      target="Hello World!"
-      margin="0px 0px 20px 14px"
-    />
+  <Overlays content="Default" subContent="MyDiv" target={['mydiv-target']}>
+    <MyDiv instance="mydiv" target={['Hello World!']} />
   </Overlays>
 );
 

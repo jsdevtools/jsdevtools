@@ -26,7 +26,11 @@ const PlaceHolderBorder = styled.div`
   display: inline-block;
 `;
 
-const withPlaceHolder = WrappedComponent =>
+const childrenNotFound = 'Children Not Found';
+const childrenFound = 'Children Found';
+
+const withPlaceHolder = WrappedComponent => {
+  // BH extending FLOAT
   class PlaceHolder extends React.Component {
     constructor(props) {
       super(props);
@@ -38,13 +42,27 @@ const withPlaceHolder = WrappedComponent =>
     }
 
     componentDidCatch(error, info) {
-      this.setState({ hasError: true, error, info });
+      if (error.toString().includes(childrenFound)) {
+        this.setState({ hasError: false, error: null, info: null });
+      } else {
+        this.setState({ hasError: true, error, info });
+      }
     }
 
     render() {
-      return <WrappedComponent {...this.props} hasError={this.state.hasError} error={this.state.error} />;
+      const retVal = (
+        <WrappedComponent {...this.props} hasError={this.state.hasError} error={this.state.error} />
+      );
+      return retVal;
     }
+  }
+
+  PlaceHolder.propTypes = {
+    children: PropTypes.element,
   };
+
+  return PlaceHolder;
+};
 
 class PHBC extends React.Component {
   render() {
@@ -57,13 +75,22 @@ PHBC.propTypes = {
 };
 
 const withBoundaryHandler = WrappedComponent => {
+  // FLOAT
   class BoundaryHandler extends WrappedComponent {
+    // BH extends FLOAT
     render() {
-      const elementsTree = super.render();
-      const childrenNotFound = 'Children Not Found';
+      const elementsTree = super.render(); //RENDERED FLOAT
       if (!this.props.hasError && this.props.children === undefined) {
-        throw new Error(childrenNotFound);
+        // oh snap! no children
+        throw new Error(childrenNotFound); //PASS 1 - no children - throws error
+      } else if (this.props.hasError && this.props.children !== undefined) {
+        // found children - clear the error
+        throw new Error(childrenFound);
       }
+      /* continues if:
+         hasError && noChildren => toDisplay-Error;
+         !hasError && children => toDisplay-Component;
+      */
       const PHB = withBoundaryHandler(PHBC); // doesn't like styled component so wrapped in a class
       // eslint-disable-next-line no-nested-ternary
       const msg = this.props.hasError ? (

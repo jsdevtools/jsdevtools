@@ -22,6 +22,7 @@ export const DropdownItem = withGlobalState(FUIR.DropdownItem);
 export const DropdownSearchInput = withGlobalState(FUIR.DropdownSearchInput);
 export const FocusZoneMode = withGlobalState(FUIR.FocusZoneMode);
 export const Flex = withGlobalState(FUIR.Flex);
+export const FlexItem = withGlobalState(FUIR.FlexItem);
 export const Form = withGlobalState(FUIR.Form);
 export const FormField = withGlobalState(FUIR.FormField);
 export const Grid = withGlobalState(FUIR.Grid);

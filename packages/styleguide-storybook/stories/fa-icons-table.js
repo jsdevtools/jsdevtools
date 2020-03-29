@@ -136,7 +136,7 @@ export const faStoryFn = faTypeDefinitions => {
       <Overlays
         content={`${prefix === 'fas' ? 'Solid' : prefix === 'far' ? 'Regular' : 'Brands'}`}
         subContent="Font Awesome Icons"
-        target="fa-icons-table-target"
+        target={['fa-icons-table-target']}
       >
         <Table header={header} rows={rows} />
       </Overlays>

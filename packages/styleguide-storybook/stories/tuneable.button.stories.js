@@ -19,7 +19,7 @@ export default {
 export const DefaultButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Default" target="button1a">
+    <Overlays content="Default" target={['button1a']}>
       <Button
         instance="button1a"
         content={() => (
@@ -92,7 +92,7 @@ export const DefaultButtons = () => {
 export const EmphasisButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Emphasis" target="button2a">
+    <Overlays content="Emphasis" target={['button2a']}>
       <Button
         primary
         instance="button2a"
@@ -128,7 +128,7 @@ export const EmphasisButtons = () => {
 export const IconButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Icon" target="button3a">
+    <Overlays content="Icon" target={['button3a']}>
       <Button
         primary
         icon="fas calendar"
@@ -164,7 +164,7 @@ export const IconButtons = () => {
 export const IconOnlyButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Icon Only" target="button4a">
+    <Overlays content="Icon Only" target={['button4a']}>
       <Button
         primary
         icon="download"
@@ -204,7 +204,7 @@ export const IconOnlyButtons = () => {
 export const IconAndContentButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Icon and Content" target="button5a">
+    <Overlays content="Icon and Content" target={['button5a']}>
       <Button
         primary
         icon="eye"
@@ -284,7 +284,7 @@ export const IconAndContentButtons = () => {
 export const FluidButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Fluid" target="button6a">
+    <Overlays content="Fluid" target={['button6a']}>
       <Button
         instance="button6a"
         fluid
@@ -334,7 +334,7 @@ export const FluidButtons = () => {
 export const CircularButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Circular" target="button7a">
+    <Overlays content="Circular" target={['button7a']}>
       <Button
         instance="button7a"
         circular
@@ -374,7 +374,7 @@ export const CircularButtons = () => {
 export const CircularEmphasisButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Circular Emphasis" target="button8a">
+    <Overlays content="Circular Emphasis" target={['button8a']}>
       <Button
         instance="button8a"
         circular
@@ -414,7 +414,7 @@ export const CircularEmphasisButtons = () => {
 export const TextButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Sidebar" target="button9a">
+    <Overlays content="Sidebar" target={['button9a']}>
       <Button
         instance="button9a"
         text
@@ -486,7 +486,7 @@ export const TextButtons = () => {
 export const GroupButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Group" target="button10a">
+    <Overlays content="Group" target={['button10a']}>
       <ButtonGroup
         instance="button10a"
         buttons={[
@@ -546,7 +546,7 @@ export const GroupButtons = () => {
 export const CircularGroupButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Circular Group" target="button11a">
+    <Overlays content="Circular Group" target={['button11a']}>
       <ButtonGroup
         instance="button11a"
         circular

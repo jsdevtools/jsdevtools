@@ -20,6 +20,7 @@ module.exports = {
   externals: {
     react: 'react',
     'styled-components': 'styled-components',
+    '@jsdevtools/tuneable-fluentui': '@jsdevtools/tuneable-fluentui',
   },
   mode: 'development',
 };

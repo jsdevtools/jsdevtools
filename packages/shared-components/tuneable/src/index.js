@@ -2,8 +2,10 @@ import React, { createContext, useLayoutEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { action as actionAddon } from '@storybook/addon-actions';
 import { Provider, createStoreHook, createDispatchHook, createSelectorHook, shallowEqual } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { createSelector } from 'reselect';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const INIT = 'INIT';
 const CLR = 'CLR';
@@ -118,9 +120,18 @@ const rootReducer = combineReducers({
   reducer2,
 });
 
+const middleware = [thunk];
+const composeEnhancers = composeWithDevTools({
+  serialize: undefined,
+  // Specify name here, actionsBlacklist, actionsCreators and other options if needed
+});
 export const store = (() => {
   if (window.store === undefined) {
-    window.store = createStore(rootReducer);
+    window.store = createStore(
+      rootReducer,
+      /* preloaded state, */
+      composeEnhancers(applyMiddleware(...middleware)),
+    );
   }
   return window.store;
 })();

@@ -18,7 +18,7 @@ export default {
 };
 
 export const fluentTeamsIcons = () => (
-  <Overlays content="Fluent-UI Teams Icons" target="fluentui-teams-icons-target">
+  <Overlays content="Fluent-UI Teams Icons" target={['fluentui-teams-icons-target']}>
     {teamsIconNames.map(fuiIconName => (
       <React.Fragment key={`t-${fuiIconName}`}>
         <Layout
