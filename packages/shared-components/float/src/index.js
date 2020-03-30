@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import withPlaceHolder from '@jsdevtools/place-holder';
-// import withPlaceHolder from '../../place-holder/src';
+import withPlaceHolder, {
+  PlaceHolderBorder,
+  PlaceHolderMsg,
+  childrenNotFound,
+} from '@jsdevtools/place-holder';
 import { withGlobalState } from '@jsdevtools/tuneable';
 
 const StyledFloatAbsolute = styled.div`
@@ -34,32 +37,25 @@ const Centered = styled.div`
 
 class Float extends Component {
   render() {
-    const toDisplay = this.props.children;
-    const zIndex = this.props.zIndex === undefined ? 100 : this.props.zIndex;
-    const position = this.props.position === undefined ? 'absolute' : this.props.position;
-    switch (this.props.placement) {
+    const { placement, margin, children, ...rest } = this.props;
+    switch (placement) {
       case 'topRight':
         return (
-          <TopRightFloat
-            zIndex={zIndex}
-            top={this.props.margin}
-            right={this.props.margin}
-            position={position}
-          >
-            <div style={{ pointerEvents: 'auto' }}>{toDisplay}</div>
+          <TopRightFloat {...{ top: margin, right: margin, ...rest }}>
+            <div style={{ pointerEvents: 'auto' }}>{children}</div>
           </TopRightFloat>
         );
       case 'topLeft':
         return (
-          <TopLeftFloat zIndex={zIndex} top={this.props.margin} left={this.props.margin} position={position}>
-            <div style={{ pointerEvents: 'auto' }}>{toDisplay}</div>
+          <TopLeftFloat {...{ top: margin, left: margin, ...rest }}>
+            <div style={{ pointerEvents: 'auto' }}>{children}</div>
           </TopLeftFloat>
         );
       default:
         return (
-          <TopFloat zIndex={zIndex} top={this.props.margin} position={position}>
+          <TopFloat {...{ top: margin, ...rest }}>
             <Centered>
-              <div style={{ pointerEvents: 'auto' }}>{toDisplay}</div>
+              <div style={{ pointerEvents: 'auto' }}>{children}</div>
             </Centered>
           </TopFloat>
         );
@@ -73,6 +69,7 @@ Float.propTypes = {
   margin: PropTypes.string.isRequired,
   children: PropTypes.element,
   position: PropTypes.oneOf(['absolute', 'relative']).isRequired,
+  placeHolder: PropTypes.element,
 };
 
 Float.defaultProps = {
@@ -81,6 +78,16 @@ Float.defaultProps = {
   margin: '10px',
   hasError: false,
   position: 'absolute',
+  placeHolder: (
+    <PlaceHolderBorder>
+      <PlaceHolderMsg>
+        Warning: {childrenNotFound}
+        <br />
+        <br />
+        Component is expected to contain children, displaying place holder instead.
+      </PlaceHolderMsg>
+    </PlaceHolderBorder>
+  ),
 };
 
 export default withGlobalState(withPlaceHolder(Float));

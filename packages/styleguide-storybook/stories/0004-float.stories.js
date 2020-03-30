@@ -15,18 +15,18 @@ export default {
 
 export const topLeft = () => (
   <Overlays content="Float" subContent="topLeft" target={['topLeftFloat']}>
-    <Float instance="topLeftFloat" placement="topLeft" zIndex={20} margin="100px"></Float>
+    <Float instance="topLeftFloat" placement="topLeft" zIndex={20} margin="100px" />
   </Overlays>
 );
 
 export const topRight = () => (
   <Overlays content="Float" subContent="topRight" target={['topRightFloat']}>
-    <Float instance="topRightFloat" placement="topRight" zIndex={20} margin="10px" />
+    <Float instance="topRightFloat" placement="topRight" zIndex={20} margin="100px" />
   </Overlays>
 );
 export const top = () => (
   <Overlays content="Float" subContent="top" target={['topFloat']}>
-    <Float instance="topFloat" placement="top" zIndex={20} margin="10px" />
+    <Float instance="topFloat" placement="top" zIndex={20} margin="100px" />
   </Overlays>
 );
 

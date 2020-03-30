@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const PlaceHolderMsg = styled.div`
+export const PlaceHolderMsg = styled.div`
   width: 200px;
   height: 300px;
   background: #bbbbbb;
@@ -15,7 +15,7 @@ const PlaceHolderMsg = styled.div`
   padding: 8px;
 `;
 
-const PlaceHolderBorder = styled.div`
+export const PlaceHolderBorder = styled.div`
   border-color: #bbbbbb;
   border-radius: 2px;
   border-width: 2px;
@@ -26,11 +26,10 @@ const PlaceHolderBorder = styled.div`
   display: inline-block;
 `;
 
-const childrenNotFound = 'Children Not Found';
-const childrenFound = 'Children Found';
+export const childrenNotFound = 'Children Not Found';
+export const childrenFound = 'Children Found';
 
 const withPlaceHolder = WrappedComponent => {
-  // BH extending FLOAT
   class PlaceHolder extends React.Component {
     constructor(props) {
       super(props);
@@ -44,7 +43,7 @@ const withPlaceHolder = WrappedComponent => {
     componentDidCatch(error, info) {
       if (error.toString().includes(childrenFound)) {
         this.setState({ hasError: false, error: null, info: null });
-      } else {
+      } else if (error.toString().includes(childrenNotFound)) {
         this.setState({ hasError: true, error, info });
       }
     }
@@ -64,25 +63,13 @@ const withPlaceHolder = WrappedComponent => {
   return PlaceHolder;
 };
 
-class PHBC extends React.Component {
-  render() {
-    return <PlaceHolderBorder {...this.props}>{this.props.children}</PlaceHolderBorder>;
-  }
-}
-
-PHBC.propTypes = {
-  children: PropTypes.element,
-};
-
 const withBoundaryHandler = WrappedComponent => {
-  // FLOAT
   class BoundaryHandler extends WrappedComponent {
-    // BH extends FLOAT
     render() {
-      const elementsTree = super.render(); //RENDERED FLOAT
+      const elementsTree = super.render();
       if (!this.props.hasError && this.props.children === undefined) {
         // oh snap! no children
-        throw new Error(childrenNotFound); //PASS 1 - no children - throws error
+        throw new Error(childrenNotFound);
       } else if (this.props.hasError && this.props.children !== undefined) {
         // found children - clear the error
         throw new Error(childrenFound);
@@ -91,29 +78,7 @@ const withBoundaryHandler = WrappedComponent => {
          hasError && noChildren => toDisplay-Error;
          !hasError && children => toDisplay-Component;
       */
-      const PHB = withBoundaryHandler(PHBC); // doesn't like styled component so wrapped in a class
-      // eslint-disable-next-line no-nested-ternary
-      const msg = this.props.hasError ? (
-        this.props.error.toString().includes(childrenNotFound) ? (
-          <Fragment>
-            Warning: {childrenNotFound}
-            <br />
-            <br />
-            Component is expected to contain children, displaying place holder instead.
-          </Fragment>
-        ) : (
-          this.props.error.toString()
-        )
-      ) : (
-        ''
-      );
-      const toDisplay = this.props.hasError ? (
-        <PHB>
-          <PlaceHolderMsg>{msg}</PlaceHolderMsg>
-        </PHB>
-      ) : (
-        elementsTree.props.children
-      );
+      const toDisplay = this.props.hasError ? <>{this.props.placeHolder}</> : elementsTree.props.children;
       const newElementsTree = React.cloneElement(elementsTree, elementsTree.props, toDisplay);
       return newElementsTree;
     }
