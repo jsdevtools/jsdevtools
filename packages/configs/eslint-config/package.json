@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/eslint-config",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A shared eslint configuration",
   "keywords": [
     "eslint",
