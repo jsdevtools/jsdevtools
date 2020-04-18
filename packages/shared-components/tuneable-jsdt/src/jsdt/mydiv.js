@@ -1,7 +1,7 @@
 import React, { useEffect, Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Button, Dropdown } from '@jsdevtools/tuneable-fluentui';
+import { Button, Dropdown, Text, Flex, Input } from '@jsdevtools/tuneable-fluentui';
 import { actions, useDispatch } from '@jsdevtools/tuneable';
 
 const MyDiv = styled.div`
@@ -67,27 +67,67 @@ const MyDivWithContent = props => {
   useEffect(() => {
     dispatch(
       actions.chg('chgChildren', {
-        onClick: () => dispatch(actions.chg(target[0], { children: <h1>Hello my friend.</h1> })),
+        onClick: () => dispatch(actions.chg(target[0], { content: <h1>Hello my friend.</h1> })),
       }),
     );
   });
   return (
     <MyDiv {...rest}>
       <Dropdown
-        placeholder={'Colors'}
+        placeholder={'Targets'}
         items={target}
         fluid
         defaultValue={target[0]}
         onSelectedChange={(a, b) => {
+          console.log(`Targets onSelectedChange`);
           dispatch(
             actions.chg('chgChildren', {
-              onClick: () =>
-                dispatch(actions.chg(b.value, { children: <h1>Hello friend.</h1>, hasError: false })),
+              onClick: () => dispatch(actions.chg(b.value, { content: <h1>Hello friend.</h1> })),
+            }),
+          );
+          dispatch(
+            actions.chg('heightElem', {
+              onChange: e => {
+                console.log(`height: ${JSON.stringify(e.target.value)}`);
+                dispatch(actions.overlay(b.value, { style: { height: e.target.value } }));
+              },
+            }),
+          );
+          dispatch(
+            actions.chg('widthElem', {
+              onChange: e => {
+                console.log(`width: ${JSON.stringify(e.target.value)}`);
+                dispatch(actions.overlay(b.value, { style: { width: e.target.value } }));
+              },
             }),
           );
         }}
       />
       <Button instance="chgChildren">Replace Children</Button>
+      <br />
+      <Flex space="between">
+        <Text>Height</Text>
+        <Input
+          onChange={e => {
+            console.log(`height: ${JSON.stringify(e.target.value)}`);
+            dispatch(actions.overlay(target[0], { style: { height: e.target.value } }));
+          }}
+          instance="heightElem"
+          placeholder="400px"
+        />
+      </Flex>
+      <br />
+      <Flex space="between">
+        <Text>Width</Text>
+        <Input
+          onChange={e => {
+            console.log(`width: ${JSON.stringify(e.target.value)}`);
+            dispatch(actions.overlay(target[0], { style: { width: e.target.value } }));
+          }}
+          instance="widthElem"
+          placeholder="300px"
+        />
+      </Flex>
     </MyDiv>
   );
 };

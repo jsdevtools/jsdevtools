@@ -12,7 +12,10 @@ const TuneableProvider = props => {
       instance="themer"
       theme="teams"
       onChange={(_first, selection) => {
-        dispatch(actions.chg('suirdropdown', { value: selection.value }));
+        //console.log(`1st: ${JSON.stringify_first}`);
+        //console.log(`2nd: ${selection}`);
+        //console.log(`3rd: ${third}`);
+        if (selection !== undefined) dispatch(actions.chg('suirdropdown', { value: selection.value }));
       }}
     >
       {props.children}

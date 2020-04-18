@@ -19,7 +19,20 @@ export default {
 export const DefaultButtons = () => {
   const dispatch = useDispatch();
   return (
-    <Overlays content="Default" target={['button1a']}>
+    <Overlays
+      content="Default"
+      target={[
+        'button1a',
+        'button1c',
+        'button1d',
+        'button1e',
+        'button1f',
+        'button1g',
+        'button1h',
+        'button1i',
+        'button1j',
+      ]}
+    >
       <Button
         instance="button1a"
         content={() => (

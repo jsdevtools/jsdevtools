@@ -9,6 +9,7 @@ export const Accordion = withGlobalState(FUIR.Accordion);
 export const Alert = withGlobalState(TuneableAlert);
 export const Animation = withGlobalState(FUIR.Animation);
 export const Avatar = withGlobalState(FUIR.Avatar);
+export const Box = withGlobalState(FUIR.Box);
 export const Button = withGlobalState(FUIR.Button);
 export const ButtonGroup = withGlobalState(FUIR.ButtonGroup);
 export const Chat = withGlobalState(FUIR.Chat);

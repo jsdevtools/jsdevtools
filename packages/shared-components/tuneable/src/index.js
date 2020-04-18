@@ -77,20 +77,34 @@ const reducer1 = (state, action) => {
     }
     case types.CHG: {
       //console.log(`Reached ${action.type}`, action);
+      const { instance, newProps } = action.payload;
       return {
         ...state,
-        ...Object.keys(action.payload.newProps).reduce(
+        ...Object.keys(newProps).reduce(
           (acc, propName) => ({
             ...acc,
-            [`${action.payload.instance}/${propName}`]: action.payload.newProps[propName],
+            [`${instance}/${propName}`]: newProps[propName],
           }),
           {},
         ),
       };
     }
     case types.OVERLAY: {
-      console.log(`Reached ${action.type}, warning! not implemented.`, action);
-      return state;
+      console.log(`Reached ${action.type}`, action);
+      const { instance, newProps } = action.payload;
+      return {
+        ...state,
+        ...Object.keys(newProps).reduce(
+          (acc, propName) => ({
+            ...acc,
+            [`${instance}/${propName}`]: {
+              ...(state[`${instance}/${propName}`] === undefined ? {} : state[`${instance}/${propName}`]),
+              ...newProps[propName],
+            },
+          }),
+          {},
+        ),
+      };
     }
     default:
       return state;
@@ -109,7 +123,7 @@ const reducer2 = (state, action) => {
         case '@@':
           return state;
         default:
-          actionAddon(action.type)(action.payload.instance, action.payload);
+          actionAddon(action.type)(action.payload.instance, JSON.stringify(action.payload));
           return state;
       }
   }
@@ -160,9 +174,10 @@ GlobalStateProvider.propTypes = {
 const makeMapStateToPropsSelector = () =>
   createSelector(
     (state, instance) => {
-      // console.log(`mSTP: ${JSON.stringify(instance)} ${JSON.stringify(Object.keys(state))}`);
+      //console.log(`mSTP: ${JSON.stringify(instance)} ${JSON.stringify(Object.keys(state))}`);
       if (instance === 'ignore') return {};
       const wholeState = Object.entries(state).reduce((acc, [, val]) => ({ ...acc, ...val }), {});
+      //console.log(`mSTP2: ${JSON.stringify(instance)} ${JSON.stringify(Object.keys(wholeState))}`);
       return Object.keys(wholeState)
         .filter(key => key.includes(`${instance}`))
         .reduce(
@@ -185,12 +200,18 @@ export const withGlobalState = WrappedComponent => {
         dispatch(actions.init(instance, rest));
       }
       return () => {
-        dispatch(actions.clr(props.instance));
+        if (instance) {
+          dispatch(actions.clr(props.instance));
+        }
       };
     }, []);
     const mapStateToProps = useMemo(makeMapStateToPropsSelector, []);
     const newProps = useSelector(state => mapStateToProps(state, instance), shallowEqual);
-    //console.log(`wGS: ${JSON.stringify(Object.keys(newProps).map(key => `${key} ${newProps[key]}`))}`);
+    console.log(
+      `wGS: -${instance}- [${JSON.stringify(Object.keys(rest))}] ${JSON.stringify(
+        Object.keys(newProps).map(key => `${key} ${newProps[key]}`),
+      )}`,
+    );
     return <WrappedComponent {...{ ...rest, ...newProps }} />;
   };
   wrapComponent.propTypes = { instance: PropTypes.string };
