@@ -2,7 +2,7 @@ import React, { createContext, useLayoutEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { action as actionAddon } from '@storybook/addon-actions';
 import { Provider, createStoreHook, createDispatchHook, createSelectorHook, shallowEqual } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createSelector } from 'reselect';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -207,11 +207,13 @@ export const withGlobalState = WrappedComponent => {
     }, []);
     const mapStateToProps = useMemo(makeMapStateToPropsSelector, []);
     const newProps = useSelector(state => mapStateToProps(state, instance), shallowEqual);
-    console.log(
-      `wGS: -${instance}- [${JSON.stringify(Object.keys(rest))}] ${JSON.stringify(
-        Object.keys(newProps).map(key => `${key} ${newProps[key]}`),
-      )}`,
-    );
+    instance
+      ? console.log(
+          `wGS: -${instance}- [${JSON.stringify(Object.keys(rest))}] ${JSON.stringify(
+            Object.keys(newProps).map(key => `${key} ${newProps[key]}`),
+          )}`,
+        )
+      : null;
     return <WrappedComponent {...{ ...rest, ...newProps }} />;
   };
   wrapComponent.propTypes = { instance: PropTypes.string };

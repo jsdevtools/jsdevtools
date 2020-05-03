@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Provider, themes } from '@fluentui/react';
+import { Provider, themes } from '@fluentui/react-northstar';
 
 export default class TuneableProvider extends React.Component {
   componentDidUpdate(prevProps) {

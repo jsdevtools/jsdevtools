@@ -5,6 +5,7 @@ import { Text, Divider, ProviderConsumer } from '@jsdevtools/tuneable-fluentui';
 import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
 import { fullViewport } from '../.storybook/addons/fullViewport';
+import _ from 'lodash';
 
 export default {
   title: 'Components/Tuneable/Divider',
@@ -58,7 +59,7 @@ export const SizedDivider = () => (
   <Overlays content="Size" subContent="A divider can have different sizes." target={['sizedDivider']}>
     {_.times(11, i => {
       const size = i;
-      return <Divider instance="sizedDivider" key={size} size={size} content={`Size ${size}`} />;
+      return <Divider instance={`sizedDivider${size}x`} key={size} size={size} content={`Size ${size}`} />;
     })}
   </Overlays>
 );

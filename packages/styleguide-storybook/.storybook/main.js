@@ -2,7 +2,7 @@ const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 const DependenciesPlugin = require('storybook-dep-webpack-plugin');
 
 module.exports = {
-  presets: ['storybook-addon-deps/preset', '@storybook/addon-docs/preset'],
+  //  presets: ['storybook-addon-deps', '@storybook/addon-docs/preset'],
   stories: ['../stories/*.stories.js'],
   addons: [
     '@storybook/addon-a11y',

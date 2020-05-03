@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from '@fluentui/react';
+import { Alert } from '@fluentui/react-northstar';
 
 const ModifiedAlert = props => {
   const { open, ...rest } = { open: true, ...props };

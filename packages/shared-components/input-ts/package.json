@@ -33,30 +33,27 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist lib"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
+    "react": "^16.13.1",
     "styled-components": "^5.0.1"
-  },
-  "dependencies": {
-    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/preset-react": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.7",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
     "@jsdevtools/babel-config-ts": "^0.1.7",
     "@jsdevtools/eslint-config-ts": "^0.2.2",
     "@jsdevtools/stylelint-config": "^0.1.12",
-    "@types/node": "^13.7.4",
-    "@types/react": "^16.9.22",
-    "@types/react-dom": "^16.9.4",
-    "@types/styled-components": "^5.0.0",
-    "babel-loader": "^8.0.6",
+    "@types/node": "^13.13.0",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/styled-components": "^5.0.1",
+    "babel-loader": "^8.1.0",
     "shx": "^0.3.2",
-    "stylelint": "^13.2.0",
-    "typescript": "^3.8.2",
-    "webpack": "^4.41.6",
+    "stylelint": "^13.3.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "stylelint": {

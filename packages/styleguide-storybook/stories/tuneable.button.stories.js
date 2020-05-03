@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, ButtonGroup, Text } from '@jsdevtools/tuneable-fluentui';
+import { Button, ButtonGroup, Icon, Text } from '@jsdevtools/tuneable-fluentui';
 import { actions, useDispatch } from '@jsdevtools/tuneable';
 import Spacer from 'react-add-space';
 import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
@@ -142,34 +142,34 @@ export const IconButtons = () => {
   const dispatch = useDispatch();
   return (
     <Overlays content="Icon" target={['button3a']}>
-      <Button
-        primary
-        icon="fas calendar"
-        instance="button3a"
-        onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
-      />
+      <Button primary instance="button3a" onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}>
+        <Icon name={['fas', 'calendar']} />
+      </Button>
       <Button
         secondary
-        icon="chat"
         instance="button3b"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
-      />
+      >
+        <Icon name="ChatIcon" />
+      </Button>
       <br />
       <br />
       <Button
         primary
         disabled
-        icon="fas calendar"
         instance="button3c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
-      />
+      >
+        <Icon name={['fas', 'calendar']} />
+      </Button>
       <Button
         secondary
         disabled
-        icon="chat"
         instance="button3d"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
-      />
+      >
+        <Icon name="ChatIcon" />
+      </Button>
     </Overlays>
   );
 };
@@ -180,14 +180,14 @@ export const IconOnlyButtons = () => {
     <Overlays content="Icon Only" target={['button4a']}>
       <Button
         primary
-        icon="download"
+        icon={<Icon name="DownloadIcon" />}
         iconOnly
         instance="button4a"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
       <Button
         secondary
-        icon="email"
+        icon={<Icon name="EmailIcon" />}
         iconOnly
         instance="button4b"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -197,7 +197,7 @@ export const IconOnlyButtons = () => {
       <Button
         primary
         disabled
-        icon="download"
+        icon={<Icon name="DownloadIcon" />}
         iconOnly
         instance="button4c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -205,7 +205,7 @@ export const IconOnlyButtons = () => {
       <Button
         secondary
         disabled
-        icon="email"
+        icon={<Icon name="EmailIcon" />}
         iconOnly
         instance="button4d"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -220,7 +220,7 @@ export const IconAndContentButtons = () => {
     <Overlays content="Icon and Content" target={['button5a']}>
       <Button
         primary
-        icon="eye"
+        icon={<Icon name="EyeIcon" />}
         iconPosition="before"
         instance="button5a"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -228,7 +228,7 @@ export const IconAndContentButtons = () => {
       />
       <Button
         primary
-        icon="triangle-down"
+        icon={<Icon name="TriangleDownIcon" />}
         iconPosition="after"
         instance="button5b"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -237,7 +237,7 @@ export const IconAndContentButtons = () => {
       <br />
       <Button
         secondary
-        icon="flag"
+        icon={<Icon name="FlagIcon" />}
         iconPosition="before"
         instance="button5c"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -245,7 +245,7 @@ export const IconAndContentButtons = () => {
       />
       <Button
         secondary
-        icon="leave"
+        icon={<Icon name="LeaveIcon" />}
         iconPosition="after"
         instance="button5d"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -256,7 +256,7 @@ export const IconAndContentButtons = () => {
       <Button
         primary
         disabled
-        icon="eye"
+        icon={<Icon name="EyeIcon" />}
         iconPosition="before"
         instance="button5e"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -265,7 +265,7 @@ export const IconAndContentButtons = () => {
       <Button
         primary
         disabled
-        icon="triangle-down"
+        icon={<Icon name="TriangleDownIcon" />}
         iconPosition="after"
         instance="button5f"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -275,7 +275,7 @@ export const IconAndContentButtons = () => {
       <Button
         secondary
         disabled
-        icon="flag"
+        icon={<Icon name="FlagIcon" />}
         iconPosition="before"
         instance="button5g"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -284,7 +284,7 @@ export const IconAndContentButtons = () => {
       <Button
         secondary
         disabled
-        icon="leave"
+        icon={<Icon name="LeaveIcon" />}
         iconPosition="after"
         instance="button5h"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
@@ -302,7 +302,7 @@ export const FluidButtons = () => {
         instance="button6a"
         fluid
         primary
-        icon="like"
+        icon={<Icon name="LikeIcon" />}
         iconPosition="before"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Fits to container"
@@ -312,7 +312,7 @@ export const FluidButtons = () => {
         instance="button6b"
         fluid
         secondary
-        icon="mic"
+        icon={<Icon name="MicIcon" />}
         iconPosition="after"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="See how this very long text shows up on the button"
@@ -324,7 +324,7 @@ export const FluidButtons = () => {
         disabled
         fluid
         primary
-        icon="like"
+        icon={<Icon name="LikeIcon" />}
         iconPosition="before"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
         content="Fits to container"
@@ -335,7 +335,7 @@ export const FluidButtons = () => {
         disabled
         fluid
         secondary
-        icon="mic"
+        icon={<Icon name="MicIcon" />}
         iconPosition="after"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="See how this very long text shows up on the button"
@@ -357,7 +357,7 @@ export const CircularButtons = () => {
       <Button
         instance="button7b"
         circular
-        icon="more"
+        icon={<Icon name="MoreIcon" />}
         iconPosition="after"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Confusingly long"
@@ -375,7 +375,7 @@ export const CircularButtons = () => {
         instance="button7d"
         disabled
         circular
-        icon="more"
+        icon={<Icon name="MoreIcon" />}
         iconPosition="after"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
         content="Confusingly long"
@@ -392,14 +392,14 @@ export const CircularEmphasisButtons = () => {
         instance="button8a"
         circular
         primary
-        icon="number-list"
+        icon={<Icon name="NumberListIcon" />}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
       <Button
         instance="button8b"
         circular
         secondary
-        icon="play"
+        icon={<Icon name="PlayIcon" />}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
       <br />
@@ -409,7 +409,7 @@ export const CircularEmphasisButtons = () => {
         disabled
         circular
         primary
-        icon="number-list"
+        icon={<Icon name="NumberListIcon" />}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
       />
       <Button
@@ -417,7 +417,7 @@ export const CircularEmphasisButtons = () => {
         disabled
         circular
         secondary
-        icon="play"
+        icon={<Icon name="PlayIcon" />}
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
     </Overlays>
@@ -431,7 +431,7 @@ export const TextButtons = () => {
       <Button
         instance="button9a"
         text
-        icon="quote"
+        icon={<Icon name="QuoteIcon" />}
         iconPosition="before"
         content="Default"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -453,7 +453,7 @@ export const TextButtons = () => {
       <Button
         instance="button9d"
         text
-        icon="reply"
+        icon={<Icon name="ReplyIcon" />}
         iconOnly
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
@@ -463,7 +463,7 @@ export const TextButtons = () => {
         instance="button9e"
         disabled
         text
-        icon="quote"
+        icon={<Icon name="QuoteIcon" />}
         iconPosition="before"
         content="Default"
         onClick={() => dispatch(actions.chg('themer', { theme: 'teams' }))}
@@ -488,7 +488,7 @@ export const TextButtons = () => {
         instance="button9h"
         disabled
         text
-        icon="reply"
+        icon={<Icon name="ReplyIcon" />}
         iconOnly
         onClick={() => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' }))}
       />
@@ -505,19 +505,19 @@ export const GroupButtons = () => {
         buttons={[
           {
             key: 'search',
-            icon: 'search',
+            icon: <Icon name="SearchIcon" />,
             iconOnly: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teams' })),
           },
           {
             key: 'send',
-            icon: 'send',
+            icon: <Icon name="SendIcon" />,
             iconOnly: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'settings',
-            icon: 'settings',
+            icon: <Icon name="SettingsIcon" />,
             iconOnly: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
@@ -530,21 +530,21 @@ export const GroupButtons = () => {
         buttons={[
           {
             key: 'search',
-            icon: 'search',
+            icon: <Icon name="SearchIcon" />,
             iconOnly: true,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teams' })),
           },
           {
             key: 'send',
-            icon: 'send',
+            icon: <Icon name="SendIcon" />,
             iconOnly: true,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'settings',
-            icon: 'settings',
+            icon: <Icon name="SettingsIcon" />,
             iconOnly: true,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
@@ -566,18 +566,18 @@ export const CircularGroupButtons = () => {
         buttons={[
           {
             key: 'star',
-            icon: 'star',
+            icon: <Icon name="StarIcon" />,
             primary: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'sticker',
-            icon: 'sticker',
+            icon: <Icon name="StickerIcon" />,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'strike',
-            icon: 'strike',
+            icon: <Icon name="StrikeIcon" />,
             primary: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
@@ -591,20 +591,20 @@ export const CircularGroupButtons = () => {
         buttons={[
           {
             key: 'star',
-            icon: 'star',
+            icon: <Icon name="StarIcon" />,
             primary: true,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'sticker',
-            icon: 'sticker',
+            icon: <Icon name="StickerIcon" />,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),
           },
           {
             key: 'strike',
-            icon: 'strike',
+            icon: <Icon name="StrikeIcon" />,
             primary: true,
             disabled: true,
             onClick: () => dispatch(actions.chg('themer', { theme: 'teamsHighContrast' })),

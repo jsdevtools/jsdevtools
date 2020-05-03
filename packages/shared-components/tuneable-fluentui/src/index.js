@@ -1,4 +1,4 @@
-import * as FUIR from '@fluentui/react';
+import * as FUIR from '@fluentui/react-northstar';
 import { withGlobalState } from '@jsdevtools/tuneable';
 import TuneableProvider from './provider';
 import TuneableAlert from './alert';

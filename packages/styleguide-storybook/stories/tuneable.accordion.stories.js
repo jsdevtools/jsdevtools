@@ -1,11 +1,10 @@
 import React from 'react';
-import { Accordion, Image, List, Text } from '@jsdevtools/tuneable-fluentui';
+import { Accordion, Image, List, Icon, Text } from '@jsdevtools/tuneable-fluentui';
 import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
-import { actions, StateContext } from '@jsdevtools/tuneable';
 import { fullViewport } from '../.storybook/addons/fullViewport';
 
-import { Layout, Label, themes } from '@fluentui/react';
+import { Layout, Label, themes } from '@fluentui/react-northstar';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { transformIconColectionToIconMap } from '@jsdevtools/fluentui-font-awesome';
@@ -97,7 +96,14 @@ const panels = [
     title: (
       <Layout
         key="peopleTitle"
-        start={<Label icon="fas user-friends" iconPosition="start" circular content="People" />}
+        start={
+          <Label
+            icon={<Icon name={['fas', 'user-friends']} />}
+            iconPosition="start"
+            circular
+            content="People"
+          />
+        }
       />
     ),
     content: {
@@ -107,7 +113,10 @@ const panels = [
   },
   {
     title: (
-      <Layout key="petsTitle" start={<Label icon="fas paw" iconPosition="start" circular content="Pets" />} />
+      <Layout
+        key="petsTitle"
+        start={<Label icon={<Icon name={['fas', 'paw']} />} iconPosition="start" circular content="Pets" />}
+      />
     ),
     content: {
       key: 'pets',

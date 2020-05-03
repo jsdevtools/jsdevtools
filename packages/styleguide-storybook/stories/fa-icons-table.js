@@ -26,45 +26,35 @@ export const faStoryFn = faTypeDefinitions => {
               <React.Fragment key={`${i}0`}>
                 {i} {definition.prefix} {definition.iconName}
               </React.Fragment>,
-              <Icon key={`${i}1`} bordered name={`${definition.prefix} ${definition.iconName}`} />,
+              <Icon key={`${i}1`} bordered="true" name={[definition.prefix, definition.iconName]} />,
               <Icon
                 key={`${i}2`}
                 flip="vertical"
                 color="grey"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}3`}
                 flip="horizontal"
                 color="orange"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
-              <Icon
-                key={`${i}4`}
-                flip="both"
-                color="pink"
-                name={`${definition.prefix} ${definition.iconName}`}
-              />,
-              <Icon
-                key={`${i}5`}
-                pulse="true"
-                color="red"
-                name={`${definition.prefix} ${definition.iconName}`}
-              />,
+              <Icon key={`${i}4`} flip="both" color="pink" name={[definition.prefix, definition.iconName]} />,
+              <Icon key={`${i}5`} pulse="true" color="red" name={[definition.prefix, definition.iconName]} />,
               <Icon
                 key={`${i}6`}
                 spin="true"
                 color="green"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}7`}
                 rotate={90}
                 color="yellow"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
-              <Icon key={`${i}8`} color="blue" name={`${definition.prefix} ${definition.iconName}`} />,
-              <Icon key={`${i}9`} color="purple" name={`${definition.prefix} ${definition.iconName}`} />,
+              <Icon key={`${i}8`} color="blue" name={[definition.prefix, definition.iconName]} />,
+              <Icon key={`${i}9`} color="purple" name={[definition.prefix, definition.iconName]} />,
             ],
           }
         : {
@@ -74,59 +64,64 @@ export const faStoryFn = faTypeDefinitions => {
               <React.Fragment key={`${i}0`}>
                 {definition.prefix} {definition.iconName}
               </React.Fragment>,
-              <Icon key={`${i}1`} size="smaller" name={`${definition.prefix} ${definition.iconName}`} />,
+              <Icon
+                key={`${i}1`}
+                size="smaller"
+                bordered="true"
+                name={[definition.prefix, definition.iconName]}
+              />,
               <Icon
                 key={`${i}2`}
                 flip="vertical"
                 color="grey"
                 size="small"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}3`}
                 flip="horizontal"
                 color="orange"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}4`}
                 flip="both"
                 color="pink"
                 size="large"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}5`}
                 pulse="true"
                 color="red"
                 size="larger"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}6`}
                 spin="true"
                 color="green"
                 size="largest"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}7`}
                 rotate={90}
                 color="yellow"
                 size="huger"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}8`}
                 color="blue"
                 size="enormous"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
               <Icon
                 key={`${i}9`}
                 color="purple"
                 size="titanic"
-                name={`${definition.prefix} ${definition.iconName}`}
+                name={[definition.prefix, definition.iconName]}
               />,
             ],
           },

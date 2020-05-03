@@ -30,8 +30,8 @@
   "private": false,
   "main": "index.js",
   "dependencies": {
-    "@babel/preset-env": "^7.7.7",
-    "@babel/preset-react": "^7.7.4"
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.7.7",

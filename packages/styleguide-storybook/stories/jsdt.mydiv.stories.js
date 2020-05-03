@@ -1,11 +1,7 @@
-import React, { useContext } from 'react';
-import { Text, Flex } from '@jsdevtools/tuneable-fluentui';
+import React from 'react';
 import { MyDiv } from '@jsdevtools/tuneable-jsdt';
 import { GlobalStateDecorator, ThemeProvider, Overlays } from './shared';
 import { withA11y } from '@storybook/addon-a11y';
-import { actions, StateContext } from '@jsdevtools/tuneable';
-import Float from '@jsdevtools/float';
-import { Flex as FFlex } from '@fluentui/react';
 import { fullViewport } from '../.storybook/addons/fullViewport';
 
 export default {

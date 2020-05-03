@@ -19,7 +19,8 @@ module.exports = {
   },
   externals: {
     react: 'react',
-    '@fluentui/react': '@fluentui/react',
+    '@fluentui/react-northstar': '@fluentui/react-northstar',
+    '@fluentui/react-icons-northstar': '@fluentui/react-icons-northstar',
   },
   mode: 'development',
 };
