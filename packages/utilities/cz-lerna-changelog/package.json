@@ -2,7 +2,7 @@
   "name": "@jsdevtools/cz-lerna-changelog",
   "description": "Fork of cz-lerna-changelog, see https://github.com/atlassian/cz-lerna-changelog.git",
   "main": "lib/index.js",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

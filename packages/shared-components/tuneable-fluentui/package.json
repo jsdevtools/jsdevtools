@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/tuneable-fluentui",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Make fluentui components tuneable.",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -28,9 +28,9 @@
     "clean": "shx rm -f yarn-error.log && shx rm -rf dist"
   },
   "dependencies": {
-    "@fluentui/react-northstar": "^0.48.0",
     "@fluentui/react-icons-northstar": "^0.48.0",
-    "@jsdevtools/tuneable": "^0.3.1",
+    "@fluentui/react-northstar": "^0.48.0",
+    "@jsdevtools/tuneable": "^0.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -39,7 +39,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
-    "@jsdevtools/babel-config": "^0.1.7",
+    "@jsdevtools/babel-config": "^0.1.8",
     "@jsdevtools/stylelint-config": "^0.1.12",
     "babel-loader": "^8.1.0",
     "babel-plugin-react-docgen": "^4.1.0",

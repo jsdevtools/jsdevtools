@@ -1,6 +1,6 @@
 {
   "name": "@jsdevtools/input-ts",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Sample typescript component",
   "main": "dist/bundle.js",
   "license": "MIT",
@@ -42,8 +42,8 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@jsdevtools/babel-config-ts": "^0.1.7",
-    "@jsdevtools/eslint-config-ts": "^0.2.2",
+    "@jsdevtools/babel-config-ts": "^0.1.8",
+    "@jsdevtools/eslint-config-ts": "^0.2.3",
     "@jsdevtools/stylelint-config": "^0.1.12",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
